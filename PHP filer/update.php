@@ -6,8 +6,8 @@ require_once "functions.php";
 $filename = "plants.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
-if ($requestMethod != "PUT") {
-    $error = ["error" => "Invalid HTTP method! (Only PUT is allowed)"];
+if ($requestMethod != "PATCH") {
+    $error = ["error" => "Invalid HTTP method! (Only PATCH is allowed)"];
     sendJSON($error, 405);
 }
 
