@@ -9,7 +9,7 @@
     color: #181307;
     background-color: #e6d7b5;
     width: 100vw;
-    height: 50px;
+    height: 60px;
     transition: 1s;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 15px;
+    top: 17px;
     left: 15px;
     transition: 1s;
     transition-timing-function: ease-in-out;
@@ -49,7 +49,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 15px;
+    top: 17px;
     left: 15px;
     transform: rotate(90deg);
     transition: 1s;
@@ -61,6 +61,7 @@
     opacity: 0%;
     transition: 0.5s;
     visibility: hidden;
+    position: fixed;
 }
  
 
@@ -69,8 +70,8 @@
     visibility: visible;
     color: white;
     transition: 0.5s;
-    transition-delay: 0.5s;
-    
+    transition-delay: 0.5s;    
+    position: fixed;
 }
 
 
@@ -97,7 +98,7 @@ a{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 15px;
+    top: 17px;
     right: 15px;
     transition: 1s;
     transition-timing-function: ease-in-out;
@@ -107,7 +108,7 @@ a{
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 15px;
+    top: 17px;
     right: 15px;
     transition: 1s;
     transition-timing-function: ease-in-out;
@@ -117,7 +118,7 @@ a{
     opacity: 0%;
     transition: 0.5s;
     visibility: hidden;
-    display: none;
+    position: fixed;
 }
  
 
@@ -126,6 +127,56 @@ a{
     visibility: visible;
     transition: 0.5s;
     transition-delay: 0.5s;
-    display: flex;
-    
+    position: fixed;
+}
+
+#close-hidden {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0%;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+#close-visible {
+    position: fixed;
+    visibility: visible;
+    opacity: 100%;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+#profile-symbol-visible {
+    visibility: visible;
+    opacity: 100%;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+#profile-symbol-hidden {
+    visibility: hidden;
+    opacity: 0%;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+#line-menu-hidden {
+    visibility: hidden;
+    opacity: 0%;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+#line-menu-visible {
+    visibility: visible;
+    opacity: 100%;
+    transition: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.header-name{
+    position: fixed;
+    margin: 0;
+    top: 17px;
+    font-size: 25px;
 }
