@@ -1,9 +1,10 @@
 <?php 
+// hur gör vi på denna att water är tom och bug false automatiskt
 ini_set("display_errors", 1);
 
 require_once "functions.php";
 
-$filename = "userPlants.json";
+$filename = "../JSON-filer/userPlants.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "POST") {
@@ -21,17 +22,16 @@ if (file_exists($filename)) {
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-if (!isset($requestData["userId"], $requestData["plantId"], $requestData["water"], $requestData["bugs"])) {
+if (!isset($requestData["userId"], $requestData["plantId"])) {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }
 
 $userId = $requestData["userId"];
 $plantId = $requestData["plantId"];
-$water = $requestData["water"];
-$bugs = $requestData["bugs"];
 
-if ($userId == "" or $plantId == "" or $water == "" or $bugs == "") {
+
+if ($userId == "" or $plantId == "") {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }

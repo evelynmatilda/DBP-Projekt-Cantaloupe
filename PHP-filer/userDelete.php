@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 
 require_once "functions.php";
 
-$filename = "users.json";
+$filename = "../JSON-filer/users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "DELETE") {
@@ -21,15 +21,15 @@ if (file_exists($filename)) {
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-if (!isset($requestData["id"])) {
+if (!isset($requestData["userId"])) {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }
 
-$id = $requestData["id"];
+$id = $requestData["userId"];
 
 foreach ($users as $index => $user) {
-    if ($user["id"] == $id) {
+    if ($user["userId"] == $id) {
         array_splice($users, $index, 1);
         $json = json_encode($users, JSON_PRETTY_PRINT);
         file_put_contents($filename, $json);

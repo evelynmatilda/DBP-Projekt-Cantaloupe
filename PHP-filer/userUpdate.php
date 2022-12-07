@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 
 require_once "userFunctions.php";
 
-$filename = "plants.json";
+$filename = "../JSON-filer/users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "PATCH") {
