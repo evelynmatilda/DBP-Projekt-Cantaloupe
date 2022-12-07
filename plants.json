@@ -2,80 +2,56 @@
     {
         "name": "Fiolfikus",
         "latin": "Ficus lyrata",
-        "info": "Kommer ursprungligen från västra Afrika. Fiolfikusen är känslig för temperaturändringar, därför är det viktigt att Fiolfikusen inte står i ett läge som tenderar bli dragigt. Den bästa temperaturen för en Fiolfikus är mellan 15-30 grader.
-        Växten kan bli hög, vill man behålla storleken kan fiolfikusen beskäras, detta görs på våren. Under vintern har fikusen sin viloperiod och bör inte bli flyttad för att undvika bladfall.
-        Tillsätt näring en gång i veckan under vår och sommarmånaderna och en gång i månaden under vintern.",
+        "info": "Kommer ursprungligen från västra Afrika. Fiolfikusen är känslig för temperaturändringar, därför är det viktigt att Fiolfikusen inte står i ett läge som tenderar bli dragigt. Den bästa temperaturen för en Fiolfikus är mellan 15-30 grader. Växten kan bli hög, vill man behålla storleken kan fiolfikusen beskäras, detta görs på våren. Under vintern har fikusen sin viloperiod och bör inte bli flyttad för att undvika bladfall. Tillsätt näring en gång i veckan under vår och sommarmånaderna och en gång i månaden under vintern.",
         "vattnas": 1,
         "blommar": false,
         "sol": "Full sol"
     }, {
         "name": "Trekantseuforbia",
         "latin": "Euphorbia trigona",
-        "info": "Trekantseuforbian kommer ursprungligen från sydvästra Afrika.
-        Även om plantan ser ut som en kaktus så är det egentligen en växt inom törelsläktet och den är släkt med julstjärnan. 'High Chaparral' och 'Rubra' är exempel på namnsorter som finns i odling.
-        Trekantseuforbia är en stamsuckulent med trekantiga stammar som har möjlighet att lagra vatten. Innehåller en vit växtsaft som kan vara irriterande. 
-        Tillsätt kaktusnäring i vattnet varannan vecka från april till augusti. Omplanteras vid behov i speciell kaktusjord.",
+        "info": "Trekantseuforbian kommer ursprungligen från sydvästra Afrika. Även om plantan ser ut som en kaktus så är det egentligen en växt inom törelsläktet och den är släkt med julstjärnan. 'High Chaparral' och 'Rubra' är exempel på namnsorter som finns i odling.Trekantseuforbia är en stamsuckulent med trekantiga stammar som har möjlighet att lagra vatten. Innehåller en vit växtsaft som kan vara irriterande. Tillsätt kaktusnäring i vattnet varannan vecka från april till augusti. Omplanteras vid behov i speciell kaktusjord.",
         "vattnas": 1,
         "blommar": false,
         "sol": "Full sol"
     }, {
         "name": "Ampellilja",
         "latin": "Chlorophytum comosum",
-        "info": "Ampelliljan kommer ursprungligen från Sydafrika.
-        Ampelliljan är en tuvbildande växt som blommar med små vita blommor på långa stänglar. Blomningen kan ske när som helst på året. Efter blomningen utvecklas småplantor på stängeln, som i naturen lägger sig ner på marken där de lätt slår rot.
-        En lättskött växt som passar utmärkt i amplar. Växten blir fort stor och omfångsrik.
-        Näring ges i vattnet en gång i veckan från mars till oktober, under övrig tid behövs ingen näring. Omplantering bör göras varje år. Tycker om hög luftfuktighet. Rumstemperatur året om, dvs. 18 - 20°C är den bästa temperaturen för ampelliljan.
-        Flera sorter finns. Några vanliga är 'Variegata' och 'Vittatum'. 'Variegata' har längsgående vita ränder på bladen. 'Vittatum' har gröna blad med en bred gul eller creméfärgad mitt strimma.
-        Ampelliljan har ett kraftfullt rotsystem med knölar för lagring av vatten och näring. Detta rotsystem behöver växten där den växer naturligt eftersom det kan gå månader mellan regnperioderna.",
+        "info": "Ampelliljan kommer ursprungligen från Sydafrika. Ampelliljan är en tuvbildande växt som blommar med små vita blommor på långa stänglar. Blomningen kan ske när som helst på året. Efter blomningen utvecklas småplantor på stängeln, som i naturen lägger sig ner på marken där de lätt slår rot. En lättskött växt som passar utmärkt i amplar. Växten blir fort stor och omfångsrik. Näring ges i vattnet en gång i veckan från mars till oktober, under övrig tid behövs ingen näring. Omplantering bör göras varje år. Tycker om hög luftfuktighet. Rumstemperatur året om, dvs. 18 - 20°C är den bästa temperaturen för ampelliljan. Flera sorter finns. Några vanliga är 'Variegata' och 'Vittatum'. 'Variegata' har längsgående vita ränder på bladen. 'Vittatum' har gröna blad med en bred gul eller creméfärgad mitt strimma. Ampelliljan har ett kraftfullt rotsystem med knölar för lagring av vatten och näring. Detta rotsystem behöver växten där den växer naturligt eftersom det kan gå månader mellan regnperioderna.",
         "vattnas": 1,
         "blommar": true,
         "sol": "Halvskugga"
     }, {
         "name": "Vågbladskalatea",
         "latin": "Calathea rufibarba",
-        "info": "Växer naturligt i Brasilien och blir som krukväxt här hemma hos oss ca 50 cm hög. I det vilda blommar unga exemplar av vågbladskalantea med gula blommor vid basen medan äldre exemplar av växten blommar med lila små blommor.
-        Vågbladskalatean tillhör strimbladsväxter och behöver ljus för att behålla de vackra mönstren på bladen. Vågbladskalatea är en populär bladväxt med gröna och blanka blad som är vågiga i kanten. Hela växten är glest överdragen med silverhår. 
-        Trivs i normal rumstemperatur. Tillsätt kalkfri näring i vattnet en gång per vecka från april till augusti. Tycker om hög luftfuktighet. Vid omplantering används en krukväxtjord för kalkskyende växter.
-        'Blue Grass', 'Miroscha' och 'Elergrass' är exempel på namnsorter som finns i odling.",
+        "info": "Växer naturligt i Brasilien och blir som krukväxt här hemma hos oss ca 50 cm hög. I det vilda blommar unga exemplar av vågbladskalantea med gula blommor vid basen medan äldre exemplar av växten blommar med lila små blommor. Vågbladskalatean tillhör strimbladsväxter och behöver ljus för att behålla de vackra mönstren på bladen. Vågbladskalatea är en populär bladväxt med gröna och blanka blad som är vågiga i kanten. Hela växten är glest överdragen med silverhår. Trivs i normal rumstemperatur. Tillsätt kalkfri näring i vattnet en gång per vecka från april till augusti. Tycker om hög luftfuktighet. Vid omplantering används en krukväxtjord för kalkskyende växter. 'Blue Grass', 'Miroscha' och 'Elergrass' är exempel på namnsorter som finns i odling.",
         "vattnas": 2,
         "blommar": true,
         "sol": "Halv sol"
     }, {
         "name": "Papegojblomma",
         "latin": "Strelitzia reginae",
-        "info": "Papegojblomman kommer ursprungligen från Sydafrika.
-        Vanlig rumstemperatur passar perfekt. Däremot gillar inte papegojblomman att stå i drag och den klarar inte temperaturer under 10 grader. När temperaturen närmar sig 15 grader slutar den växa för att spara energi. Papegojblomman trivs allra bäst i hög luftfuktighet.
-        På sommaren kan också lägga till lite växtnäring vartannat vecka.
-        Plantera om växten efter köpet, eller när den blir för stor för sin kruka. Ibland växer det spontant nya mini-växter i krukan Du kan bara lämna dem i krukan eller klippa av de noggrant, just ovanpå marken, och plantera sticklingarna i en annan kruka.  Använd väldränerad och näringsrik jord.",
+        "info": "Papegojblomman kommer ursprungligen från Sydafrika. Vanlig rumstemperatur passar perfekt. Däremot gillar inte papegojblomman att stå i drag och den klarar inte temperaturer under 10 grader. När temperaturen närmar sig 15 grader slutar den växa för att spara energi. Papegojblomman trivs allra bäst i hög luftfuktighet. På sommaren kan också lägga till lite växtnäring vartannat vecka. Plantera om växten efter köpet, eller när den blir för stor för sin kruka. Ibland växer det spontant nya mini-växter i krukan Du kan bara lämna dem i krukan eller klippa av de noggrant, just ovanpå marken, och plantera sticklingarna i en annan kruka. Använd väldränerad och näringsrik jord.",
         "vattnas": 1,
         "blommar": true,
         "sol": "Full sol"
     }, {
         "name": "Monstera",
         "latin": "Monstera Deliciosa",
-        "info": "Är en epifytisk lianväxt med ursprung i de tropiska delarna av Mexiko. Att en växt är epifyt innebär att den lever på en annan växt utan att ta vatten och näring av denna.
-        När plantan är ung är bladen hela och hjärtformade. Senare när växten blivit äldre blir bladen djupt flikiga och stora. Monstera kan bli mycket hög och behöver då någon form av stöd.
-        Vattna helst med kalkfritt vatten. Näringsvattna en gång i veckan med normal dos kalkfri näring från april till september. Omplanteras vid behov i krukväxtjord för kalkskyende växter.
-        Finns några olika namnsorter i odling. Främst är det sorter med något mindre blad och sirligare växtsätt, allt för att växten ska passa in bättre i våra moderna bostäder.",
+        "info": "Är en epifytisk lianväxt med ursprung i de tropiska delarna av Mexiko. Att en växt är epifyt innebär att den lever på en annan växt utan att ta vatten och näring av denna. När plantan är ung är bladen hela och hjärtformade. Senare när växten blivit äldre blir bladen djupt flikiga och stora. Monstera kan bli mycket hög och behöver då någon form av stöd. Vattna helst med kalkfritt vatten. Näringsvattna en gång i veckan med normal dos kalkfri näring från april till september. Omplanteras vid behov i krukväxtjord för kalkskyende växter. Finns några olika namnsorter i odling. Främst är det sorter med något mindre blad och sirligare växtsätt, allt för att växten ska passa in bättre i våra moderna bostäder.",
         "vattnas": 1,
         "blommar": false,
         "sol": "Halv sol"
     }, {
         "name": "Fredskalla",
         "latin": "Spathiphyllum wallisii",
-        "info": "Fredskallan är en tropisk växt som kommer från Sydamerika där den växer som undervegetation i den sumpiga regnskogen.
-        Vill ha normal rumstemperatur. Tål inte temperaturer under 16°C. Ge en svag näringslösning vid varje vattning. Växten är känslig för kyla, drag, kallt vatten och torr jord.
-        Fredskalla är en relativt lättskött krukväxt. Kan blomma två gånger per år. Uteblir blomningen kan det bero på att växten har fått för mycket näring.",
+        "info": "Fredskallan är en tropisk växt som kommer från Sydamerika där den växer som undervegetation i den sumpiga regnskogen. Vill ha normal rumstemperatur. Tål inte temperaturer under 16°C. Ge en svag näringslösning vid varje vattning. Växten är känslig för kyla, drag, kallt vatten och torr jord. Fredskalla är en relativt lättskött krukväxt. Kan blomma två gånger per år. Uteblir blomningen kan det bero på att växten har fått för mycket näring.",
         "vattnas": 2,
         "blommar": true,
         "sol": "Halv skugga"
     }, {
         "name": "Paradisträd",
         "latin": "Crassula ovata",
-        "info": "Paradisträd härstammar från Sydafrika och här hemma kan den som krukväxt bli max kring en meter hög.
-        Har paradisträd stått svalt vintertid kan den blomma med ljusrosa nästan vita, stjärnformiga blommor på våren. Är en suckulent med köttiga, glänsande mörkgröna blad som ibland kan ha röda kanter.
-        Klara värme bra men kan stå svalt, 6-8°C, vintertid. Tillsätt halv dos näring i vattnet en gång i veckan från april till augusti. Vid omplantering använd en kaktusjord eller en vanlig krukväxtjord med sand i. 
-        'Horntree', 'Sunset' och 'Minor' är exempel på sorter av paradisträd som finns i odling.",
+        "info": "Paradisträd härstammar från Sydafrika och här hemma kan den som krukväxt bli max kring en meter hög. Har paradisträd stått svalt vintertid kan den blomma med ljusrosa nästan vita, stjärnformiga blommor på våren. Är en suckulent med köttiga, glänsande mörkgröna blad som ibland kan ha röda kanter. Klara värme bra men kan stå svalt, 6-8°C, vintertid. Tillsätt halv dos näring i vattnet en gång i veckan från april till augusti. Vid omplantering använd en kaktusjord eller en vanlig krukväxtjord med sand i. 'Horntree', 'Sunset' och 'Minor' är exempel på sorter av paradisträd som finns i odling.",
         "vattnas": 1,
         "blommar": true,
         "sol": "Full sol"

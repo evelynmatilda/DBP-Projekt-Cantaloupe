@@ -1,6 +1,5 @@
 <?php 
 ini_set("display_errors", 1);
-$filename = "plants.json";
 
 function sendJSON ($data, $statusCode = 200) {
     header("Content-Type: application/json");
