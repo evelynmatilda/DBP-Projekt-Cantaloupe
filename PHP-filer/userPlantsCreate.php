@@ -46,7 +46,7 @@ foreach ($userPlants as $userPlant) {
 $nextId = $highestId + 1;
 
 $newUserPlant = ["userPlantId" => $nextId, "userId" => $userId, "plantId" => $plantId, "water" => $water, $bugs => "bugs"];
-$users[] = $newUser;
+$userPlants[] = $newUserPlant;
 $json = json_encode($userPlants, JSON_PRETTY_PRINT);
 file_put_contents($filename, $json);
 
