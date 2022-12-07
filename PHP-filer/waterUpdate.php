@@ -15,32 +15,29 @@ if ($requestMethod != "PATCH") {
    sendJSON($error, 405);
 }
 
-$plantNotes = [];
+$plantWater = [];
 
 if (!file_exists($filename)) {
-   $error = ["error" => "We couldn't find the file"];
+   $error = ["error" => "We could not find the file"];
    sendJSON($error, 404);
 }
 
-$requestJSON = file_get_contents("php://input");
-$requestData = json_decode($requestJSON, true);
-
-if (!isset($requestData["id"], $requestData["notes"])) {
+if (!isset($requestData["id"], $requestData["water"])) {
    $error = ["error" => "Bad Request!"];
    sendJSON($error, 400);
 }
 
 $id = $requestData["id"];
-$newNotes = $requestData["notes"];
+$newWater = $requestData["water"];
 
-if ($newNotes == "") {
+if ($newWater == "") {
    $error = ["error" => "Bad Request!"];
    sendJSON($error, 400);
 }
 
 foreach ($users as $index => $user) {
    if ($user["id"] == $id) {
-       $plant["notes"] = $newNotes;
+       $plant["water"] = $newWater;
 
        $json = json_encode($users, JSON_PRETTY_PRINT);
        file_put_contents($filename, $json);
