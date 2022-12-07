@@ -7,7 +7,7 @@ require_once "functions.php";
 // så kolla id:t → if sats?
 // måste nå userns id och sedan växtens id
 
-$filename = "users.json";
+$filename = "../JSON-filer/userPlants.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "PATCH") {
@@ -15,7 +15,7 @@ if ($requestMethod != "PATCH") {
    sendJSON($error, 405);
 }
 
-$plantNotes = [];
+$plantBugs = [];
 
 if (file_exists($filename)) {
    $json = file_get_contents($filename);
@@ -25,31 +25,31 @@ if (file_exists($filename)) {
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-if (!isset($requestData["id"], $requestData["notes"])) {
+if (!isset($requestData["id"], $requestData["bug"])) {
    $error = ["error" => "Bad Request!"];
    sendJSON($error, 400);
 }
 
-$id = $requestData["id"];
-$newNotes = $requestData["notes"];
+$id = $requestData["userPlantId"];
+$bugs = $requestData["bugs"];
 
-if ($newNotes == "") {
+if ($bugs == "") {
    $error = ["error" => "Bad Request!"];
    sendJSON($error, 400);
 }
 
-foreach ($users as $index => $user) {
-   if ($user["id"] == $id) {
-       $plant["notes"] = $newNotes;
+foreach ($plantBugs as $index => $plantBug) {
+   if ($plantBug["userPlantId"] == $id) {
+       $plantBug["bugs"] = $bugs;
 
-       $json = json_encode($users, JSON_PRETTY_PRINT);
+       $json = json_encode($plantBugs, JSON_PRETTY_PRINT);
        file_put_contents($filename, $json);
-       sendJSON($user);
+       sendJSON($plantBug);
    }
 }
 
-variabel error = ["error" => "Plant not found"];
-kalla vår egna funktion → sendJSON($error, 404);
+$error = ["error" => "Plant not found"];
+sendJSON($error, 404);
 
 
 ?>
