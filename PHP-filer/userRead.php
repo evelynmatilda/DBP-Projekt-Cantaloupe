@@ -1,9 +1,9 @@
 <?php 
 ini_set("display_errors", 1);
 
-require_once "userFunctions.php";
+require_once "functions.php";
 
-$filename = "plants.json";
+$filename = "users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "GET") {
@@ -11,26 +11,26 @@ if ($requestMethod != "GET") {
     sendJSON($error, 405);
 }
 
-$plants = [];
+$users = [];
 
 if (file_exists($filename)) {
     $json = file_get_contents($filename);
-    $plants = json_decode($json, true);
+    $users = json_decode($json, true);
 }
 
 if (isset($_GET["id"])) {
     $id = $_GET["id"];
 
-    foreach ($plants as $plant) {
-        if ($plant["id"] == $id) {
-            sendJSON($plant);
+    foreach ($users as $user) {
+        if ($user["id"] == $id) {
+            sendJSON($user);
         }
     }
 
-    $error = ["error" => "plant not found"];
+    $error = ["error" => "User not found"];
     sendJSON($error, 404);
 }
 
-sendJSON($plants);
+sendJSON($users);
 
 ?>
