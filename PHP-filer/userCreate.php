@@ -1,9 +1,9 @@
 <?php 
 ini_set("display_errors", 1);
 
-require_once "userFunctions.php";
+require_once "functions.php";
 
-$filename = "plants.json";
+$filename = "users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "POST") {
@@ -15,40 +15,40 @@ $plants = [];
 
 if (file_exists($filename)) {
     $json = file_get_contents($filename);
-    $plants = json_decode($json, true);
+    $users = json_decode($json, true);
 }
 
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-if (!isset($requestData["name"], $requestData["latin"], $requestData["flowers"])) {
+if (!isset($requestData["username"], $requestData["password"], $requestData["email"])) {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }
 
-$name = $requestData["name"];
-$latin = $requestData["latin"];
-$flowers = $requestData["flowers"];
+$username = $requestData["username"];
+$password = $requestData["password"];
+$email = $requestData["email"];
 
-if ($name == "" or $latin == "" or $flowers == "") {
+if ($username == "" or $password == "" or $email == "") {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }
 
 $highestId = 0;
-foreach ($plants as $plant) {
-    if ($plant["id"] > $highestId) {
-        $highestId = $plant["id"];
+foreach ($users as $user) {
+    if ($user["id"] > $highestId) {
+        $highestId = $user["id"];
     }
 }
 
 $nextId = $highestId + 1;
 
-$newPlant = ["id" => $nextId, "name" => $name, "latin" => $latin, "flowers" => $flowers];
-$plants[] = $newPlant;
-$json = json_encode($plants, JSON_PRETTY_PRINT);
+$newUser = ["id" => $nextId, "username" => $username, "password" => $password, "email" => $email];
+$users[] = $newUser;
+$json = json_encode($users, JSON_PRETTY_PRINT);
 file_put_contents($filename, $json);
 
-sendJSON($newPlant);
+sendJSON($newUser);
 
 ?>

@@ -1,9 +1,9 @@
 <?php 
 ini_set("display_errors", 1);
 
-require_once "usetrFunctions.php";
+require_once "functions.php";
 
-$filename = "plants.json";
+$filename = "users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "DELETE") {
@@ -11,11 +11,11 @@ if ($requestMethod != "DELETE") {
     sendJSON($error, 405);
 }
 
-$plants = [];
+$users = [];
 
 if (file_exists($filename)) {
     $json = file_get_contents($filename);
-    $plants = json_decode($json, true);
+    $users = json_decode($json, true);
 }
 
 $requestJSON = file_get_contents("php://input");
@@ -23,21 +23,21 @@ $requestData = json_decode($requestJSON, true);
 
 if (!isset($requestData["id"])) {
     $error = ["error" => "Bad Request!"];
-    sendJSON($error, 400);   
+    sendJSON($error, 400);
 }
 
 $id = $requestData["id"];
 
-foreach ($plants as $index => $plant) {
-    if ($plant["id"] == $id) {
-        array_splice($plants, $index, 1);
-        $json = json_encode($plants, JSON_PRETTY_PRINT);
+foreach ($users as $index => $user) {
+    if ($user["id"] == $id) {
+        array_splice($users, $index, 1);
+        $json = json_encode($users, JSON_PRETTY_PRINT);
         file_put_contents($filename, $json);
         sendJSON($id);
     }
     
 }
 
-$error = ["error" => "Plant not found"];
+$error = ["error" => "User not found"];
 sendJSON($error, 404);
 ?>
