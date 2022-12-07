@@ -13,7 +13,7 @@ function plantInfoDiv(){
            <p>${plant.info}</p>
            `;
            let wrapper = document.querySelector("#wrapper");
-           wrapper.append(plantDiv)
+           wrapper.append(plantDiv);
         })
     } )
    
