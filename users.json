@@ -1,0 +1,9 @@
+[
+    {
+        "userId": 1,
+        "username": "Eveloine",
+        "password": "mau1234",
+        "email": "evelyn.palsson@gmail.com",
+        "owns":[1]
+    }
+]
