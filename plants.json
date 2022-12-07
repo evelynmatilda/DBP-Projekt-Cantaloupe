@@ -47,13 +47,8 @@
         Vanlig rumstemperatur passar perfekt. Däremot gillar inte papegojblomman att stå i drag och den klarar inte temperaturer under 10 grader. När temperaturen närmar sig 15 grader slutar den växa för att spara energi. Papegojblomman trivs allra bäst i hög luftfuktighet.
         På sommaren kan också lägga till lite växtnäring vartannat vecka.
         Plantera om växten efter köpet, eller när den blir för stor för sin kruka. Ibland växer det spontant nya mini-växter i krukan Du kan bara lämna dem i krukan eller klippa av de noggrant, just ovanpå marken, och plantera sticklingarna i en annan kruka.  Använd väldränerad och näringsrik jord.",
-<<<<<<< Updated upstream
         "vattnas": 1,
-        "blommar": "Ja",
-=======
-        "vattnas": "1",
         "blommar": true,
->>>>>>> Stashed changes
         "sol": "Full sol"
     }, {
         "name": "Monstera",
@@ -62,13 +57,8 @@
         När plantan är ung är bladen hela och hjärtformade. Senare när växten blivit äldre blir bladen djupt flikiga och stora. Monstera kan bli mycket hög och behöver då någon form av stöd.
         Vattna helst med kalkfritt vatten. Näringsvattna en gång i veckan med normal dos kalkfri näring från april till september. Omplanteras vid behov i krukväxtjord för kalkskyende växter.
         Finns några olika namnsorter i odling. Främst är det sorter med något mindre blad och sirligare växtsätt, allt för att växten ska passa in bättre i våra moderna bostäder.",
-<<<<<<< Updated upstream
         "vattnas": 1,
-        "blommar": "Nej",
-=======
-        "vattnas": "1",
         "blommar": false,
->>>>>>> Stashed changes
         "sol": "Halv sol"
     }, {
         "name": "Fredskalla",
