@@ -38,14 +38,14 @@ if ($username == "" or $password == "" or $email == "") {
 
 $highestId = 0;
 foreach ($users as $user) {
-    if ($user["id"] > $highestId) {
-        $highestId = $user["id"];
+    if ($user["userId"] > $highestId) {
+        $highestId = $user["userId"];
     }
 }
 
 $nextId = $highestId + 1;
 
-$newUser = ["id" => $nextId, "username" => $username, "password" => $password, "email" => $email, $owns => "owns"];
+$newUser = ["userId" => $nextId, "username" => $username, "password" => $password, "email" => $email, $owns => "owns"];
 $users[] = $newUser;
 $json = json_encode($users, JSON_PRETTY_PRINT);
 file_put_contents($filename, $json);

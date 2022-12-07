@@ -37,8 +37,8 @@ if ($name == "" or $latin == "" or $flowers == "") {
 
 $highestId = 0;
 foreach ($plants as $plant) {
-    if ($plant["id"] > $highestId) {
-        $highestId = $plant["id"];
+    if ($plant["plantId"] > $highestId) {
+        $highestId = $plant["plantId"];
     }
 }
 
