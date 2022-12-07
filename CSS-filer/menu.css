@@ -1,0 +1,131 @@
+:root {
+    --iceblue: #e6f4f1;
+    --red: #842700;
+    --darkblue: #005c84;
+    --lightblue: #8ccbd6;
+}
+
+.nav-container-closed{
+    color: #181307;
+    background-color: #e6d7b5;
+    width: 100vw;
+    height: 50px;
+    transition: 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    transition-timing-function: ease-in-out;
+}
+
+.nav-container-opened{
+    background-color: #99c5a4;
+    width: 100vw;
+    height: 100vh;
+    transition: 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    transition-timing-function: ease-in-out;
+}
+  
+  
+.menu-closed{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+  
+.menu-opened{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    transform: rotate(90deg);
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+  
+
+.text-container-hidden{
+    opacity: 0%;
+    transition: 0.5s;
+    visibility: hidden;
+}
+ 
+
+.text-container-visible{
+    opacity: 100%;
+    visibility: visible;
+    color: white;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    
+}
+
+
+.logotyp{
+    height: 110px;
+    width: 110px;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.text{
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+
+a{
+    text-decoration: none;
+}
+
+.profile-closed{ 
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+  
+.profile-opened{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.profile-container-hidden{
+    opacity: 0%;
+    transition: 0.5s;
+    visibility: hidden;
+    display: none;
+}
+ 
+
+.profile-container-visible{
+    opacity: 100%;
+    visibility: visible;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    display: flex;
+    
+}
