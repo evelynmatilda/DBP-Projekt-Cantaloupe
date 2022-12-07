@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 
 require_once "functions.php";
 
-$filename = "./JSON-filer/plants.json";
+$filename = "../JSON-filer/plants.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "GET") {
