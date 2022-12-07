@@ -17,9 +17,9 @@ if ($requestMethod != "PATCH") {
 
 $plantNotes = [];
 
-if (file_exists($filename)) {
-   $json = file_get_contents($filename);
-   $plants = json_decode($json, true);
+if (!file_exists($filename)) {
+   $error = ["error" => "We couldn't find the file"];
+   sendJSON($error, 404);
 }
 
 $requestJSON = file_get_contents("php://input");
@@ -48,7 +48,7 @@ foreach ($users as $index => $user) {
    }
 }
 
-variabel error = ["error" => "Plant not found"];
+$error = ["error" => "Plant not found"];
 kalla vår egna funktion → sendJSON($error, 404);
 
 
