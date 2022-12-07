@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 
 require_once "functions.php";
 
-$filename = "plants.json";
+$filename = "./JSON-filer/plants.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "GET") {
@@ -18,16 +18,16 @@ if (file_exists($filename)) {
     $plants = json_decode($json, true);
 }
 
-if (isset($_GET["id"])) {
-    $id = $_GET["id"];
+if (isset($_GET["plantId"])) {
+    $id = $_GET["plantId"];
 
     foreach ($plants as $plant) {
-        if ($plant["id"] == $id) {
+        if ($plant["plantId"] == $id) {
             sendJSON($plant);
         }
     }
 
-    $error = ["error" => "plant not found"];
+    $error = ["error" => "Plant not found"];
     sendJSON($error, 404);
 }
 
