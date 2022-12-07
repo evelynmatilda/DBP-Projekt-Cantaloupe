@@ -6,7 +6,7 @@
         Växten kan bli hög, vill man behålla storleken kan fiolfikusen beskäras, detta görs på våren. Under vintern har fikusen sin viloperiod och bör inte bli flyttad för att undvika bladfall.
         Tillsätt näring en gång i veckan under vår och sommarmånaderna och en gång i månaden under vintern.",
         "vattnas": 1,
-        "blommar": "Nej",
+        "blommar": false,
         "sol": "Full sol"
     }, {
         "name": "Trekantseuforbia",
@@ -16,7 +16,7 @@
         Trekantseuforbia är en stamsuckulent med trekantiga stammar som har möjlighet att lagra vatten. Innehåller en vit växtsaft som kan vara irriterande. 
         Tillsätt kaktusnäring i vattnet varannan vecka från april till augusti. Omplanteras vid behov i speciell kaktusjord.",
         "vattnas": 1,
-        "blommar": "Nej",
+        "blommar": false,
         "sol": "Full sol"
     }, {
         "name": "Ampellilja",
@@ -28,7 +28,7 @@
         Flera sorter finns. Några vanliga är 'Variegata' och 'Vittatum'. 'Variegata' har längsgående vita ränder på bladen. 'Vittatum' har gröna blad med en bred gul eller creméfärgad mitt strimma.
         Ampelliljan har ett kraftfullt rotsystem med knölar för lagring av vatten och näring. Detta rotsystem behöver växten där den växer naturligt eftersom det kan gå månader mellan regnperioderna.",
         "vattnas": 1,
-        "blommar": "Ja",
+        "blommar": true,
         "sol": "Halvskugga"
     }, {
         "name": "Vågbladskalatea",
@@ -38,7 +38,7 @@
         Trivs i normal rumstemperatur. Tillsätt kalkfri näring i vattnet en gång per vecka från april till augusti. Tycker om hög luftfuktighet. Vid omplantering används en krukväxtjord för kalkskyende växter.
         'Blue Grass', 'Miroscha' och 'Elergrass' är exempel på namnsorter som finns i odling.",
         "vattnas": 2,
-        "blommar": "Ja",
+        "blommar": true,
         "sol": "Halv sol"
     }, {
         "name": "Papegojblomma",
@@ -47,8 +47,13 @@
         Vanlig rumstemperatur passar perfekt. Däremot gillar inte papegojblomman att stå i drag och den klarar inte temperaturer under 10 grader. När temperaturen närmar sig 15 grader slutar den växa för att spara energi. Papegojblomman trivs allra bäst i hög luftfuktighet.
         På sommaren kan också lägga till lite växtnäring vartannat vecka.
         Plantera om växten efter köpet, eller när den blir för stor för sin kruka. Ibland växer det spontant nya mini-växter i krukan Du kan bara lämna dem i krukan eller klippa av de noggrant, just ovanpå marken, och plantera sticklingarna i en annan kruka.  Använd väldränerad och näringsrik jord.",
+<<<<<<< Updated upstream
         "vattnas": 1,
         "blommar": "Ja",
+=======
+        "vattnas": "1",
+        "blommar": true,
+>>>>>>> Stashed changes
         "sol": "Full sol"
     }, {
         "name": "Monstera",
@@ -57,8 +62,13 @@
         När plantan är ung är bladen hela och hjärtformade. Senare när växten blivit äldre blir bladen djupt flikiga och stora. Monstera kan bli mycket hög och behöver då någon form av stöd.
         Vattna helst med kalkfritt vatten. Näringsvattna en gång i veckan med normal dos kalkfri näring från april till september. Omplanteras vid behov i krukväxtjord för kalkskyende växter.
         Finns några olika namnsorter i odling. Främst är det sorter med något mindre blad och sirligare växtsätt, allt för att växten ska passa in bättre i våra moderna bostäder.",
+<<<<<<< Updated upstream
         "vattnas": 1,
         "blommar": "Nej",
+=======
+        "vattnas": "1",
+        "blommar": false,
+>>>>>>> Stashed changes
         "sol": "Halv sol"
     }, {
         "name": "Fredskalla",
@@ -67,7 +77,7 @@
         Vill ha normal rumstemperatur. Tål inte temperaturer under 16°C. Ge en svag näringslösning vid varje vattning. Växten är känslig för kyla, drag, kallt vatten och torr jord.
         Fredskalla är en relativt lättskött krukväxt. Kan blomma två gånger per år. Uteblir blomningen kan det bero på att växten har fått för mycket näring.",
         "vattnas": 2,
-        "blommar": "Ja",
+        "blommar": true,
         "sol": "Halv skugga"
     }, {
         "name": "Paradisträd",
@@ -77,7 +87,7 @@
         Klara värme bra men kan stå svalt, 6-8°C, vintertid. Tillsätt halv dos näring i vattnet en gång i veckan från april till augusti. Vid omplantering använd en kaktusjord eller en vanlig krukväxtjord med sand i. 
         'Horntree', 'Sunset' och 'Minor' är exempel på sorter av paradisträd som finns i odling.",
         "vattnas": 1,
-        "blommar": "Ja",
+        "blommar": true,
         "sol": "Full sol"
     }
 ]
