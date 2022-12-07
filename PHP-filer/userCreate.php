@@ -29,6 +29,7 @@ if (!isset($requestData["username"], $requestData["password"], $requestData["ema
 $username = $requestData["username"];
 $password = $requestData["password"];
 $email = $requestData["email"];
+$owns = $requestData["owns"];
 
 if ($username == "" or $password == "" or $email == "") {
     $error = ["error" => "Bad Request!"];
@@ -44,7 +45,7 @@ foreach ($users as $user) {
 
 $nextId = $highestId + 1;
 
-$newUser = ["id" => $nextId, "username" => $username, "password" => $password, "email" => $email];
+$newUser = ["id" => $nextId, "username" => $username, "password" => $password, "email" => $email, $owns => "owns"];
 $users[] = $newUser;
 $json = json_encode($users, JSON_PRETTY_PRINT);
 file_put_contents($filename, $json);
