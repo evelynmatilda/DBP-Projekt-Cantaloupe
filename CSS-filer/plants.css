@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#wrapper{
+    max-width: 400px;
+}
+
+.plantDiv{
+    margin-top: 20px;
+    background-color: greenyellow;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.plantDiv > img{
+    width: 350px;
+    height: 490px;
+}

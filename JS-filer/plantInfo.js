@@ -10,6 +10,7 @@ function plantInfoDiv(){
            plantDiv.classList.add("plantDiv");
            plantDiv.innerHTML = `
            <h2>${plant.name} (${plant.latin})</h2>
+           <img src="${plant.img}"></img>
            <p>${plant.info}</p>
            `;
            let wrapper = document.querySelector("#wrapper");
