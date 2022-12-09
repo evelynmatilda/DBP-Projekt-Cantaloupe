@@ -29,27 +29,42 @@
     <button id="addNewPlant">Lägg till egen växt<span class="material-symbols-outlined add_plant">add_circle</span></button>
     
     <div id="addPlantForm">
-        <label for="nameInput">Namn:</label>
-        <input id="nameInput" type="text" placeholder="Skriv här" name="nameInput">
-        <label for="latinInput">Latin:</label>
-        <input id="latinInput" type="text" placeholder="Skriv här" name="latinInput">
-        <label for="infoInput">Info:</label>
-        <input id="infoInput" type="text" placeholder="Skriv här" name="infoInput">
-        <label for="waterInput">Vattnas gånger/veckan:</label>
-        <input id="waterInput" type="number" name="waterInput" min="1" max="5">
-        <label for="flowerInput">Blommar den?:</label>
-        <select name="flowerInput" id="flowerInput">
-            <option value="Ja">Ja</option>
-            <option value="Nej">Nej</option>
-        </select>
-        <label for="flowers">Blommar den?:</label>
-        <select name="flowers" id="flowers">
-            <option value="Full sol">Full sol</option>
-            <option value="Halv sol">Halv sol</option>
-            <option value="Halv skugga">Halv skugga</option>
-            <option value="Hel skugga">Hel skugga</option>
-        </select>
-        <button id="addButton" type="submit">Add plant<span class="material-symbols-outlined add_plant">add_circle</span></button>
+        <div id="leftSideForm">
+            <span class="material-symbols-outlined close">close</span>
+            <br>
+            <label for="nameInput">Namn:</label>
+            <br>
+            <input id="nameInput" type="text" placeholder="Skriv här" name="nameInput">
+            <br>
+            <label for="latinInput">Latin:</label>
+            <br>
+            <input id="latinInput" type="text" placeholder="Skriv här" name="latinInput">
+            <br>
+            <label for="infoInput">Info:</label>
+            <br>
+            <input id="infoInput" type="text" placeholder="Skriv här" name="infoInput">
+        </div>
+        <div id="rightSideForm">
+            <label for="waterInput">Vattnas ggr/v:</label>
+            <input id="waterInput" type="number" name="waterInput" min="1" max="5">
+            <br>
+            <label for="flowerInput">Blommar den?:</label>
+            <select name="flowerInput" id="flowerInput">
+                <option value="true">Ja</option>
+                <option value="false">Nej</option>
+            </select>
+            <br>
+            <label for="sunInput">Sol:</label>
+            <select name="sunInput" id="sunInput">
+                <option value="Full sol">Full sol</option>
+                <option value="Halv sol">Halv sol</option>
+                <option value="Halv skugga">Halv skugga</option>
+                <option value="Hel skugga">Hel skugga</option>
+            </select>
+            <br>
+            <button id="addButton" type="submit">Add plant<span class="material-symbols-outlined add_plant">add_circle</span></button>
+        </div>
+        
     </div>
     
     <div id="plantWrapper">

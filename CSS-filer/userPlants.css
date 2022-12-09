@@ -63,13 +63,65 @@ body {
     position: absolute;
 }
 
-#addPlantList:nth-child(even) {
+#addPlantList div:nth-child(4n+3) {
+    background-color: gainsboro;
+}
+#addPlantList div:nth-child(4n+2) {
     background-color: gainsboro;
 }
 
 #addNewPlant {
     width: 184px;
     height: 53px;
+    align-self: center;
+    position: relative;
+
+    display: flex;
+    text-align: left;
+    align-items: center;
+    
+    font-size: medium;
+}
+
+#addNewPlant > span {
+    right: 5px;
+    position: absolute;
+}
+
+#addPlantForm {
+    background-color: gainsboro;
+    margin: 5px;
+    height: 206px;
+    width: 380px;
+
+    position: relative;
+}
+
+#leftSideForm {
+    left: 5px;
+    position: absolute;
+
+    width: 190px;
+}
+
+#rightSideForm {
+    right: -30px;
+    top: 10px;
+    position: absolute;
+    
+    width: 190px;
+}
+
+#infoInput {
+    height: 50px;
+}
+
+#waterInput {
+    width: 35px;
+}
+
+#sunInput {
+    width: 70px;
 }
 
 #plantWrapper {
@@ -128,4 +180,9 @@ body {
 
 .add_plant {
     font-size: 30px;
+}
+
+.close {
+    font-size: 24px;
+    color: gray;
 }
