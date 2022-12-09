@@ -6,6 +6,7 @@ let text = document.querySelector(".text-container-hidden")
 let profileSymbol = document.querySelector("#profile-symbol-visible");
 let menuSymbol = document.querySelector(".menu-closed > .material-symbols-outlined");
 let closeX = document.querySelector("#close-hidden");
+let inputReg = document.querySelector("#reg-login-hidden");
 line.style.cursor = "pointer"
 line.addEventListener("click", function(){
     if (nav.className == "nav-container-closed"){
@@ -79,11 +80,20 @@ if(inputLogin.id == "input-login-hidden"){
 }
     else {
         inputLogin.id = "input-login-hidden";
+}  
+
+if (nav.className == "nav-container-closed"){
+    inputLogin.id = "input-login-hidden";
+    inputReg.id = "reg-login-hidden";
+} 
+    else {
+        inputLogin.id = "input-login-visible";
+        loginInputs.style.borderBottom = "solid black 2px"
+        regInputs.style.borderBottom = "solid black 1px"
 }
 
 });
 
-let inputReg = document.querySelector("#reg-login-hidden");
 let loginInputs = document.querySelector(".text-login");
 let regInputs = document.querySelector(".text-reg");
 
@@ -100,6 +110,7 @@ loginInputs.addEventListener("click", function(){
     if (inputReg.id == "reg-login-visible"){
         inputReg.id = "reg-login-hidden";
     }
+    
 });
 
 regInputs.addEventListener("click", function(){
@@ -114,6 +125,7 @@ regInputs.addEventListener("click", function(){
 
     if (inputLogin.id == "input-login-visible"){
         inputLogin.id = "input-login-hidden";
-    }
-})
+    }   
+});
+
 
