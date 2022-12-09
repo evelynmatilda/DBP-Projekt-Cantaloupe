@@ -119,6 +119,11 @@ a{
     transition: 0.5s;
     visibility: hidden;
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 60vh;
 }
  
 
@@ -128,6 +133,11 @@ a{
     transition: 0.5s;
     transition-delay: 0.5s;
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100vw;
+    height: 60vh;
 }
 
 #close-hidden {
@@ -179,4 +189,90 @@ a{
     margin: 0;
     top: 17px;
     font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.text-login {
+    width: 40vw;
+    border-bottom: solid black 2px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-reg {
+    width: 40vw;
+    border-bottom: solid black 1px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-login-hidden{
+    opacity: 0%;
+    transition: 0.5s;
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 12px;
+}
+
+#input-login-visible{
+    opacity: 100%;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    visibility: visible;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #e6f4f1;
+    border: solid 1px gainsboro;
+    font-size: 12px;
+}
+
+.inp {
+    margin-bottom: 8px;
+}
+
+.login-button-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-button {
+    width: 80px;
+}
+
+.reg-button {
+    width: 100px;
+}
+
+#reg-login-hidden {
+    opacity: 0%;
+    transition: 0.5s;
+    visibility: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 12px;
+}
+
+#reg-login-visible{
+    opacity: 100%;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    visibility: visible;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #e6f4f1;
+    border: solid 1px gainsboro;
+    font-size: 12px;
 }
