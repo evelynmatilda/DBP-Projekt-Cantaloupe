@@ -7,7 +7,7 @@ function plantInfoDiv(){
     .then(resource => {
         resource.forEach(plant => {
            let plantDiv = document.createElement("div");
-           plantDiv.classList.add("plantDiv");
+           plantDiv.classList.add("plantDiv-closed");
            plantDiv.innerHTML = `
            <h2>${plant.name} (${plant.latin})</h2>
            <img src="${plant.img}"></img>
@@ -15,9 +15,19 @@ function plantInfoDiv(){
            `;
            let wrapper = document.querySelector("#wrapper");
            wrapper.append(plantDiv);
+            plantDiv.addEventListener("click", function(){
+        if (plantDiv.className == "plantDiv-closed"){
+            plantDiv.className = "plantDiv-opened";
+        }
+            else {
+            plantDiv.className = "plantDiv-closed";
+        }
+    });
         })
     } )
    
 }
+
+
 
 plantInfoDiv()
