@@ -1,0 +1,131 @@
+body {
+    overflow-x: hidden;
+    width: 100vw;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#buttonsTop {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+#buttonsTop > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: large;
+
+    width: 184px;
+    height: 52px;
+}
+
+#buttonsTop > button > span {
+    margin-left: 10px;
+}
+
+#addPlantList {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+
+    background-color: rgb(184, 184, 184);
+
+    margin: 5px;
+    width: 380px;
+    height: fit-content;
+}
+
+#addPlantList > div {
+    height: 46px;
+    width: 190px;
+    margin: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#addPlantList > div > h3 {
+    margin: 15px;
+    text-align: left;
+}
+
+#addPlantList > div > h3 > span {
+    top: 2px;
+    right: 10px;
+    position: absolute;
+}
+
+#addPlantList:nth-child(even) {
+    background-color: gainsboro;
+}
+
+#addNewPlant {
+    width: 184px;
+    height: 53px;
+}
+
+#plantWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: fit-content;
+    gap: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.userPlantDiv {
+    border: solid black 2px;
+    border-radius: 10%;
+    height: 240px;
+    width: 175px;
+    margin-top: 5px;
+    position: relative;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.userPlantDiv > h3 {
+    font-size: 24px;
+}
+
+.userPlantDiv > p {
+    font-size: 18px;
+}
+
+#plantButtons {
+    position: absolute;
+    bottom: 5px;
+}
+
+#plantButtons > span {
+    border: solid black 1px;
+    border-radius: 10%;
+}
+
+/* Ikoner */
+.material-symbols-outlined {
+    font-size: 42px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48;
+}
+
+.add_plant {
+    font-size: 30px;
+}
