@@ -4,9 +4,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
+    <link rel="stylesheet" href="../CSS-filer/userPlants.css">
+    <title>Mina Växter</title>
 </head>
 <body>
     
+    <div id="buttonsTop">
+        <button id="waterAll">Vattnat alla<span class="material-symbols-outlined">water_drop</span></button>
+        <button id="addPlant">Lägg till växt<span class="material-symbols-outlined">add_circle</span></button>
+    </div>
+
+    <div id="addPlantList">
+        <div><h3>Växt 1<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 2<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 3<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 4<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 5<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 6<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 7<span class="material-symbols-outlined">add_box</span></h3></div>
+        <div><h3>Växt 8<span class="material-symbols-outlined">add_box</span></h3></div>
+    </div>
+
+    <button id="addNewPlant">Lägg till egen växt<span class="material-symbols-outlined add_plant">add_circle</span></button>
+    
+    <div id="addPlantForm">
+        <label for="nameInput">Namn:</label>
+        <input id="nameInput" type="text" placeholder="Skriv här" name="nameInput">
+        <label for="latinInput">Latin:</label>
+        <input id="latinInput" type="text" placeholder="Skriv här" name="latinInput">
+        <label for="infoInput">Info:</label>
+        <input id="infoInput" type="text" placeholder="Skriv här" name="infoInput">
+        <label for="waterInput">Vattnas gånger/veckan:</label>
+        <input id="waterInput" type="number" name="waterInput" min="1" max="5">
+        <label for="flowerInput">Blommar den?:</label>
+        <select name="flowerInput" id="flowerInput">
+            <option value="Ja">Ja</option>
+            <option value="Nej">Nej</option>
+        </select>
+        <label for="flowers">Blommar den?:</label>
+        <select name="flowers" id="flowers">
+            <option value="Full sol">Full sol</option>
+            <option value="Halv sol">Halv sol</option>
+            <option value="Halv skugga">Halv skugga</option>
+            <option value="Hel skugga">Hel skugga</option>
+        </select>
+        <button id="addButton" type="submit">Add plant<span class="material-symbols-outlined add_plant">add_circle</span></button>
+    </div>
+    
+    <div id="plantWrapper">
+        <div class="userPlantDiv">
+            <h3>Fiolfikus</h3>
+            <p>Vattnad senast: <br> 2022-11-25</p>
+            <div id="plantButtons">
+                <span class="material-symbols-outlined">water_drop</span>
+                <span class="material-symbols-outlined">bug_report</span>
+                <span class="material-symbols-outlined">delete</span>
+            </div>
+            
+        </div>
+        <div class="userPlantDiv">
+            <h3>Ampellilja</h3>
+            <p>Vattnad senast: <br>2022-12-03</p>
+            <div id="plantButtons">
+                <span class="material-symbols-outlined">water_drop</span>
+                <span class="material-symbols-outlined">bug_report</span>
+                <span class="material-symbols-outlined">delete</span>
+            </div>
+        </div>
+        <div class="userPlantDiv">
+            <h3>Papegojblomma</h3>
+            <p>Vattnad senast: <br>2022-12-08</p>
+            <div id="plantButtons">
+                <span class="material-symbols-outlined">water_drop</span>
+                <span class="material-symbols-outlined">bug_report</span>
+                <span class="material-symbols-outlined">delete</span>
+            </div>
+        </div>
+        <div class="userPlantDiv">
+            <h3>Fredskalla</h3>
+            <p>Vattnad senast: <br>2022-12-09</p>
+            <div id="plantButtons">
+                <span class="material-symbols-outlined">water_drop</span>
+                <span class="material-symbols-outlined">bug_report</span>
+                <span class="material-symbols-outlined">delete</span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
