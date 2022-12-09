@@ -32,7 +32,8 @@ if (text.className == "text-container-visible"){
 }
 });
 
-let profile = document.querySelector(".profile-closed")
+let profile = document.querySelector(".profile-closed");
+let inputLogin = document.querySelector("#input-login-hidden");
 let profileContainer = document.querySelector(".profile-container-hidden")
 profile.style.cursor = "pointer"
 profile.addEventListener("click", function(){
@@ -73,4 +74,46 @@ if (profileSymbol.id == "profile-symbol-visible"){
     profileSymbol.id = "profile-symbol-visible";    
 }
 
+if(inputLogin.id == "input-login-hidden"){
+    inputLogin.id = "input-login-visible";
+}
+    else {
+        inputLogin.id = "input-login-hidden";
+}
+
 });
+
+let inputReg = document.querySelector("#reg-login-hidden");
+let loginInputs = document.querySelector(".text-login");
+let regInputs = document.querySelector(".text-reg");
+
+loginInputs.addEventListener("click", function(){
+    if(inputLogin.id == "input-login-hidden"){
+        inputLogin.id = "input-login-visible";
+        loginInputs.style.borderBottom = "solid black 2px"
+        regInputs.style.borderBottom = "solid black 1px"
+    }
+        else {
+            inputLogin.id = "input-login-hidden";
+    }
+    
+    if (inputReg.id == "reg-login-visible"){
+        inputReg.id = "reg-login-hidden";
+    }
+});
+
+regInputs.addEventListener("click", function(){
+    if(inputReg.id == "reg-login-hidden"){
+        inputReg.id = "reg-login-visible";
+        regInputs.style.borderBottom = "solid black 2px"
+        loginInputs.style.borderBottom = "solid black 1px"
+    }
+        else {
+            inputReg.id = "reg-login-hidden"
+    }
+
+    if (inputLogin.id == "input-login-visible"){
+        inputLogin.id = "input-login-hidden";
+    }
+})
+

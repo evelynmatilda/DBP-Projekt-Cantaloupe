@@ -38,6 +38,8 @@
     <div class="text-container-hidden">
         <a href="homePage.html"><h1 class="text">Home</h1></a>
         <a href="plantInfo.html"><h1 class="text">Våra växter</h1></a>
+        <a href="userPlants.html"><h1 class="text">Mina växter</h1></a>
+        <a href="aboutUIs.html"><h1 class="text">Om oss</h1></a>
     </div>
     <div class="menu-closed">
         <span id="line-menu-visible" class="material-symbols-outlined">menu</span>
@@ -46,9 +48,29 @@
         <div class="line"></div> -->
     </div>
     <div class="profile-container-hidden">
-        <div class="text">Logga in</div>
-        <div class="text">Registrera konto</div>
+        <div class="text-login">Logga in</div>
+        <div class="text-reg">Registrera konto</div>
     </div>
+    <form id="input-login-hidden">
+        <label for="username">Användarnamn:</label>
+        <input class="inp" type="text">
+        <label for="username">Lösenord:</label>
+        <input class="inp" type="text">
+        <div class="login-button-frame">
+            <button class="login-button">Logga in</button>
+        </div>
+    </form>
+    <form id="reg-login-hidden">
+        <label for="email">Email:</label>
+        <input class="inp" type="text">
+        <label for="username">Användarnamn:</label>
+        <input class="inp" type="text">
+        <label for="username">Lösenord:</label>
+        <input class="inp" type="text">
+        <div class="login-button-frame">
+            <button class="reg-button">Skapa konto</button>
+        </div>
+    </form>
     <div class ="profile-closed">
         <span id="profile-symbol-visible" class="material-symbols-outlined">account_circle</span>
         <span id="close-hidden" class="material-symbols-outlined">close</span>
