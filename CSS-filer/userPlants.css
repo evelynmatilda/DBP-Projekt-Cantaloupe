@@ -105,15 +105,19 @@ body {
 }
 
 #rightSideForm {
-    right: -30px;
-    top: 10px;
+    right: 10px;
+    top: 20px;
     position: absolute;
     
-    width: 190px;
+    width: 150px;
 }
 
 #infoInput {
     height: 50px;
+}
+
+#flowerInput {
+    width: 46px;
 }
 
 #waterInput {
@@ -122,6 +126,18 @@ body {
 
 #sunInput {
     width: 70px;
+}
+
+#addButton {
+    position: absolute;
+    right: 10px;
+    bottom: -50px;
+    
+    display: flex;
+    text-align: left;
+    align-items: center;
+
+    font-size: medium;
 }
 
 #plantWrapper {
