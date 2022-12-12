@@ -6,6 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+    background-color: blue;
 }
 
 #buttonsTop {
@@ -121,11 +123,11 @@ body {
 }
 
 #waterInput {
-    width: 35px;
+    width: 46px;
 }
 
 #sunInput {
-    width: 70px;
+    width: 120px;
 }
 
 #addButton {
@@ -187,11 +189,6 @@ body {
 /* Ikoner */
 .material-symbols-outlined {
     font-size: 42px;
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 48;
 }
 
 .add_plant {

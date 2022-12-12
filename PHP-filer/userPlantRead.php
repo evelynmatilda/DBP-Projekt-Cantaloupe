@@ -15,7 +15,7 @@ $userPlants = [];
 
 if (file_exists($filename)) {
     $json = file_get_contents($filename);
-    $plants = json_decode($json, true);
+    $userPlants = json_decode($json, true);
 }
 
 if (isset($_GET["userPlantId"])) {
