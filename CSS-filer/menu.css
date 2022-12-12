@@ -209,6 +209,10 @@ a{
     align-items: center;
 }
 
+.text-login:hover, .text-reg:hover {
+    cursor: pointer;
+}
+
 #input-login-hidden{
     opacity: 0%;
     transition: 0.5s;
@@ -250,6 +254,10 @@ a{
 
 .reg-button {
     width: 100px;
+}
+
+.reg-button:hover, .login-button:hover{
+    cursor: pointer;
 }
 
 #reg-login-hidden {

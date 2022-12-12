@@ -7,7 +7,7 @@ let profileSymbol = document.querySelector("#profile-symbol-visible");
 let menuSymbol = document.querySelector(".menu-closed > .material-symbols-outlined");
 let closeX = document.querySelector("#close-hidden");
 let inputReg = document.querySelector("#reg-login-hidden");
-line.style.cursor = "pointer"
+line.style.cursor = "pointer";
 line.addEventListener("click", function(){
     if (nav.className == "nav-container-closed"){
     nav.className = "nav-container-opened";
@@ -36,7 +36,7 @@ if (text.className == "text-container-visible"){
 let profile = document.querySelector(".profile-closed");
 let inputLogin = document.querySelector("#input-login-hidden");
 let profileContainer = document.querySelector(".profile-container-hidden")
-profile.style.cursor = "pointer"
+profile.style.cursor = "pointer";
 profile.addEventListener("click", function(){
     if (nav.className == "nav-container-closed"){
     nav.className = "nav-container-opened";
