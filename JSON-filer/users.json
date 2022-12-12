@@ -4,6 +4,15 @@
         "username": "Eveloine",
         "password": "mau1234",
         "email": "evelyn.palsson@gmail.com",
-        "owns":[1]
+        "owns": [
+            1
+        ]
+    },
+    {
+        "userId": 2,
+        "username": "hej",
+        "password": "hej",
+        "email": "ermansson",
+        "owns": []
     }
 ]

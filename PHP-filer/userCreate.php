@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 
 require_once "functions.php";
 
-$filename = "/JSON-filer/users.json";
+$filename = "../JSON-filer/users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "POST") {
@@ -29,7 +29,7 @@ if (!isset($requestData["username"], $requestData["password"], $requestData["ema
 $username = $requestData["username"];
 $password = $requestData["password"];
 $email = $requestData["email"];
-$owns = $requestData["owns"];
+
 
 if ($username == "" or $password == "" or $email == "") {
     $error = ["error" => "Bad Request!"];
@@ -45,7 +45,7 @@ foreach ($users as $user) {
 
 $nextId = $highestId + 1;
 
-$newUser = ["userId" => $nextId, "username" => $username, "password" => $password, "email" => $email, "owns" => $owns];
+$newUser = ["userId" => $nextId, "username" => $username, "password" => $password, "email" => $email, "owns" => []];
 $users[] = $newUser;
 $json = json_encode($users, JSON_PRETTY_PRINT);
 file_put_contents($filename, $json);
