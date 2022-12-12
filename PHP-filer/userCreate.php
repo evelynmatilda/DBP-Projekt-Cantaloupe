@@ -3,7 +3,7 @@ ini_set("display_errors", 1);
 
 require_once "functions.php";
 
-$filename = "users.json";
+$filename = "/JSON-filer/users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if ($requestMethod != "POST") {
