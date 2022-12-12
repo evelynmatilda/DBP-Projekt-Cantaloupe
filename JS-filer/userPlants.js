@@ -9,7 +9,6 @@ function renderUserPlants (id) {
         fetch(user_plant_rqst)
             .then(r => r.json())
             .then(resource => {
-                console.log(resource);
                 resource.forEach(user_plant => {
                     if (user_plant.plantId == id) {
                         const user_plant_id = user_plant.plantId;
@@ -27,7 +26,7 @@ function renderUserPlants (id) {
                                         div.classList.add("userPlantDiv");
                                         div.innerHTML = `
                                         <h3>${plant.name}</h3>
-                                        <p>Vattnad senast: <br></p>
+                                        <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}</p>
                                         <span class="material-symbols-outlined warning_bugs">emergency_home</span>
                                         <div id="plantButtons">
                                         <span class="material-symbols-outlined water_but">water_drop</span>
@@ -45,13 +44,19 @@ function renderUserPlants (id) {
                                     const del_but = div.querySelector(".delete_but");
                                     del_but.style.cursor = "pointer";
                                     del_but.addEventListener("click", function () {
-                                        eventDelBut(user_plant_id);
+                                        eventDelBut(user_plant.userPlantId);
                                     })
 
                                     const bug_but = div.querySelector(".bug_but");
                                     bug_but.style.cursor = "pointer";
                                     bug_but.addEventListener("click", function () {
-                                        eventBugBut(user_plant_id, !user_plant.bugs); 
+                                        eventBugBut(user_plant.userPlantId, !user_plant.bugs); 
+                                    })
+
+                                    const wat_but = div.querySelector(".water_but");
+                                    wat_but.style.cursor = "pointer";
+                                    wat_but.addEventListener("click", function () {
+                                        eventWatBut(user_plant.userPlantId);
                                     })
                                     }
                                 });
@@ -65,26 +70,29 @@ function renderUserPlants (id) {
     
 }
 
-function eventDelBut (plantId) {
+function eventDelBut (userPlantId) {
     const del_rqst = new Request("/PHP-filer/userPlantDelete.php", {
         method: "DELETE",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
-            "userPlantId": plantId
+            "userPlantId": userPlantId
         })
     });
 
     fetch(del_rqst)
         .then(response => response.json())
-        .then(resource => renderUserPlants(1));
+        .then(resource => {
+            document.getElementById("plantWrapper").innerHTML = "";
+            renderUserPlants(1)
+        });
 }
 
-function eventBugBut (plantId, TorF) {
+function eventBugBut (userPlantId, TorF) {
     const bug_rqst = new Request("/PHP-filer/bugUpdate.php", {
         method: "PATCH",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
-            "userPlantId": plantId,
+            "userPlantId": userPlantId,
             "bugs": TorF
         })
     });
@@ -92,4 +100,18 @@ function eventBugBut (plantId, TorF) {
     fetch(bug_rqst)
         .then(response => response.json())
         .then(resource => renderUserPlants(1));   
+}
+
+function eventWatBut (userPlantId) {
+    const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+            "userPlantId": userPlantId
+        })
+    });
+
+    fetch(wat_rqst)
+        .then(response => response.json())
+        .then(resource => renderUserPlants(1));
 }

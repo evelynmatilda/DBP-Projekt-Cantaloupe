@@ -171,7 +171,9 @@ body {
 }
 
 .userPlantDiv > p {
+    position: absolute;
     font-size: 18px;
+    top: 40px;
 }
 
 #plantButtons {
@@ -213,4 +215,6 @@ body {
 
 .warning_bugs {
     visibility: hidden;
+    position: absolute;
+    bottom: 55px;
 }
