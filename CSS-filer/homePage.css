@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 70px;
+    background-color: #D9EAD3;
+}
+
+#welcomeText{
+max-width: 300px;
+font-size: 20px;
+}
+
+#registration{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: #e6f4f1;
+    border: solid 1px gainsboro;
+    font-size: 14px;
+    margin-top: 20px;
+}
