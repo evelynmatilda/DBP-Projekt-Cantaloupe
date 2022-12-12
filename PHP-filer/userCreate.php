@@ -11,7 +11,7 @@ if ($requestMethod != "POST") {
     sendJSON($error, 405);
 }
 
-$plants = [];
+$users = [];
 
 if (file_exists($filename)) {
     $json = file_get_contents($filename);
@@ -45,7 +45,7 @@ foreach ($users as $user) {
 
 $nextId = $highestId + 1;
 
-$newUser = ["userId" => $nextId, "username" => $username, "password" => $password, "email" => $email, "own" => $owns];
+$newUser = ["userId" => $nextId, "username" => $username, "password" => $password, "email" => $email, "owns" => $owns];
 $users[] = $newUser;
 $json = json_encode($users, JSON_PRETTY_PRINT);
 file_put_contents($filename, $json);
