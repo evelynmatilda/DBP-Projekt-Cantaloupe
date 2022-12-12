@@ -1,13 +1,11 @@
 body {
     overflow-x: hidden;
     width: 100vw;
-    margin: 0;
+    margin: 60px 0px 0px 0px;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    background-color: blue;
 }
 
 #buttonsTop {
@@ -123,11 +121,11 @@ body {
 }
 
 #waterInput {
-    width: 46px;
+    width: 35px;
 }
 
 #sunInput {
-    width: 120px;
+    width: 70px;
 }
 
 #addButton {
@@ -191,6 +189,7 @@ body {
     font-size: 42px;
 }
 
+
 .add_plant {
     font-size: 30px;
 }
@@ -210,4 +209,8 @@ body {
 
 .close-icon {
     font-size: 24px;
+}
+
+.warning_bugs {
+    visibility: hidden;
 }

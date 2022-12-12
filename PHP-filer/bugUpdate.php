@@ -1,11 +1,11 @@
 <?php 
-ini_set(display errors, 1);
+
+// ini_set("display errors", 1);
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 require_once "functions.php";
-
-// nå den växtens id för att nå den växtens objekt→nyckel för anteckningar
-// så kolla id:t → if sats?
-// måste nå userns id och sedan växtens id
 
 $filename = "../JSON-filer/userPlants.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
@@ -19,28 +19,27 @@ $plantBugs = [];
 
 if (file_exists($filename)) {
    $json = file_get_contents($filename);
-   $plants = json_decode($json, true);
+   $plantBugs = json_decode($json, true);
 }
 
-$requestJSON = file_get_contents("php://input");
+$requestJSON = file_get_contents('php://input');
 $requestData = json_decode($requestJSON, true);
 
-if (!isset($requestData["id"], $requestData["bug"])) {
-   $error = ["error" => "Bad Request!"];
-   sendJSON($error, 400);
-}
-
 $id = $requestData["userPlantId"];
-$bugs = $requestData["bugs"];
+$newBugs = $requestData["bugs"];
 
-if ($bugs == "") {
+
+if ($newBugs === "") {
    $error = ["error" => "Bad Request!"];
    sendJSON($error, 400);
 }
 
 foreach ($plantBugs as $index => $plantBug) {
+
    if ($plantBug["userPlantId"] == $id) {
-       $plantBug["bugs"] = $bugs;
+
+       $plantBug["bugs"] = $newBugs;
+       $plantBugs[$index] = $plantBug;
 
        $json = json_encode($plantBugs, JSON_PRETTY_PRINT);
        file_put_contents($filename, $json);
