@@ -33,3 +33,12 @@ function addUser(email, username, password){
     .then(console.log)
 
 }
+
+
+function logIn(event){
+    event.preventDefault();
+
+    var username = document.querySelector("#login-username").value;
+    var password = document.querySelector("#login-password").value;
+
+}
