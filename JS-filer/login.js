@@ -46,7 +46,8 @@ function logIn(event){
         .then(resource => {
             resource.forEach(user => {
                 if (recUsername == user.username && recPassword == user.password) {
-                    window.localStorage.setItem("userId", user.userId)
+                    window.localStorage.setItem("userId", user.userId);
+                    window.location.href = "/HTML-filer/homePage.html";
                 }
             })
         })
