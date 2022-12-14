@@ -13,23 +13,62 @@ function reg(event){
 
     addUser(email, userName, password)
 
+    document.querySelector("#email").value = "";
+    document.querySelector("#username").value = "";
+    document.querySelector("#password").value = "";
+
 };
 
 
-function addUser(email, username, password){
+function regUser(email, username, password){
     
     const request = new Request("/PHP-filer/userCreate.php",{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
             email: email,
-            username: username,
+            username: userName,
             password: password
         }),
     });
 
     fetch(request)
         .then(r => r.json())
-        .then(console.log)
+        .then(resource => {
+            if (resource.email == email && resource.username == username && resource.password == password) {
+                window.localStorage.setItem("userId", resource.userId);
+                window.location.href = "/HTML-filer/homePage.html";
+            }
+        })
 
+}
+
+let userId = window.localStorage.getItem("userId");
+
+homePageLogedIn(userId)
+
+function homePageLogedIn(userId) {
+    if (localStorage.length > 0){
+        let homePageReg = document.getElementById("registration");
+        let homePageText = document.querySelector("#welcomeText > p");
+        let welcomeText = document.querySelector("#welcome");
+
+        homePageText.innerHTML = "";
+        homePageReg.style.display = "none";
+
+        const rqst = new Request (`/PHP-filer/userRead.php?userId=${userId}`);
+
+        fetch(rqst)
+            .then(r => r.json())
+            .then(user => {
+                welcomeText.innerHTML = `<h1>Välkommen "${user.username}"!</h1>`;
+                logedInHome()
+            })
+    }
+}
+
+function logedInHome () {
+    let wrapper = document.getElementById("logedIn-wrapper");
+
+    wrapper.innerHTML = `<button>Mina Växter</button><button>Info Om Växter</button>`
 }
