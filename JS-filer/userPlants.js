@@ -1,11 +1,13 @@
 "use strict";
 
-renderUserPlants(1);
+const savedUserId = window.localStorage.getItem("userId")
+
+renderUserPlants(savedUserId);
 
 function renderUserPlants (id) {
     const user_plant_rqst = new Request ("/PHP-filer/userPlantRead.php");
 
-    if (id == 1) {
+    if (id != "") {
         fetch(user_plant_rqst)
             .then(r => r.json())
             .then(resource => {
