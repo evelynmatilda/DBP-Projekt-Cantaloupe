@@ -4,86 +4,81 @@ const savedUserId = window.localStorage.getItem("userId")
 
 renderUserPlants(savedUserId);
 
-function renderUserPlants (id) {
+function renderUserPlants(id) {
     document.getElementById("plantWrapper").innerHTML = "";
     const users_rqst = new Request("/PHP-filer/userRead.php")
-    
+
     if (id != "") {
         fetch(users_rqst)
             .then(r => r.json())
             .then(resource => {
                 resource.forEach(user => {
-                    user.owns.forEach(plant => {
-                        const user_plant_rqst = new Request("/PHP-filer/userPlantRead.php");
+                    if (user.userId == id) {
+                        user.owns.forEach(plant => {
+                            const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php?userPlantId=${plant}`);
 
-                        fetch(user_plant_rqst)
-                            .then(r => r.json())
-                            .then(resource => {
-                                console.log(resource, plant);
-                                resource.forEach(user_plant => {
-                                    if (user_plant.userPlantId == plant) {
+                            fetch(user_plant_rqst)
+                                .then(r => r.json())
+                                .then(user_plant => {
                                         const user_plant_id = user_plant.plantId;
 
-                                        const plant_rqst = new Request("/PHP-filer/plantRead.php");
+                                        const plant_rqst = new Request(`/PHP-filer/plantRead.php?plantId=${user_plant_id}`);
 
                                         fetch(plant_rqst)
                                             .then(r => r.json())
-                                            .then(resource => {
-                                                resource.forEach(plant => {
-                                                    if (plant.plantId == user_plant_id) {
-                                                        let div = document.createElement("div");
-                                                        div.classList.add("userPlantDiv");
-                                                        div.innerHTML = `
-                                                        <h3>${plant.name}</h3>
-                                                        <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}</p>
-                                                        <span class="material-symbols-outlined warning_bugs">emergency_home</span>
-                                                        <div id="plantButtons">
-                                                        <span class="material-symbols-outlined water_but">water_drop</span>
-                                                        <span class="material-symbols-outlined bug_but">bug_report</span>
-                                                        <span class="material-symbols-outlined delete_but">delete</span>
-                                                        </div>
-                                                        `;
+                                            .then(plant_info => {
+                                                    let div = document.createElement("div");
+                                                    div.classList.add("userPlantDiv");
+                                                    div.innerHTML = `
+                                                    <h3>${plant_info.name}</h3>
+                                                    <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}</p>
+                                                    <span class="material-symbols-outlined warning_bugs">emergency_home</span>
+                                                    <div id="plantButtons">
+                                                    <span class="material-symbols-outlined water_but">water_drop</span>
+                                                    <span class="material-symbols-outlined bug_but">bug_report</span>
+                                                    <span class="material-symbols-outlined delete_but">delete</span>
+                                                    </div>
+                                                    `;
 
-                                                        document.getElementById("plantWrapper").appendChild(div);
+                                                    document.getElementById("plantWrapper").appendChild(div);
 
-                                                        if (user_plant.bugs == true) {
-                                                            div.querySelector(".warning_bugs").style.visibility = "visible";
-                                                        }
-
-                                                        const del_but = div.querySelector(".delete_but");
-                                                        del_but.style.cursor = "pointer";
-                                                        del_but.addEventListener("click", function () {
-                                                            eventDelBut(user_plant.userPlantId);
-                                                        })
-
-                                                        const bug_but = div.querySelector(".bug_but");
-                                                        bug_but.style.cursor = "pointer";
-                                                        bug_but.addEventListener("click", function () {
-                                                            eventBugBut(user_plant.userPlantId, !user_plant.bugs);
-                                                        })
-
-                                                        const wat_but = div.querySelector(".water_but");
-                                                        wat_but.style.cursor = "pointer";
-                                                        wat_but.addEventListener("click", function () {
-                                                            eventWatBut(user_plant.userPlantId);
-                                                        })
+                                                    if (user_plant.bugs == true) {
+                                                        div.querySelector(".warning_bugs").style.visibility = "visible";
                                                     }
-                                                });
-                                            });
-                                    }
-                                })
-                            })
 
-                    })
+                                                    const del_but = div.querySelector(".delete_but");
+                                                    del_but.style.cursor = "pointer";
+                                                    del_but.addEventListener("click", function () {
+                                                        eventDelBut(user_plant.userPlantId);
+                                                    })
+
+                                                    const bug_but = div.querySelector(".bug_but");
+                                                    bug_but.style.cursor = "pointer";
+                                                    bug_but.addEventListener("click", function () {
+                                                        eventBugBut(user_plant.userPlantId, !user_plant.bugs);
+                                                    })
+
+                                                    const wat_but = div.querySelector(".water_but");
+                                                    wat_but.style.cursor = "pointer";
+                                                    wat_but.addEventListener("click", function () {
+                                                        eventWatBut(user_plant.userPlantId);
+                                                    })
+                                            });
+                                })
+
+                        })
+
+                    }
+                })
+
 
             })
-            
-        })
+
 
     } else {
         document.getElementById("plantWrapper").innerHTML = "<h1>AP AP AP du måste logga in först!</h1>";
     }
-    
+
 }
 
 function eventDelBut (userPlantId) {
