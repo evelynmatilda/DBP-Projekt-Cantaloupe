@@ -15,7 +15,12 @@ function addUser(email, username, password){
 
     fetch(request)
         .then(r => r.json())
-        .then(console.log)
+        .then(resource => {
+            if (resource.email == email && resource.username == username && resource.password == password) {
+                window.localStorage.setItem("userId", resource.userId);
+                window.location.href = "/HTML-filer/homePage.html";
+            }
+        })
 
 }
 
