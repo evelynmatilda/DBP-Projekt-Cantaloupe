@@ -28,8 +28,6 @@ font-size: 20px;
     padding-top: 10vh;
     flex-direction: column;
     gap: 10vh;
-    height: 50vh;
-    width: 100vw;
 }
 
 #logedIn-wrapper > button {

@@ -69,6 +69,7 @@ function homePageLogedIn(userId) {
 
 function logedInHome () {
     let wrapper = document.getElementById("logedIn-wrapper");
-
+    wrapper.style.height = "50vh";
+    wrapper.style.width = "100vw";
     wrapper.innerHTML = `<button>Mina Växter</button><button>Info Om Växter</button>`
 }
