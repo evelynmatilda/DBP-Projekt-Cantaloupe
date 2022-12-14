@@ -1,20 +1,5 @@
 "use strict";
 
-let registerButton = document.querySelector("#register-button");
-
-registerButton.addEventListener("click", reg)
-
-function reg(event){
-    event.preventDefault();
-
-    let email = document.querySelector("#email").value;
-    let userName = document.querySelector("#username").value;
-    let password = document.querySelector("#password").value;
-
-    addUser(email, userName, password)
-
-};
-
 
 function addUser(email, username, password){
     
