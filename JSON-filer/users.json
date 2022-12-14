@@ -14,5 +14,12 @@
         "password": "hej",
         "email": "ermansson",
         "owns": []
+    },
+    {
+        "userId": 3,
+        "username": "Hann",
+        "password": "123456",
+        "email": "bina.99@live.se",
+        "owns": []
     }
 ]
