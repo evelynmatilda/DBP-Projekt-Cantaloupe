@@ -22,19 +22,5 @@
         "password": "123456",
         "email": "bina.99@live.se",
         "owns": []
-    },
-    {
-        "userId": 4,
-        "username": "rtyhjkl",
-        "password": "sdfghjk",
-        "email": "ghjkl",
-        "owns": []
-    },
-    {
-        "userId": 5,
-        "username": "ghj",
-        "password": "sdfghj",
-        "email": "fghjkf",
-        "owns": []
     }
 ]
