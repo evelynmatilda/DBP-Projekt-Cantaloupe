@@ -20,7 +20,7 @@ function reg(event){
 };
 
 
-function regUser(email, username, password){
+function regUser(email, userName, password){
     
     const request = new Request("/PHP-filer/userCreate.php",{
         method:'POST',
