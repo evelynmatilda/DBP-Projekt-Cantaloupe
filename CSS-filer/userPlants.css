@@ -31,7 +31,11 @@ body {
     margin-left: 10px;
 }
 
-#addPlantList {
+#addplantList_closed {
+    visibility: hidden;
+}
+
+#addPlantList_visible {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
