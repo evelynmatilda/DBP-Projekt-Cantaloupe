@@ -1,6 +1,6 @@
 "use strict";
 
-const savedUserId = window.localStorage.getItem("userId")
+const savedUserId = window.localStorage.getItem("userId");
 
 renderUserPlants(savedUserId);
 
@@ -16,7 +16,6 @@ function renderUserPlants(id) {
                     if (user.userId == id) {
                         user.owns.forEach(plant => {
                             const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php?userPlantId=${plant}`);
-                            document.getElementById("plantWrapper").innerHTML = "";
                             fetch(user_plant_rqst)
                                 .then(r => r.json())
                                 .then(user_plant => {
@@ -126,61 +125,74 @@ function eventWatBut (userPlantId) {
     fetch(wat_rqst)
         .then(response => response.json())
         .then(resource => {
-            renderUserPlants(savedUserId)
+            renderUserPlants(savedUserId);
         });
 }
 
 const waterAllBut = document.getElementById("waterAll");
 waterAllBut.style.cursor = "pointer";
 waterAllBut.addEventListener("click", function () {
-    waterAll(savedUserId)
+    waterAll(savedUserId);
 });
 
-// function waterAll (id) {
-//     const users_rqst = new Request("/PHP-filer/userRead.php");
+console.log(savedUserId);
+function waterAll (savedUserId) {
 
-//     fetch(users_rqst)
-//         .then(r => r.json())
-//         .then(resource => {
-//             resource.forEach(user => {
-//                 if (user.userId == savedUserId) {
-//                     user.owns.forEach(plant => {
-//                         const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php?userPlantId=${plant}`);
+    const users_rqst = new Request(`/PHP-filer/userRead.php?userId=${savedUserId}`);
 
-//                         fetch(user_plant_rqst)
-//                             .then(r => r.json())
-//                             .then(user_plant => {
-//                                 const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
-//                                     method: "POST",
-//                                     headers: { "Content-type": "application/json; charset=UTF-8" },
-//                                     body: JSON.stringify({
-//                                         "userPlantId": user_plant.userPlantId
-//                                     })
-//                                 });
+    fetch(users_rqst)
+        .then(r => r.json())
+        .then(user => {
+            user.owns.forEach(plant => {
+                console.log(plant);
+                const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php?userPlantId=${plant}`);
 
-//                                 fetch(wat_rqst)
-//                                     .then(response => response.json())
-//                                     .then(resource => {
-//                                         document.getElementById("plantWrapper").innerHTML = "";
-//                                         renderUserPlants(savedUserId)
-//                                     });
-//                             })
-//                     })
-//                 }
-//             })
-//         })
+                fetch(user_plant_rqst)
+                    .then(r => r.json())
+                    .then(user_plant => {
+                        eventWatBut(user_plant.userPlantId);
+                    })
+            })
+        })
+}
 
+// function addPLantFromDB (params) {
+    
 // }
 
-function addPLant (params) {
+// function addOwnPlant(params) {
     
+// }
+
+function renderDatabasePlants () {
+    const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
+
+    fetch(DBplants_rqst)
+        .then(r => r.json())
+        .then(resource => {
+            resource.forEach(plant => {
+                const div = document.createElement("div");
+                div.innerHTML = `
+                <h3>${plant.name}<span class="material-symbols-outlined">add_box</span></h3>
+                `;
+
+                document.querySelector("#addPlantList").appendChild(div);
+            })
+        })
 }
 
 const add_plant_but = document.getElementById("addPlant");
 add_plant_but.style.cursor = "pointer";
 add_plant_but.addEventListener("click", function () {
-    if (document.querySelector("#addPlantList").style.display == "none") {
-        document.querySelector("#addPlantList").style.visibility = "visible";
+    if (document.querySelector("#addPlantList").style.display != "none") {
+        document.querySelector("#addPlantList").style.display = "none";
+        document.querySelector("#addPlantList").innerHTML = "";
+        document.querySelector("#addNewPlant").style.display = "none";
+        
+    } else {
+        renderDatabasePlants();
+        document.querySelector("#addPlantList").style.display = "grid";
+        document.querySelector("#addNewPlant").style.display = "flex";
     }
     
 })
