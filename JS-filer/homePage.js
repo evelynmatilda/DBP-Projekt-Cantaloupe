@@ -71,5 +71,9 @@ function logedInHome () {
     let wrapper = document.getElementById("logedIn-wrapper");
     wrapper.style.height = "50vh";
     wrapper.style.width = "100vw";
-    wrapper.innerHTML = `<button>Mina Växter</button><button>Info Om Växter</button>`
+    wrapper.innerHTML = `<button>Mina Växter</button>
+    <button>Min Profil</button>
+    <button>Om oss</button>
+    <button>Växter</button>
+    `
 }
