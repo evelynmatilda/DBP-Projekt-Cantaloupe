@@ -1,20 +1,5 @@
 "use strict";
 
-let registerButton = document.querySelector("#register-button");
-
-registerButton.addEventListener("click", reg)
-
-function reg(event){
-    event.preventDefault();
-
-    let email = document.querySelector("#email").value;
-    let userName = document.querySelector("#username").value;
-    let password = document.querySelector("#password").value;
-
-    addUser(email, userName, password)
-
-};
-
 
 function addUser(email, username, password){
     
@@ -30,7 +15,12 @@ function addUser(email, username, password){
 
     fetch(request)
         .then(r => r.json())
-        .then(console.log)
+        .then(resource => {
+            if (resource.email == email && resource.username == username && resource.password == password) {
+                window.localStorage.setItem("userId", resource.userId);
+                window.location.href = "/HTML-filer/homePage.html";
+            }
+        })
 
 }
 
@@ -50,9 +40,8 @@ function logIn(event){
         .then(resource => {
             resource.forEach(user => {
                 if (recUsername == user.username && recPassword == user.password) {
-<<<<<<< Updated upstream
+
                     window.localStorage.setItem("userId", user.userId)
-=======
                     window.localStorage.setItem("userId", user.userId);
                     window.location.href = "/HTML-filer/homePage.html";
                     errorMassage.innerHTML = "";
@@ -67,7 +56,8 @@ function logIn(event){
                         // document.querySelector("input[name='password']").focus().select();
                         // input.dequeue();
 
->>>>>>> Stashed changes
+                    window.localStorage.setItem("userId", user.userId);
+                    window.location.href = "/HTML-filer/homePage.html";
                 }
             })
         })

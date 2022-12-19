@@ -16,59 +16,37 @@
         <button id="addPlant">Lägg till växt<span class="material-symbols-outlined">add_circle</span></button>
     </div>
 
-    <div id="addPlantList">
-        <div><h3>Växt 1<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 2<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 3<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 4<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 5<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 6<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 7<span class="material-symbols-outlined">add_box</span></h3></div>
-        <div><h3>Växt 8<span class="material-symbols-outlined">add_box</span></h3></div>
+    <div id="addPlantList" style="display: none;">
     </div>
 
     <button id="addNewPlant">Lägg till egen växt<span class="material-symbols-outlined add_plant">add_circle</span></button>
-    
     <div id="addPlantForm">
         <div id="leftSideForm">
-            <span class="material-symbols-outlined close">close</span>
-            <br>
-            <label for="nameInput">Namn:</label>
-            <br>
-            <input id="nameInput" type="text" placeholder="Skriv här" name="nameInput">
-            <br>
-            <label for="latinInput">Latin:</label>
-            <br>
-            <input id="latinInput" type="text" placeholder="Skriv här" name="latinInput">
-            <br>
-            <label for="infoInput">Info:</label>
-            <br>
+            <span class="material-symbols-outlined close">close</span><br>
+            <label for="nameInput">Namn:</label><br>
+            <input id="nameInput" type="text" placeholder="Skriv här" name="nameInput"><br>
+            <label for="latinInput">Latin:</label><br>
+            <input id="latinInput" type="text" placeholder="Skriv här" name="latinInput"><br>
+            <label for="infoInput">Info:</label><br>
             <input id="infoInput" type="text" placeholder="Skriv här" name="infoInput" maxlength="200">
         </div>
         <div id="rightSideForm">
             <label for="waterInput">Vattnas ggr/v:</label>
-            <input id="waterInput" type="number" name="waterInput" min="1" max="5">
-            <br>
-            <br>
-            <label for="flowerInput">Blommar den?:</label>
+            <input id="waterInput" type="number" name="waterInput" min="1" max="5"><br>
+            <br><label for="flowerInput">Blommar den?:</label>
             <select name="flowerInput" id="flowerInput">
                 <option value="true">Ja</option>
                 <option value="false">Nej</option>
-            </select>
-            <br>
-            <br>
-            <label for="sunInput">Sol:</label>
+            </select><br>
+            <br><label for="sunInput">Sol:</label>
             <select name="sunInput" id="sunInput">
                 <option value="Full sol">Full sol</option>
                 <option value="Halv sol">Halv sol</option>
                 <option value="Halv skugga">Halv skugga</option>
                 <option value="Hel skugga">Hel skugga</option>
-            </select>
-            <br>
-            <br>
-            <button id="addButton" type="submit">Add plant<span class="material-symbols-outlined add_plant">add_circle</span></button>
+            </select><br>
+            <br><button id="addButton" type="submit">Add plant<span class="material-symbols-outlined add_plant">add_circle</span></button>
         </div>
-        
     </div>
     
     <div id="plantWrapper">
@@ -76,16 +54,13 @@
 
     <div class="nav-container-closed"> <h1 class="header-name">OKBloomer</h1>
         <div class="text-container-hidden">
-            <a href="homePage.html"><h1 class="text">Home</h1></a>
+            <a href="homePage.html"><h1 class="text">Hem</h1></a>
             <a href="plantInfo.html"><h1 class="text">Våra växter</h1></a>
             <a href="userPlants.html"><h1 class="text">Mina växter</h1></a>
             <a href="aboutUs.html"><h1 class="text">Om oss</h1></a>
         </div>
         <div class="menu-closed">
             <span id="line-menu-visible" class="material-symbols-outlined menu-lines">menu</span>
-            <!-- <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div> -->
         </div>
         <div class="profile-container-hidden">
             <div class="text-login">Logga in</div>
@@ -119,5 +94,6 @@
     
     <script src="/JS-filer/userPlants.js"></script>
     <script src="/JS-filer/menu.js"></script>
+    <script src="/JS-filer/login.js"></script>
 </body>
 </html>
