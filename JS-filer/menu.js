@@ -73,6 +73,7 @@ if (nav.className == "nav-container-closed"){
 
         inputReg.id = "reg-login-hidden";
         document.getElementById("error-message").style.display = "none";
+    }
         
 function profileEvent(){
     if (nav.className == "nav-container-closed"){
@@ -176,4 +177,4 @@ if (localStorage.length > 0) {
     profile.addEventListener("click", function(){
         window.location.href = "/HTML-filer/userProfile.html";
     })
-} 
+}
