@@ -30,7 +30,7 @@ font-size: 20px;
     gap: 10vh;
 }
 
-#logedIn-wrapper > button {
+#logedIn-wrapper > a {
     width: 30vw;
     height: 5vh;
     background-color: black;
