@@ -39,42 +39,6 @@ let profileContainer = document.querySelector(".profile-container-hidden")
 profile.style.cursor = "pointer";
 profile.addEventListener("click", profileEvent)
 
-
-if (closeX.id == "close-hidden"){
-    closeX.id = "close-visible";
-}   
-    else {
-    closeX.id = "close-hidden";
-}
-
-if (profileSymbol.id == "profile-symbol-visible"){
-    profileSymbol.id = "profile-symbol-hidden";
-}
-    else {
-    profileSymbol.id = "profile-symbol-visible";    
-}
-
-if(inputLogin.id == "input-login-hidden"){
-    inputLogin.id = "input-login-visible";
-}
-    else {
-        inputLogin.id = "input-login-hidden";
-
-}  
-
-if (nav.className == "nav-container-closed"){
-    inputLogin.id = "input-login-hidden";
-    inputReg.id = "reg-login-hidden";
-} 
-    else {
-        inputLogin.id = "input-login-visible";
-        loginInputs.style.borderBottom = "solid black 2px"
-        regInputs.style.borderBottom = "solid black 1px"
-
-        inputReg.id = "reg-login-hidden";
-        document.getElementById("error-message").style.display = "none";
-    }
-        
 function profileEvent(){
     if (nav.className == "nav-container-closed"){
         nav.className = "nav-container-opened";
@@ -129,7 +93,6 @@ function profileEvent(){
             loginInputs.style.borderBottom = "solid black 2px"
             regInputs.style.borderBottom = "solid black 1px"
     }
-
 }
 
 
@@ -153,6 +116,7 @@ loginInputs.addEventListener("click", function(){
 });
 
 regInputs.addEventListener("click", function(){
+    document.getElementById("error-message").innerHTML = "";
     if(inputReg.id == "reg-login-hidden"){
         inputReg.id = "reg-login-visible";
         regInputs.style.borderBottom = "solid black 2px"
@@ -177,4 +141,4 @@ if (localStorage.length > 0) {
     profile.addEventListener("click", function(){
         window.location.href = "/HTML-filer/userProfile.html";
     })
-}
+} 

@@ -1,6 +1,5 @@
 "use strict";
 
-
 function addUser(email, username, password){
     
     const request = new Request("/PHP-filer/userCreate.php",{
@@ -25,14 +24,13 @@ function addUser(email, username, password){
 }
 
 document.querySelector(".login-button").addEventListener("click", logIn);
-
 function logIn(event){
     event.preventDefault();
     let recUsername = document.querySelector("#login-username").value;
     let recPassword = document.querySelector("#login-password").value;
-    let errorMassage = document.getElementById("error-message");
+    let errorMessage = document.getElementById("error-message");
     let input = document.querySelector("#input-login-visible");
-    errorMassage.innerHTML = "";
+    errorMessage.innerHTML = "";
     input.classList.remove("shake");
 
     fetch("/PHP-filer/userRead.php")
@@ -44,20 +42,13 @@ function logIn(event){
                     window.localStorage.setItem("userId", user.userId)
                     window.localStorage.setItem("userId", user.userId);
                     window.location.href = "/HTML-filer/homePage.html";
-                    errorMassage.innerHTML = "";
+                    errorMessage.innerHTML = "";
                 }
                 else {
-                    errorMassage.innerHTML = "Fel användarnamn eller lösenord...";
-                    errorMassage.style.color = "red";
-                    errorMassage.style.display = "flex";
-                    input.classList.add("shake")
-                 
-                    // input.classList.remove("shake");
-                        // document.querySelector("input[name='password']").focus().select();
-                        // input.dequeue();
-
-                    window.localStorage.setItem("userId", user.userId);
-                    window.location.href = "/HTML-filer/homePage.html";
+                    errorMessage.innerHTML = "Fel användarnamn eller lösenord...";
+                    errorMessage.style.color = "red";
+                    errorMessage.style.display = "flex";
+                    input.classList.add("shake");
                 }
             })
         })
