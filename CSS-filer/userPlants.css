@@ -31,12 +31,7 @@ body {
     margin-left: 10px;
 }
 
-/* #addPlantList > div {
-    display: none;
-} */
-
 #addPlantList {
-    /* display: none; */
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
 
