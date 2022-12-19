@@ -74,6 +74,6 @@ function logedInHome () {
     wrapper.innerHTML = `<button>Mina Växter</button>
     <button>Min Profil</button>
     <button>Om oss</button>
-    <button>Växter</button>
+    <button>Mina Växter</button>
     `
 }
