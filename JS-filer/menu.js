@@ -80,6 +80,7 @@ if(inputLogin.id == "input-login-hidden"){
 }
     else {
         inputLogin.id = "input-login-hidden";
+<<<<<<< Updated upstream
 }  
 
 if (nav.className == "nav-container-closed"){
@@ -90,6 +91,17 @@ if (nav.className == "nav-container-closed"){
         inputLogin.id = "input-login-visible";
         loginInputs.style.borderBottom = "solid black 2px"
         regInputs.style.borderBottom = "solid black 1px"
+=======
+        inputReg.id = "reg-login-hidden";
+        document.getElementById("error-message").style.display = "none";
+    } 
+        else {
+            inputLogin.id = "input-login-visible";
+            loginInputs.style.borderBottom = "solid black 2px"
+            regInputs.style.borderBottom = "solid black 1px"
+    }
+    
+>>>>>>> Stashed changes
 }
 
 });
