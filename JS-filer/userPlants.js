@@ -150,10 +150,26 @@ function waterAll (savedUserId) {
                 fetch(user_plant_rqst)
                     .then(r => r.json())
                     .then(user_plant => {
-                        eventWatBut(user_plant.userPlantId);
+                        const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
+                            method: "POST",
+                            headers: { "Content-type": "application/json; charset=UTF-8" },
+                            body: JSON.stringify({
+                                "userPlantId": user_plant.userPlantId
+                            })
+                        });
+
+                        fetch(wat_rqst)
+                            .then(response => response.json())
+                            .then(resource => {
+                                console.log(resource);
+                            })
                     })
             })
+            
+            renderUserPlants(savedUserId);
         })
+        
+        
 }
 
 // function addPLantFromDB (params) {
