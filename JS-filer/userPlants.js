@@ -135,7 +135,6 @@ waterAllBut.addEventListener("click", function () {
     waterAll(savedUserId);
 });
 
-console.log(savedUserId);
 function waterAll (savedUserId) {
 
     const users_rqst = new Request(`/PHP-filer/userRead.php?userId=${savedUserId}`);
@@ -172,13 +171,6 @@ function waterAll (savedUserId) {
         
 }
 
-// function addPLantFromDB (params) {
-    
-// }
-
-// function addOwnPlant(params) {
-    
-// }
 
 function renderDatabasePlants () {
     const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
@@ -189,10 +181,16 @@ function renderDatabasePlants () {
             resource.forEach(plant => {
                 const div = document.createElement("div");
                 div.innerHTML = `
-                <h3>${plant.name}<span class="material-symbols-outlined">add_box</span></h3>
+                <h3>${plant.name}<span class="material-symbols-outlined addDBPlant">add_box</span></h3>
                 `;
 
                 document.querySelector("#addPlantList").appendChild(div);
+
+                const addButtonDBPlant = document.querySelector(".addDBPlant");
+                addButtonDBPlant.style.cursor = "pointer";
+                addButtonDBPlant.addEventListener("click", function () {
+                    addPLantFromDB(plant.plantId);
+                })
             })
         })
 }
@@ -211,4 +209,20 @@ add_plant_but.addEventListener("click", function () {
         document.querySelector("#addNewPlant").style.display = "flex";
     }
     
-})
+});
+
+function addPLantFromDB () {
+    const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
+
+    fetch(DBplants_rqst)
+        .then(r => r.json())
+        .then(resource => {
+            resource.forEach(plant => {
+
+            })
+        })
+}
+
+// function addOwnPlant(params) {
+    
+// }
