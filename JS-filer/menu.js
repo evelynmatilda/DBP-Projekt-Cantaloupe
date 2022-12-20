@@ -87,6 +87,7 @@ function profileEvent(){
     if (nav.className == "nav-container-closed"){
         inputLogin.id = "input-login-hidden";
         inputReg.id = "reg-login-hidden";
+        document.getElementById("error-message").innerHTML="";
     } 
         else {
             inputLogin.id = "input-login-visible";
