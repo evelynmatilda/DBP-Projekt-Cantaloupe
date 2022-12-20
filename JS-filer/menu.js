@@ -134,11 +134,9 @@ regInputs.addEventListener("click", function(){
 
 
 if (localStorage.length > 0) {
-    let profileWrapper = document.getElementById("profile-wrapper");
     profileContainer.style.display = "none";
     inputLogin.style.display = "none";
     profile.removeEventListener("click", profileEvent)
-    profileWrapper.style.height = "10vh"
     profile.addEventListener("click", function(){
         window.location.href = "/HTML-filer/userProfile.html";
     })

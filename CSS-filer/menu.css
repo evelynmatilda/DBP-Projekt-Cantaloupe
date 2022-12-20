@@ -328,10 +328,14 @@ a{
     100% {
       transform: translate(0);
     }
-  }
+}
 
-  #input-login-visible.shake {
+#input-login-visible.shake {
     animation: shake 0.5s;
-  }
+}
+
+#profile-wrapper{
+    height: 0;
+}
 
 
