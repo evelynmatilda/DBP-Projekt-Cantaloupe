@@ -71,9 +71,10 @@ function logedInHome () {
     let wrapper = document.getElementById("logedIn-wrapper");
     wrapper.style.height = "50vh";
     wrapper.style.width = "100vw";
-    wrapper.innerHTML = `<a href="plantInfo.html"><h1 class="logedIn-button">Våra Växter</h1></a>
+    wrapper.innerHTML = `<a href="/HTML-filer/plantInfo.html"><h1 class="logedIn-button">Våra Växter</h1></a>
     <a href="userProfile.html"><h1 class="logedIn-button">Min Profil</h1></a>
     <a href="userPlants.html"><h1 class="logedIn-button">Mina växter</h1></a>
-    <a href="aboutUs.html"><h1 class="logedIn-button">Om oss</h1></a>
-    `
+    <a href="/HTML-filer/aboutUs.html"><h1 class="logedIn-button">Om oss</h1></a>
+    `;
+    wrapper.style.zIndex = "1";
 }
