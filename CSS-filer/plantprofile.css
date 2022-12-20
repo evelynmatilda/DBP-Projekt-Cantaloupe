@@ -1,0 +1,14 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#plant{
+width: 10px;
+height: 10px;
+background-color: brown;
+}
