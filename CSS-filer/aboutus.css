@@ -16,3 +16,24 @@ h2{
     font-size: xx-large;
     color: #5B8C5A;
 }
+
+#hanna{
+    background-image: url(/bilder/Hanna.jpg);
+}
+
+#evelyn{
+    background-image: url(/bilder/Evelyn.jpg);
+}
+
+#julia{
+    background-image: url(/bilder/Julia.jpg);
+}
+
+.usPicture{
+    height: 30vh;
+    width: 15vw; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
