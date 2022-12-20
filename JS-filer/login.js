@@ -50,6 +50,8 @@ function logIn(event){
                     errorMessage.style.display = "flex";
                     input.classList.add("shake");
                 }
+                document.querySelector("#login-username").value = "";
+                document.querySelector("#login-password").value = "";
             })
         })
 }
