@@ -1,7 +1,7 @@
 [
     {
-        "userId": 1,
         "userPlantId": 1,
+        "userId": 1,
         "plantId": 1,
         "water": [
             "2022-12-12"
@@ -9,12 +9,21 @@
         "bugs": false
     },
     {
-        "userId": 1,
         "userPlantId": 2,
+        "userId": 1,
         "plantId": 3,
         "water": [
             "2022-12-19"
         ],
         "bugs": true
+    },
+    {
+        "userPlantId": 3,
+        "userId": 1,
+        "plantId": 5,
+        "water": [
+            "2022-12-20"
+        ],
+        "bugs": false
     }
 ]

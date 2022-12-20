@@ -172,7 +172,7 @@ function waterAll (savedUserId) {
 }
 
 
-function renderDatabasePlants () {
+function renderDatabasePlants (savedUserId) {
     const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
 
     fetch(DBplants_rqst)
@@ -180,16 +180,17 @@ function renderDatabasePlants () {
         .then(resource => {
             resource.forEach(plant => {
                 const div = document.createElement("div");
+                div.id = "addPlantDiv" + plant.plantId;
                 div.innerHTML = `
                 <h3>${plant.name}<span class="material-symbols-outlined addDBPlant">add_box</span></h3>
                 `;
 
                 document.querySelector("#addPlantList").appendChild(div);
 
-                const addButtonDBPlant = document.querySelector(".addDBPlant");
+                const addButtonDBPlant = document.getElementById("addPlantDiv" + plant.plantId);
                 addButtonDBPlant.style.cursor = "pointer";
                 addButtonDBPlant.addEventListener("click", function () {
-                    addPLantFromDB(plant.plantId);
+                    addPLantFromDB(plant.plantId, savedUserId);
                 })
             })
         })
@@ -204,25 +205,55 @@ add_plant_but.addEventListener("click", function () {
         document.querySelector("#addNewPlant").style.display = "none";
         
     } else {
-        renderDatabasePlants();
+        renderDatabasePlants(savedUserId);
         document.querySelector("#addPlantList").style.display = "grid";
         document.querySelector("#addNewPlant").style.display = "flex";
     }
     
 });
 
-function addPLantFromDB () {
-    const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
+function addPLantFromDB (recPlantId, savedUserId) {
+    // först user plant?
+    // sen users?
+
+    const DBplants_rqst = new Request("/PHP-filer/userPlantsCreate.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+            userId: parseInt(savedUserId),
+            plantId: recPlantId
+        })
+    });
 
     fetch(DBplants_rqst)
         .then(r => r.json())
-        .then(resource => {
-            resource.forEach(plant => {
+        .then(plant => {
+            console.log(plant)
+            const userOwns_rqst = new Request("/PHP-filer/ownsUpdate.php", {
+                method: "POST",
+                headers: { "Content-type": "application/json; charset=UTF-8" },
+                body: JSON.stringify({
+                    "userId": parseInt(savedUserId),
+                    "userPlantId": plant.userPlantId
+                })
+            });
 
-            })
+            fetch(userOwns_rqst)
+                .then(response => response.json())
+                .then(resource => {
+                    console.log(resource);
+                })
+
+            if (plant.error) {
+                alert("An error occured, try again!");
+            }
+            
+            renderUserPlants(savedUserId);
         })
 }
 
+const add_own_plant_but = document.querySelector("#addNewPlant");
+add_own_plant_but.style.cursor = "pointer";
 // function addOwnPlant(params) {
     
 // }
