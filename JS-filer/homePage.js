@@ -76,5 +76,4 @@ function logedInHome () {
     <a href="userPlants.html"><h1 class="logedIn-button">Mina växter</h1></a>
     <a href="/HTML-filer/aboutUs.html"><h1 class="logedIn-button">Om oss</h1></a>
     `;
-    wrapper.style.zIndex = "1";
 }

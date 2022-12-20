@@ -138,7 +138,7 @@ if (localStorage.length > 0) {
     profileContainer.style.display = "none";
     inputLogin.style.display = "none";
     profile.removeEventListener("click", profileEvent)
-
+    profileWrapper.style.height = "10vh"
     profile.addEventListener("click", function(){
         window.location.href = "/HTML-filer/userProfile.html";
     })
