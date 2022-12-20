@@ -14,20 +14,31 @@
 
 <body>
 
-    <h1>Min profil</h1>
-
     <div id="myProfile">
-        <span class="material-symbols-outlined">account_circle</span>
+        <div id="profile-pic-container">
+            <span class="material-symbols-outlined" id="profile-pic">account_circle</span>
+            <h1>Min profil</h1>
+        </div>
 
-        <p>Användarnamn:</p> <span class="material-symbols-outlined">
-            edit_note
-        </span>
-        <p>Lösenord:</p> <span class="material-symbols-outlined">
-            edit_note
-        </span>
-        <p>Email:</p> <span class="material-symbols-outlined">
-            edit_note
-        </span>
+        <div class="profile-info-container">
+            <p id="user-name">Användarnamn:</p> <span class="material-symbols-outlined">
+                edit_note
+            </span>
+        </div>
+        <div class="profile-info-container">
+            <p id="pass-word">Lösenord:</p> <span class="material-symbols-outlined">
+                edit_note
+            </span>
+        </div>
+        <div class="profile-info-container">
+            <p id="e-mail">Email:</p> <span class="material-symbols-outlined">
+                edit_note
+            </span>
+        </div>
+        <div id="logout-buttons">
+            <button>Logga ut</button>
+            <button>Radera konto</button>
+        </div>
 
         <button id="logOutButton">Logga ut</button>
         <button>Radera konto</button>
@@ -86,6 +97,7 @@
     <script src="/JS-filer/login.js"></script>
     <script src="/JS-filer/logOut.js"></script>
     <script src="/JS-filer/menu.js"></script>
+    <script src="/JS-filer/userProfile.js"></script>
 </body>
 
 </html>
