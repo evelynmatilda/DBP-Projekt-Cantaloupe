@@ -20,3 +20,65 @@ function getProfileInfo () {
 
 }
 getProfileInfo ()
+
+function openForm (){
+   let editNameButton = document.getElementById("name-edit-button");
+   editNameButton.style.cursor = "pointer";
+   editNameButton.addEventListener("click", eventEditUsername);
+
+   function eventEditUsername () {
+    let nameDiv = document.getElementById("user-name");
+    nameDiv.innerHTML = `<input id="edit-name" type="text" placeholder="Nytt användarnamn"></input>
+    <button class="save">Spara</button></div>`;
+
+    nameDiv.querySelector(".save").addEventListener("click", function(){
+        const newUsername = document.querySelector('input[id="edit-name"]').value;
+        patchUsername(newUsername)
+    });
+   }
+
+   let editPassButton = document.getElementById("password-edit-button");
+   editPassButton.style.cursor = "pointer";
+   editPassButton.addEventListener("click", eventEditPassword);
+
+   function eventEditPassword () {
+    let nameDiv = document.getElementById("pass-word");
+    nameDiv.innerHTML = `<input id="edit-pass" type="text" placeholder="Nytt lösenord"></input>
+    <button class="save">Spara</button></div>`;
+   }
+   let editEmailButton = document.getElementById("email-edit-button");
+   editEmailButton.style.cursor = "pointer";
+   editEmailButton.addEventListener("click", eventEditEmail);
+
+   function eventEditEmail () {
+    let nameDiv = document.getElementById("e-mail");
+    nameDiv.innerHTML = `<input id="edit-email" type="text" placeholder="Ny email"></input>
+    <button class="save">Spara</button></div>`;
+   }
+
+
+
+}
+
+function patchUsername (newUsername) {
+    let id = window.localStorage.getItem("userId");
+
+    const patch_rqst = new Request("/PHP-filer/userUpdate.php", {
+
+        method: 'PATCH',
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+            id: parseInt(id),
+            username: newUsername
+        }),
+    });
+
+    fetch(patch_rqst)
+        .then(r => r.json())
+        .then(console.log)
+    
+
+}
+
+
+openForm()
