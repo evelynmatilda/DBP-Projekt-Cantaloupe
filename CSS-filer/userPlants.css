@@ -88,7 +88,6 @@ body {
 }
 
 #addPlantForm {
-    display: none;
     background-color: gainsboro;
     margin: 5px;
     height: 206px;
@@ -125,7 +124,7 @@ body {
 }
 
 #sunInput {
-    width: 70px;
+    width: 100px;
 }
 
 #addButton {
