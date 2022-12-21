@@ -254,6 +254,59 @@ function addPLantFromDB (recPlantId, savedUserId) {
 
 const add_own_plant_but = document.querySelector("#addNewPlant");
 add_own_plant_but.style.cursor = "pointer";
+<<<<<<< Updated upstream
 // function addOwnPlant(params) {
+=======
+add_own_plant_but.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (document.querySelector("#addPlantForm").style.display != "none") {
+        document.querySelector("#addPlantForm").style.display = "none";
+    } else {
+        document.querySelector("#addPlantForm").style.display = "block";
+    }
+})
+
+const submit_own_but = document.getElementById("addButton");
+submit_own_but.style.cursor = "pointer";
+submit_own_but.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("nameInput").value;
+    const latin = document.getElementById("latinInput").value;
+    const info = document.getElementById("infoInput").value;
+    const water = document.getElementById("waterInput").value;
+    const flowers = document.getElementById("flowerInput").value;
+    const sun = document.getElementById("sunInput").value;
+
+    addOwnPlant(name, latin, info, water, flowers, sun);
+
+    const add_plant_rqst = new Request("/PHP-filer/plantCreate.php", {
+        method: "POST",
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: json
+    });
+
+    fetch(add_plant_rqst)
+        .then(response => response.json())
+        .then(resource => {
+            console.log(resource)
+
+            if (resource.error) {
+                alert("An error occured, try again!");
+            } else {
+                document.getElementById("nameInput").value = "";
+                document.getElementById("latinInput").value = "";
+
+                renderUserPlants(savedUserId);
+            }
+
+
+        });
+
+
+});
+
+function addOwnPlant() {
+>>>>>>> Stashed changes
     
 // }
