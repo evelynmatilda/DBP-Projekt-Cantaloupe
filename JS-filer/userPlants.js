@@ -131,44 +131,43 @@ function eventWatBut (userPlantId) {
 
 const waterAllBut = document.getElementById("waterAll");
 waterAllBut.style.cursor = "pointer";
-waterAllBut.addEventListener("click", function () {
-    waterAll(savedUserId);
+waterAllBut.addEventListener("click", async function (event) {
+    event.preventDefault();
+    await waterAll();
 });
 
-function waterAll (savedUserId) {
+async function waterAll () {
+    
+    const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php`);
 
-    const users_rqst = new Request(`/PHP-filer/userRead.php?userId=${savedUserId}`);
+    let resource = await (fetch(user_plant_rqst).then(r => r.json()));
+    console.log(resource);
+    waterAllEvent(resource, 0)
+}
 
-    fetch(users_rqst)
-        .then(r => r.json())
-        .then(user => {
-            user.owns.forEach(plant => {
-                console.log(plant);
-                const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php?userPlantId=${plant}`);
+async function waterAllEvent (resource, counter) {
+    console.log(resource);
+    console.log(counter);
+    let plant = resource[counter];
 
-                fetch(user_plant_rqst)
-                    .then(r => r.json())
-                    .then(user_plant => {
-                        const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
-                            method: "POST",
-                            headers: { "Content-type": "application/json; charset=UTF-8" },
-                            body: JSON.stringify({
-                                "userPlantId": user_plant.userPlantId
-                            })
-                        });
-
-                        fetch(wat_rqst)
-                            .then(response => response.json())
-                            .then(resource => {
-                                console.log(resource);
-                            })
-                    })
+    if (savedUserId == plant.userId) {
+        const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
+            method: "POST",
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+            body: JSON.stringify({
+                "userPlantId": plant.userPlantId
             })
-            
-            renderUserPlants(savedUserId);
-        })
+        });
+
+        await fetch(wat_rqst);
         
-        
+        counter++
+        if (counter < resource.length) {
+            waterAllEvent(resource, counter)
+        } else {
+            renderUserPlants(savedUserId)
+        }
+    }
 }
 
 
@@ -198,7 +197,8 @@ function renderDatabasePlants (savedUserId) {
 
 const add_plant_but = document.getElementById("addPlant");
 add_plant_but.style.cursor = "pointer";
-add_plant_but.addEventListener("click", function () {
+add_plant_but.addEventListener("click", function (event) {
+    event.preventDefault();
     if (document.querySelector("#addPlantList").style.display != "none") {
         document.querySelector("#addPlantList").style.display = "none";
         document.querySelector("#addPlantList").innerHTML = "";
@@ -213,8 +213,6 @@ add_plant_but.addEventListener("click", function () {
 });
 
 function addPLantFromDB (recPlantId, savedUserId) {
-    // först user plant?
-    // sen users?
 
     const DBplants_rqst = new Request("/PHP-filer/userPlantsCreate.php", {
         method: "POST",
@@ -228,7 +226,6 @@ function addPLantFromDB (recPlantId, savedUserId) {
     fetch(DBplants_rqst)
         .then(r => r.json())
         .then(plant => {
-            console.log(plant)
             const userOwns_rqst = new Request("/PHP-filer/ownsUpdate.php", {
                 method: "POST",
                 headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -254,9 +251,7 @@ function addPLantFromDB (recPlantId, savedUserId) {
 
 const add_own_plant_but = document.querySelector("#addNewPlant");
 add_own_plant_but.style.cursor = "pointer";
-<<<<<<< Updated upstream
-// function addOwnPlant(params) {
-=======
+
 add_own_plant_but.addEventListener("click", function (event) {
     event.preventDefault();
     if (document.querySelector("#addPlantForm").style.display != "none") {
@@ -277,6 +272,7 @@ submit_own_but.addEventListener("submit", function (event) {
     const water = document.getElementById("waterInput").value;
     const flowers = document.getElementById("flowerInput").value;
     const sun = document.getElementById("sunInput").value;
+
 
     addOwnPlant(name, latin, info, water, flowers, sun);
 
@@ -307,6 +303,6 @@ submit_own_but.addEventListener("submit", function (event) {
 });
 
 function addOwnPlant() {
->>>>>>> Stashed changes
+
     
-// }
+}
