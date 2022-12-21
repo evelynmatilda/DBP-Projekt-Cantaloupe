@@ -5,9 +5,13 @@ function plantClick(){
 
 function plantOverlay(){
 let overlay = document.querySelector(".plantProfileOverlay");
-overlay.style.width = "100vw";
-overlay.style.height = "100vh";
-overlay.style.backgroundColor = "green";
+overlay.style.display = "block"
+overlay.style.width = "100%";
+overlay.style.height = "100%";
+let exit = document.querySelector("#exit");
+exit.addEventListener("click", function(){
+    overlay.style.display = "none";
+})
 }
 
 plantClick()

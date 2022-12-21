@@ -39,11 +39,11 @@ body {
   border: #5B8C5A solid 10px;
 }
 
-.plantDiv-closed>p {
+.plantDiv-closed > p {
   display: none;
 }
 
-.plantDiv-closed>img {
+.plantDiv-closed > img {
   height: 0px;
 }
 
