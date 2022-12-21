@@ -12,6 +12,10 @@ let exit = document.querySelector("#exit");
 exit.addEventListener("click", function(){
     overlay.style.display = "none";
 })
+let overlayWrapper = document.querySelector("#overlayWrapper")
+overlayWrapper.innerHTML = '<div id="nameBox"> <h1>Växtens namn</h1> <h2>(namnet på latin)</h2> <div id="lastWater">Senast vattnad</div></div> <div id="plantInfo"> <h2>Info om växten</h2> </div> <div id="otherInfo"> <h3>Ljus:</h3> <h3>Blommar:</h3> <h3>Vattnas ggr/v:</h3> </div> <div id="waterDB"><h2>Föregående vattningar: </h2> </div>'
+
+
 }
 
 plantClick()
