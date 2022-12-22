@@ -16,7 +16,8 @@
         "password": "hej",
         "email": "ermansson",
         "owns": [
-            4
+            4,
+            6
         ]
     },
     {

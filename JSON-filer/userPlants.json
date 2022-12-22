@@ -27,23 +27,21 @@
         "bugs": false
     },
     {
-        "userPlantId": 4,
-        "userId": 2,
-        "plantId": 1,
-        "water": [
-            "2022-12-22",
-            "2022-12-22"
-        ],
-        "userId": 3,
-        "plantId": 1,
-        "water": [],
-        "bugs": false
-    },
-    {
         "userPlantId": 5,
         "userId": 3,
         "plantId": 8,
         "water": [],
+        "bugs": false
+    },
+    {
+        "userPlantId": 6,
+        "userId": 2,
+        "plantId": 1,
+        "water": [
+            "2022-12-22",
+            "2022-12-22",
+            "2022-12-22"
+        ],
         "bugs": false
     }
 ]
