@@ -43,5 +43,12 @@
             "2022-12-22"
         ],
         "bugs": false
+    },
+    {
+        "userPlantId": 5,
+        "userId": 3,
+        "plantId": 8,
+        "water": [],
+        "bugs": false
     }
 ]
