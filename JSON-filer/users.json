@@ -15,7 +15,9 @@
         "username": "hej",
         "password": "hej",
         "email": "ermansson",
-        "owns": []
+        "owns": [
+            4
+        ]
     },
     {
         "userId": 3,

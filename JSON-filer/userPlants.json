@@ -25,5 +25,15 @@
             "2022-12-20"
         ],
         "bugs": false
+    },
+    {
+        "userPlantId": 4,
+        "userId": 2,
+        "plantId": 1,
+        "water": [
+            "2022-12-22",
+            "2022-12-22"
+        ],
+        "bugs": false
     }
 ]

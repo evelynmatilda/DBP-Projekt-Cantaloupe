@@ -28,6 +28,7 @@ function renderUserPlants(id) {
                                         .then(plant_info => {
                                             let div = document.createElement("div");
                                             div.classList.add("userPlantDiv");
+                                            div.id = user_plant.userPlantId;
                                             div.innerHTML = `
                                             <h3>${plant_info.name}</h3>
                                             <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}</p>
@@ -62,6 +63,10 @@ function renderUserPlants(id) {
                                             wat_but.addEventListener("click", function () {
                                                 eventWatBut(user_plant.userPlantId);
                                             })
+                                            div.addEventListener("click", function(){
+                                                plantOverlay(user_plant, event, plant_info)
+                                            })
+                                            
                                         });
                                 })
 
@@ -79,6 +84,23 @@ function renderUserPlants(id) {
     }
 
 }
+
+function plantOverlay(user_plant, event, plant_info){
+    console.log(event.target.id);
+    console.log(user_plant);
+    let overlay = document.querySelector(".plantProfileOverlay");
+    overlay.style.display = "block"
+    overlay.style.width = "100%";
+    overlay.style.height = "100%";
+    let exit = document.querySelector("#exit");
+    exit.addEventListener("click", function(){
+        overlay.style.display = "none";
+    })
+    let overlayWrapper = document.querySelector("#overlayWrapper");
+    if (user_plant.userPlantId == event.target.id){overlayWrapper.innerHTML = `<div id="nameBox"> <h1>${plant_info.name}</h1> <h2>(${plant_info.latin})</h2> <div id="lastWater">Senast vattnad: ${user_plant.water[user_plant.water.length - 1]}</div></div> <div id="plantInfo"> <h2>Info om växten</h2> <p>${plant_info.info}</p> </div> <div id="otherInfo"> <h3>Ljus: ${plant_info.sun}</h3> <h3>Blommar:${plant_info.flowers}</h3> <h3>Vattnas ggr/v:${plant_info.waterInt}</h3> </div> <div id="waterDB"><h2>Föregående vattningar: ${user_plant.water} </h2> </div>`
+    
+    }};
+    
 
 function eventDelBut (userPlantId) {
     const del_rqst = new Request("/PHP-filer/userPlantDelete.php", {
