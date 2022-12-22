@@ -86,8 +86,6 @@ function renderUserPlants(id) {
 }
 
 function plantOverlay(user_plant, event, plant_info){
-    console.log(event.target.id);
-    console.log(user_plant);
     let overlay = document.querySelector(".plantProfileOverlay");
     overlay.style.display = "block"
     overlay.style.width = "100%";
@@ -97,7 +95,12 @@ function plantOverlay(user_plant, event, plant_info){
         overlay.style.display = "none";
     })
     let overlayWrapper = document.querySelector("#overlayWrapper");
-    if (user_plant.userPlantId == event.target.id){overlayWrapper.innerHTML = `<div id="nameBox"> <h1>${plant_info.name}</h1> <h2>(${plant_info.latin})</h2> <div id="lastWater">Senast vattnad: ${user_plant.water[user_plant.water.length - 1]}</div></div> <div id="plantInfo"> <h2>Info om växten</h2> <p>${plant_info.info}</p> </div> <div id="otherInfo"> <h3>Ljus: ${plant_info.sun}</h3> <h3>Blommar:${plant_info.flowers}</h3> <h3>Vattnas ggr/v:${plant_info.waterInt}</h3> </div> <div id="waterDB"><h2>Föregående vattningar: ${user_plant.water} </h2> </div>`
+    if(plant_info.flowers == false){
+        plant_info.flowers = "Nej";
+       } else{
+        plant_info.flowers = "Ja";
+       };
+    if (user_plant.userPlantId == event.target.id){overlayWrapper.innerHTML = `<div id="nameBox"> <h1>${plant_info.name}</h1> <h2>(${plant_info.latin})</h2> <div id="lastWater"> <p>Senast vattnad:</p> ${user_plant.water[user_plant.water.length - 1]}</div></div> <div id="plantInfo"> <h2>Info om växten</h2> <p>${plant_info.info}</p> </div> <div id="otherInfo"> <div id="plantSun"><h3>Ljus:</h3> ${plant_info.sun} </div> <div id="plantBlom"><h3>Blommar:</h3>${plant_info.flowers}</div> <div id="plantWater"><h3>Vattnas ggr/v:</h3> ${plant_info.waterInt} </div></div> <div id="waterDB"> <div id="waterText"><h3>Föregående vattningar:</h3>   ${user_plant.water}</div> </div>`
     
     }};
     
