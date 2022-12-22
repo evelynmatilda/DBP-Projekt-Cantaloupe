@@ -1,7 +1,7 @@
 <?php 
 ini_set("display_errors", 1);
 
-require_once "userFunctions.php";
+require_once "functions.php";
 
 $filename = "../JSON-filer/users.json";
 $requestMethod = $_SERVER["REQUEST_METHOD"];
@@ -11,45 +11,42 @@ if ($requestMethod != "PATCH") {
     sendJSON($error, 405);
 }
 
-$plants = [];
+$users = [];
 
 if (file_exists($filename)) {
     $json = file_get_contents($filename);
-    $plants = json_decode($json, true);
+    $users = json_decode($json, true);
 }
 
 $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
-if (!isset($requestData["id"], $requestData["name"], $requestData["latin"], $requestData["flowers"])) {
-    $error = ["error" => "Bad Request!"];
+if (!isset($requestData["id"], $requestData["username"])) {
+    $error = ["error" => "Bad Request! yesy"];
     sendJSON($error, 400);
 }
 
 $id = $requestData["id"];
-$newName = $requestData["name"];
-$newLatin = $requestData["latin"];
-$newFlowers = $requestData["flowers"];
+$newName = $requestData["username"];
+// $newPassword = $requestData["password"];
+// $newEmail = $requestData["email"];
 
-if ($newName == "" or $newLatin == "" or $newFlowers == "") {
+if ($newName == "") {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }
 
-foreach ($plants as $index => $plant) {
-    if ($plant["id"] == $id) {
-        $plant["name"] = $newName;
-        $plant["latin"] = $newLatin;
-        $plant["flowers"] = $newFlowers;
-        $plants[$index] = $plant;
-
-        $json = json_encode($plants, JSON_PRETTY_PRINT);
+foreach ($users as $index => $user) {
+    if ($user["userId"] == $id) {
+        $user["username"] = $newName;
+        $users[$index] = $user;
+        $json = json_encode($users, JSON_PRETTY_PRINT);
         file_put_contents($filename, $json);
-        sendJSON($plant);
+        sendJSON($user);
     }
 }
 
-$error = ["error" => "Plant not found"];
+$error = ["error" => "User not found"];
 sendJSON($error, 404);
 
 ?>
