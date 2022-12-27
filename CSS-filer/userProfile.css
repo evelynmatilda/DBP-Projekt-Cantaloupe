@@ -13,16 +13,40 @@ body > h1{
 }
 
 .confirmLogOut-closed{
-    height: 0px;
-    width: 0px;
+   display: none;
 }
 
 .confirmLogOut-opened{
     height: 200px;
-    width: 500px;
-    background-color: green;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    background-color: #5B8C5A;
+    text-align: center; 
+    border-radius: 5%;
+    border: #E4B4D2 5px solid;
+    font-size: large;
+    font-weight: bolder;
 }
 
+.YoNbuttons{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.YoNbuttons > button{
+    width: 100px;
+    height: 40px;
+    background-color: #D9EAD3;
+    color: #5B8C5A;
+    border: #E4B4D2 solid 3px;
+    font-size: large;
+   border-radius: 10%;
+}
 
 #pass-word {
     display: flex;
