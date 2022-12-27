@@ -25,14 +25,15 @@ font-size: 20px;
 #logedIn-wrapper {
     display: flex;
     align-items: center;
-    padding-top: 10vh;
+    padding-top: 5vh;
     flex-direction: column;
     gap: 10vh;
 }
 
 #logedIn-wrapper > a {
     width: 30vw;
-    height: 5vh;
+    text-align: center;
+    font-size: 14px;
     background-color: black;
     border: 1px solid white;
     color: white;
@@ -44,3 +45,4 @@ font-size: 20px;
     align-items: center;
     text-align: center;
 }
+

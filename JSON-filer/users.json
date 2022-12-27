@@ -6,7 +6,8 @@
         "email": "evelyn.palsson@gmail.com",
         "owns": [
             1,
-            2
+            2,
+            3
         ]
     },
     {
@@ -14,13 +15,19 @@
         "username": "hej",
         "password": "hej",
         "email": "ermansson",
-        "owns": []
+        "owns": [
+            4,
+            6
+        ]
     },
     {
         "userId": 3,
-        "username": "Hann",
+        "username": "Hanna",
         "password": "123456",
         "email": "bina.99@live.se",
-        "owns": []
+        "owns": [
+            4,
+            5
+        ]
     }
 ]

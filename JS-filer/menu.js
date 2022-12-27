@@ -85,6 +85,8 @@ function profileEvent(){
     }  
     
     if (nav.className == "nav-container-closed"){
+        document.querySelector("#login-username").value = "";
+        document.querySelector("#login-password").value = "";
         inputLogin.id = "input-login-hidden";
         inputReg.id = "reg-login-hidden";
         document.getElementById("error-message").innerHTML="";

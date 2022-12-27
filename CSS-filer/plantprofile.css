@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+#plant{
+width: 10px;
+height: 10px;
+background-color: brown;
+}
+
+.plantProfileOverlay{
+    background-color: #D9EAD3;
+    position: fixed;
+    z-index: 1;
+    margin: 0;
+    display: none;
+    overflow-y: scroll;
+}
+
+
+#lastWater{
+    border: #5B8C5A solid 3px;
+    height: 70px;
+    width: 130px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#lastWater > p{
+    font-weight: bold;
+    padding: 0;
+}
+
+#plantInfo{
+    text-align: center;
+    border-radius: 10px;
+}
+
+#otherInfo{
+    border: #5B8C5A solid 3px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100px;
+    width: 500px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#waterDB{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+  margin-top: 5px;
+  
+}
+
+#waterText{
+    text-align: center; 
+    border: #5B8C5A solid 3px;
+   border-radius: 10px;
+   width: 200px;
+   height: auto;
+   padding: 5px;
+   display: flex;
+   flex-direction: column;
+}
+
+#nameBox{
+   padding-left: 10px;
+}
+

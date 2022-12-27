@@ -1,6 +1,4 @@
 <?php 
-ini_set("display_errors", 1);
-
 require_once "functions.php";
 
 $filename = "../JSON-filer/userPlants.json";
@@ -11,11 +9,11 @@ if ($requestMethod != "POST") {
    sendJSON($error, 405);
 }
 
-$plantWaters = [];
+$plants = [];
 
 if (file_exists($filename)) {
    $json = file_get_contents($filename);
-   $plantWaters = json_decode($json, true);
+   $plants = json_decode($json, true);
 }
 
 $requestJSON = file_get_contents('php://input');
@@ -32,16 +30,16 @@ if ($newWater == "") {
    sendJSON($error, 400);
 }
 
-foreach ($plantWaters as $index => $plantWater) {
-   if ($plantWater["userPlantId"] == $id) {
-      $waters = $plantWater["water"];
+foreach ($plants as $index => $plant) {
+   if ($plant["userPlantId"] == $id) {
+      $waters = $plant["water"];
       $waters[] = $newWater;
-      $plantWater["water"] = $waters;
-      $plantWaters[$index] = $plantWater;
+      $plant["water"] = $waters;
+      $plants[$index] = $plant;
 
-      $json = json_encode($plantWaters, JSON_PRETTY_PRINT);
+      $json = json_encode($plants, JSON_PRETTY_PRINT);
       file_put_contents($filename, $json);
-      sendJSON($plantWater);
+      sendJSON($plant);
       }
 }
 
