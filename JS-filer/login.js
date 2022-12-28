@@ -54,28 +54,6 @@ function logIn(event) {
         errorMessage.innerHTML = "";
       }
     });
-
-  // fetch("/PHP-filer/userRead.php")
-  //     .then(r => r.json())
-  //     .then(resource => {
-  //         resource.forEach(user => {
-  //             if (recUsername == user.username && recPassword == user.password) {
-
-  //                 window.localStorage.setItem("userId", user.userId)
-  //                 window.localStorage.setItem("userId", user.userId);
-  //                 window.location.href = "/HTML-filer/homePage.html";
-  //                 errorMessage.innerHTML = "";
-  //             }
-  //             else {
-  //                 errorMessage.innerHTML = "Fel användarnamn eller lösenord...";
-  //                 errorMessage.style.color = "red";
-  //                 errorMessage.style.display = "flex";
-  //                 input.classList.add("shake");
-  //             }
-  //             document.querySelector("#login-username").value = "";
-  //             document.querySelector("#login-password").value = "";
-  //         })
-  //     })
 }
 
 let regButton = document.querySelector(".reg-button");
