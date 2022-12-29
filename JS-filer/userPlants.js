@@ -116,7 +116,27 @@ function eventDelBut (userPlantId) {
 // TODO: MÅSTE KUNNA TA BORT FRÅN USER OWNS OCKSÅ
     fetch(del_rqst)
         .then(response => response.json())
-        .then(resource => {
+        .then(plant => {
+            console.log(plant);
+            const userOwns_rqst = new Request("/PHP-filer/ownsDelete.php", {
+                method: "DELETE",
+                headers: { "Content-type": "application/json; charset=UTF-8" },
+                body: JSON.stringify({
+                    "userId": parseInt(savedUserId),
+                    "userPlantId": plant
+                })
+            });
+
+            fetch(userOwns_rqst)
+                .then(response => response.json())
+                .then(resource => {
+                    console.log(resource);
+                })
+
+            if (plant.error) {
+                alert("An error occured, try again!");
+            }
+
             renderUserPlants(savedUserId)
         });
 }
