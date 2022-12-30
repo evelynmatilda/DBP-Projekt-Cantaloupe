@@ -16,6 +16,7 @@ function getProfileInfo () {
                 }
                 document.getElementById("user-name").innerHTML = `Användarnamn: ${user.username}`;
                 document.getElementById("e-mail").innerHTML = `Email: ${user.email}`;
+
             })
 
 }
@@ -42,18 +43,29 @@ function openForm (){
    editPassButton.addEventListener("click", eventEditPassword);
 
    function eventEditPassword () {
-    let nameDiv = document.getElementById("pass-word");
-    nameDiv.innerHTML = `<input id="edit-pass" type="text" placeholder="Nytt lösenord"></input>
+    let passDiv = document.getElementById("pass-word");
+    passDiv.innerHTML = `<input id="edit-pass" type="text" placeholder="Nytt lösenord"></input>
     <button class="save">Spara</button></div>`;
+
+    passDiv.querySelector(".save").addEventListener("click", function(){
+        const newPassword = document.querySelector('input[id="edit-pass"]').value;
+        patchPassword(newPassword)
+    });
    }
+
    let editEmailButton = document.getElementById("email-edit-button");
    editEmailButton.style.cursor = "pointer";
    editEmailButton.addEventListener("click", eventEditEmail);
 
    function eventEditEmail () {
-    let nameDiv = document.getElementById("e-mail");
-    nameDiv.innerHTML = `<input id="edit-email" type="text" placeholder="Ny email"></input>
+    let emailDiv = document.getElementById("e-mail");
+    emailDiv.innerHTML = `<input id="edit-email" type="text" placeholder="Ny email"></input>
     <button class="save">Spara</button></div>`;
+
+    emailDiv.querySelector(".save").addEventListener("click", function(){
+        const newEmail = document.querySelector('input[id="edit-email"]').value;
+        patchEmail(newEmail)
+    });
    }
 
 
@@ -63,7 +75,7 @@ function openForm (){
 function patchUsername (newUsername) {
     let id = window.localStorage.getItem("userId");
 
-    const patch_rqst = new Request("/PHP-filer/userUpdate.php", {
+    const patch_rqst = new Request("/PHP-filer/usernameUpdate.php", {
 
         method: 'PATCH',
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -75,9 +87,53 @@ function patchUsername (newUsername) {
 
     fetch(patch_rqst)
         .then(r => r.json())
-        .then(console.log)
+        .then(recource =>{
+            window.location.href = "/HTML-filer/userProfile.html";
+        })
     
 
+}
+
+function patchPassword (newPassword) {
+    let id = window.localStorage.getItem("userId");
+
+    const patch_rqst = new Request("/PHP-filer/passwordUpdate.php", {
+
+        method: 'PATCH',
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+            id: parseInt(id),
+            password: newPassword
+        }),
+    });
+
+    fetch(patch_rqst)
+        .then(r => r.json())
+        .then(recource =>{
+            window.location.href = "/HTML-filer/userProfile.html";
+        })
+    
+}
+
+function patchEmail (newEmail) {
+    let id = window.localStorage.getItem("userId");
+
+    const patch_rqst = new Request("/PHP-filer/emailUpdate.php", {
+
+        method: 'PATCH',
+        headers: { "Content-type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+            id: parseInt(id),
+            email: newEmail
+        }),
+    });
+
+    fetch(patch_rqst)
+        .then(r => r.json())
+        .then(recource =>{
+            window.location.href = "/HTML-filer/userProfile.html";
+        })
+    
 }
 
 
