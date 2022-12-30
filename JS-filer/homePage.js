@@ -35,7 +35,7 @@ function regUser(email, userName, password){
     fetch(request)
         .then(r => r.json())
         .then(resource => {
-            if (resource.email == email && resource.username == username && resource.password == password) {
+            if (resource.email == email && resource.username == userName && resource.password == password) {
                 window.localStorage.setItem("userId", resource.userId);
                 window.location.href = "/HTML-filer/homePage.html";
             }
