@@ -49,21 +49,25 @@ function renderUserPlants(id) {
 
                                             const del_but = div.querySelector(".delete_but");
                                             del_but.style.cursor = "pointer";
-                                            del_but.addEventListener("click", function () {
+                                            del_but.addEventListener("click", function (event) {
+                                                event.stopPropagation()
                                                 eventDelBut(user_plant.userPlantId);
                                             })
 
                                             const bug_but = div.querySelector(".bug_but");
                                             bug_but.style.cursor = "pointer";
-                                            bug_but.addEventListener("click", function () {
+                                            bug_but.addEventListener("click", function (event) {
+                                                event.stopPropagation()
                                                 eventBugBut(user_plant.userPlantId, !user_plant.bugs);
                                             })
 
                                             const wat_but = div.querySelector(".water_but");
                                             wat_but.style.cursor = "pointer";
-                                            wat_but.addEventListener("click", function () {
+                                            wat_but.addEventListener("click", function (event) {
+                                                event.stopPropagation()
                                                 eventWatBut(user_plant.userPlantId);
                                             })
+
                                             div.addEventListener("click", function(){
                                                 plantOverlay(user_plant, event, plant_info)
                                             })
