@@ -22,7 +22,7 @@ function renderUserPlants(id) {
                                     const user_plant_id = user_plant.plantId;
 
                                     const plant_rqst = new Request(`/PHP-filer/plantRead.php?plantId=${user_plant_id}`);
-
+                                    console.log(user_plant);
                                     fetch(plant_rqst)
                                         .then(r => r.json())
                                         .then(plant_info => {
@@ -31,7 +31,8 @@ function renderUserPlants(id) {
                                             div.id = user_plant.userPlantId;
                                             div.innerHTML = `
                                             <h3>${plant_info.name}</h3>
-                                            <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}</p>
+                                            <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}
+                                            </p>
                                             <span class="material-symbols-outlined warning_bugs">emergency_home</span>
                                             <div id="plantButtons">
                                             <span class="material-symbols-outlined water_but">water_drop</span>
@@ -39,7 +40,7 @@ function renderUserPlants(id) {
                                             <span class="material-symbols-outlined delete_but">delete</span>
                                             </div>
                                             `;
-
+                                            
                                             document.getElementById("plantWrapper").appendChild(div);
 
                                             if (user_plant.bugs == true) {

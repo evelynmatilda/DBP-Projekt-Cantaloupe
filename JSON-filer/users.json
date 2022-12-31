@@ -16,8 +16,8 @@
         "password": "hej",
         "email": "ermansson",
         "owns": [
-            4,
-            6
+            6,
+            7
         ]
     },
     {
@@ -26,7 +26,6 @@
         "password": "123456",
         "email": "bina.99@live.se",
         "owns": [
-            4,
             5
         ]
     }
