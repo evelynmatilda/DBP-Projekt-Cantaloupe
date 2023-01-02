@@ -218,3 +218,26 @@ body {
     position: absolute;
     bottom: 55px;
 }
+
+.notLoggedIn{
+    height: 93vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 4;
+    background-color: #E4B4D2;
+    top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notLoggedInText{
+height: 70vh;
+width: 80vw;
+background-color: #D9EAD3;
+text-align: center;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
+}

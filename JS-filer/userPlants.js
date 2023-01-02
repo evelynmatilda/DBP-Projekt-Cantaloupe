@@ -8,7 +8,8 @@ function renderUserPlants(id) {
     document.getElementById("plantWrapper").innerHTML = "";
     const users_rqst = new Request("/PHP-filer/userRead.php")
 
-    if (id != "") {
+    if (id != null) {
+        console.log(id)
         fetch(users_rqst)
             .then(r => r.json())
             .then(resource => {
@@ -84,8 +85,16 @@ function renderUserPlants(id) {
             })
 
 
-    } else {
-        document.getElementById("plantWrapper").innerHTML = "<h1>AP AP AP du måste logga in först!</h1>";
+    } 
+    
+    if (id == null){
+        let notLoggedIn = document.createElement("div");
+        notLoggedIn.classList.add("notLoggedIn");
+        let notLoggedInText = document.createElement("div");
+        notLoggedInText.classList.add("notLoggedInText");
+        notLoggedInText.innerHTML = "<h1>AP AP AP! Du måste logga in först!</h1>";
+        document.querySelector("body").append(notLoggedIn);
+        notLoggedIn.append(notLoggedInText)
     }
 
 }
