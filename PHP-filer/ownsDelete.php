@@ -29,15 +29,17 @@ if (!isset($requestData["userId"])) {
 $id = $requestData["userId"];
 $plantId = $requestData["userPlantId"];
 
-foreach ($users as $user) {
+foreach ($users as $userIndex => $user) {
     if ($user["userId"] == $id) {
         $owns = $user["owns"];
         foreach ($owns as $index => $own) {
-            if ($index == $plantId) {
+            if ($own == $plantId) {
                 array_splice($owns, $index, 1);
+                $user["owns"] = $owns;
+                $users[$userIndex] = $user; 
                 $json = json_encode($users, JSON_PRETTY_PRINT);
                 file_put_contents($filename, $json);
-                sendJSON($id);
+                sendJSON($own);
             }
         }
     }

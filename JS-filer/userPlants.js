@@ -307,7 +307,7 @@ add_own_plant_but.addEventListener("click", function (event) {
     if (document.querySelector("#addPlantForm").style.display != "none") {
         document.querySelector("#addPlantForm").style.display = "none";
     } else {
-        document.querySelector("#addPlantForm").style.display = "block";
+        document.querySelector("#addPlantForm").style.display = "flex";
     }
 })
 

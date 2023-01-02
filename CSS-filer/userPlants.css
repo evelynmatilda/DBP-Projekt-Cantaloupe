@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 #buttonsTop {
@@ -90,15 +91,16 @@ body {
 #addPlantForm {
     background-color: gainsboro;
     margin: 5px;
-    height: 206px; 
+    /* height: 206px;  */
     width: 380px;
+    flex-basis: 206px;
 
     position: relative;
 }
 
 #leftSideForm {
     left: 5px;
-    position: absolute;
+
 
     width: 190px;
 }
@@ -106,7 +108,7 @@ body {
 #rightSideForm {
     right: 10px;
     top: 20px;
-    position: absolute;
+
     
     width: 150px;
 }
@@ -128,7 +130,6 @@ body {
 }
 
 #addButton {
-    position: absolute;
     right: 10px;
     bottom: -50px;
     

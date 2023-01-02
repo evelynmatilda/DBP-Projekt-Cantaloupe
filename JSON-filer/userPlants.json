@@ -23,14 +23,15 @@
         "userId": 1,
         "plantId": 5,
         "water": [
-            "2022-12-20"
+            "2022-12-20",
+            "2023-01-02"
         ],
         "bugs": false
     },
     {
-        "userPlantId": 5,
+        "userPlantId": 4,
         "userId": 3,
-        "plantId": 8,
+        "plantId": 5,
         "water": [],
         "bugs": false
     },
