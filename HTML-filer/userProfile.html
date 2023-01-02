@@ -45,8 +45,15 @@
             <button id="yesLogOut">Ja</button>
             <button id="noLogOut">Nej</button>
         </div>
-        </div>
-            <button>Radera konto</button>
+        </div id="delete-buttons">
+            <button id="del-account-button">Radera konto</button>
+            <div class="confirmDelete-closed">
+                <p>Är du säker på att du vill radera ditt konto?</p>
+                <div class="yes-no-buttons">
+                    <button id="yes-delete">Ja</button>
+                    <button id="no-delete">Nej</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -104,6 +111,7 @@
     <script src="/JS-filer/logOut.js"></script>
     <script src="/JS-filer/menu.js"></script>
     <script src="/JS-filer/userProfile.js"></script>
+    <script src="/JS-filer/deleteAccount.js"></script>
 </body>
 
 </html>
