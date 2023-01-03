@@ -20,6 +20,7 @@ background-color: brown;
     margin: 0;
     display: none;
     overflow-y: scroll;
+    top: 60px;
 }
 
 

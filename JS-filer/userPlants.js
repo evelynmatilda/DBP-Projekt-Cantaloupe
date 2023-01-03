@@ -92,7 +92,7 @@ function renderUserPlants(id) {
         notLoggedIn.classList.add("notLoggedIn");
         let notLoggedInText = document.createElement("div");
         notLoggedInText.classList.add("notLoggedInText");
-        notLoggedInText.innerHTML = "<h1>AP AP AP! Du måste logga in först!</h1>";
+        notLoggedInText.innerHTML = "<h1>AP AP AP! Du måste logga in först! Tryck på profil-ikonen i högra hörnet för att logga in</h1>";
         document.querySelector("body").append(notLoggedIn);
         notLoggedIn.append(notLoggedInText)
     }
