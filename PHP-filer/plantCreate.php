@@ -22,7 +22,7 @@ $requestJSON = file_get_contents("php://input");
 $requestData = json_decode($requestJSON, true);
 
 if (!isset($requestData["name"], $requestData["latin"], $requestData["info"], $requestData["waterInt"], $requestData["flowers"], $requestData["sun"])) {
-    $error = ["error" => "Bad Request!"];
+    $error = ["error" => "Bad Request! Missing data"];
     sendJSON($error, 400);
 }
 
@@ -34,7 +34,7 @@ $flowers = $requestData["flowers"];
 $sun = $requestData["sun"];
 
 if ($name == "" or $latin == "" or $info == "" or $waterInt = 0 or $flowers = "" or $sun = "") {
-    $error = ["error" => "Bad Request!"];
+    $error = ["error" => "Bad Request! You need to fill in all fields"];
     sendJSON($error, 400);
 }
 

@@ -23,7 +23,6 @@ function renderUserPlants(id) {
                                     const user_plant_id = user_plant.plantId;
 
                                     const plant_rqst = new Request(`/PHP-filer/plantRead.php?plantId=${user_plant_id}`);
-                                    console.log(user_plant);
                                     fetch(plant_rqst)
                                         .then(r => r.json())
                                         .then(plant_info => {
@@ -231,6 +230,7 @@ async function waterAllEvent (resource, counter) {
 
 
 function renderDatabasePlants (savedUserId) {
+    document.querySelector("#addPlantList").innerHTML = "";
     const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
 
     fetch(DBplants_rqst)
@@ -322,23 +322,39 @@ add_own_plant_but.addEventListener("click", function (event) {
 
 const submit_own_but = document.getElementById("addButton");
 submit_own_but.style.cursor = "pointer";
-submit_own_but.addEventListener("submit", function (event) {
+submit_own_but.addEventListener("click", function (event) {
     event.preventDefault();
+    eventSubmitOwnBut();
+});
 
+function eventSubmitOwnBut () {
     const name = document.getElementById("nameInput").value;
     const latin = document.getElementById("latinInput").value;
     const info = document.getElementById("infoInput").value;
-    const water = document.getElementById("waterInput").value;
+    const water = parseInt(document.getElementById("waterInput").value);
     const flowers = document.getElementById("flowerInput").value;
     const sun = document.getElementById("sunInput").value;
 
-
     addOwnPlant(name, latin, info, water, flowers, sun);
 
-    const add_plant_rqst = new Request("/PHP-filer/plantCreate.php", {
+    document.getElementById("nameInput").value = "";
+    document.getElementById("latinInput").value = "";
+    document.getElementById("infoInput").value = "";
+}
+
+function addOwnPlant(name, latin, info, water, flowers, sun) {
+        console.log(name);
+        const add_plant_rqst = new Request("/PHP-filer/plantCreate.php", {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
-        body: json
+        body: JSON.stringify({
+            "name": name,
+            "latin": latin,
+            "info": info,
+            "waterInt": water,
+            "flowers": flowers,
+            "sun": sun
+        })
     });
 
     fetch(add_plant_rqst)
@@ -349,19 +365,10 @@ submit_own_but.addEventListener("submit", function (event) {
             if (resource.error) {
                 alert("An error occured, try again!");
             } else {
-                document.getElementById("nameInput").value = "";
-                document.getElementById("latinInput").value = "";
-
-                renderUserPlants(savedUserId);
+                renderDatabasePlants(savedUserId);
             }
 
 
         });
 
-
-});
-
-function addOwnPlant() {
-
-    
 }
