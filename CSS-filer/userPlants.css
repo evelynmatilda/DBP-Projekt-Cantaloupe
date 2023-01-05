@@ -91,25 +91,18 @@ body {
 #addPlantForm {
     background-color: gainsboro;
     margin: 5px;
-    /* height: 206px;  */
+    height: 206px; 
     width: 380px;
-    flex-basis: 206px;
-
-    position: relative;
 }
 
 #leftSideForm {
-    left: 5px;
-
-
+    margin-left: 5px;
     width: 190px;
 }
 
 #rightSideForm {
-    right: 10px;
-    top: 20px;
-
-    
+    margin-top: 28px;
+    margin-left: 15px; 
     width: 150px;
 }
 
