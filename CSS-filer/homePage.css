@@ -9,7 +9,7 @@ body{
 
 #welcomeText{
 max-width: 300px;
-font-size: 20px;
+font-size: 30px;
 }
 
 #registration{
@@ -25,18 +25,20 @@ font-size: 20px;
 #logedIn-wrapper {
     display: flex;
     align-items: center;
-    padding-top: 5vh;
     flex-direction: column;
-    gap: 10vh;
+    gap: 7vh;
 }
 
 #logedIn-wrapper > a {
-    width: 30vw;
+    width: 130px;
+    height: 125px;
     text-align: center;
     font-size: 14px;
-    background-color: black;
+    background-color: #5B8C5A;
     border: 1px solid white;
     color: white;
+    padding: 10px;
+    border-radius: 50%;
 }
 
 #welcome {
@@ -44,5 +46,7 @@ font-size: 20px;
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-weight: bold;
+    font-size: larger;
 }
 
