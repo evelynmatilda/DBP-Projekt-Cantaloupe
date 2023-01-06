@@ -39,7 +39,7 @@ function renderUserPlants(id) {
                                             div.innerHTML = `
                                             <h3>${plant_info.name}</h3>
                                             <p>Vattnad senast: <br>${user_plant.water[user_plant.water.length - 1]}
-                                            </p>
+                                            </p> 
                                             <span class="material-symbols-outlined warning_bugs">emergency_home</span>
                                             <div id="plantButtons">
                                             <span class="material-symbols-outlined water_but">water_drop</span>
@@ -75,7 +75,16 @@ function renderUserPlants(id) {
                                                 eventWatBut(user_plant.userPlantId);
                                             })
 
-                                            div.addEventListener("click", function(){
+                                            const infoBut = document.createElement("div");
+                                            infoBut.classList.add("infoBut")
+                                            const infoSpan = document.createElement("span");
+                                            infoSpan.classList.add("material-symbols-outlined")
+                                            infoSpan.textContent = "info"
+                                            infoSpan.id = user_plant.userPlantId;
+                                            infoBut.append(infoSpan);
+                                            div.append(infoBut);
+                                            infoSpan.addEventListener("click", function(event){
+                                                event.stopPropagation()
                                                 plantOverlay(user_plant, event, plant_info);
                                             })
                                             
@@ -98,11 +107,13 @@ function plantOverlay(user_plant, event, plant_info){
     overlay.style.display = "block"
     overlay.style.width = "100%";
     overlay.style.height = "100%";
+    let overlayWrapper = document.querySelector("#overlayWrapper");
     let exit = document.querySelector("#exit");
     exit.addEventListener("click", function(){
         overlay.style.display = "none";
+        overlayWrapper.innerHTML = "";
     })
-    let overlayWrapper = document.querySelector("#overlayWrapper");
+    
     if(plant_info.flowers == false){
         plant_info.flowers = "Nej";
        } else{
