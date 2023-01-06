@@ -6,7 +6,7 @@ renderUserPlants(savedUserId);
 
 function renderUserPlants(id) {
     document.getElementById("plantWrapper").innerHTML = "";
-    const users_rqst = new Request("/PHP-filer/userRead.php")
+    const users_rqst = new Request("../PHP-filer/userRead.php")
 
     if (id == null) {
         let notLoggedIn = document.createElement("div");
@@ -23,13 +23,13 @@ function renderUserPlants(id) {
                 resource.forEach(user => {
                     if (user.userId == id) {
                         user.owns.forEach(plant => {
-                            const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php?userPlantId=${plant}`);
+                            const user_plant_rqst = new Request(`../PHP-filer/userPlantRead.php?userPlantId=${plant}`);
                             fetch(user_plant_rqst)
                                 .then(r => r.json())
                                 .then(user_plant => {
                                     const user_plant_id = user_plant.plantId;
 
-                                    const plant_rqst = new Request(`/PHP-filer/plantRead.php?plantId=${user_plant_id}`);
+                                    const plant_rqst = new Request(`../PHP-filer/plantRead.php?plantId=${user_plant_id}`);
                                     fetch(plant_rqst)
                                         .then(r => r.json())
                                         .then(plant_info => {
@@ -114,19 +114,18 @@ function plantOverlay(user_plant, event, plant_info){
     
 
 function eventDelBut (userPlantId) {
-    const del_rqst = new Request("/PHP-filer/userPlantDelete.php", {
+    const del_rqst = new Request("../PHP-filer/userPlantDelete.php", {
         method: "DELETE",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
             "userPlantId": userPlantId
         })
     });
-// TODO: MÅSTE KUNNA TA BORT FRÅN USER OWNS OCKSÅ
     fetch(del_rqst)
         .then(response => response.json())
         .then(plant => {
             console.log(plant);
-            const userOwns_rqst = new Request("/PHP-filer/ownsDelete.php", {
+            const userOwns_rqst = new Request("../PHP-filer/ownsDelete.php", {
                 method: "DELETE",
                 headers: { "Content-type": "application/json; charset=UTF-8" },
                 body: JSON.stringify({
@@ -150,7 +149,7 @@ function eventDelBut (userPlantId) {
 }
 
 function eventBugBut (userPlantId, TorF) {
-    const bug_rqst = new Request("/PHP-filer/bugUpdate.php", {
+    const bug_rqst = new Request("../PHP-filer/bugUpdate.php", {
         method: "PATCH",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
@@ -167,7 +166,7 @@ function eventBugBut (userPlantId, TorF) {
 }
 
 function eventWatBut (userPlantId) {
-    const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
+    const wat_rqst = new Request("../PHP-filer/waterUpdate.php", {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
@@ -191,7 +190,7 @@ waterAllBut.addEventListener("click", async function (event) {
 
 async function waterAll () {
     
-    const user_plant_rqst = new Request(`/PHP-filer/userPlantRead.php`);
+    const user_plant_rqst = new Request(`../PHP-filer/userPlantRead.php`);
 
     let resource = await (fetch(user_plant_rqst).then(r => r.json()));
     console.log(resource);
@@ -202,7 +201,7 @@ async function waterAllEvent (resource, counter) {
     let plant = resource[counter];
 
     if (savedUserId == plant.userId) {
-        const wat_rqst = new Request("/PHP-filer/waterUpdate.php", {
+        const wat_rqst = new Request("../PHP-filer/waterUpdate.php", {
             method: "POST",
             headers: { "Content-type": "application/json; charset=UTF-8" },
             body: JSON.stringify({
@@ -224,7 +223,7 @@ async function waterAllEvent (resource, counter) {
 
 function renderDatabasePlants (savedUserId) {
     document.querySelector("#addPlantList").innerHTML = "";
-    const DBplants_rqst = new Request("/PHP-filer/plantRead.php");
+    const DBplants_rqst = new Request("../PHP-filer/plantRead.php");
 
     fetch(DBplants_rqst)
         .then(r => r.json())
@@ -266,7 +265,7 @@ add_plant_but.addEventListener("click", function (event) {
 
 function addPLantFromDB (recPlantId, savedUserId) {
 
-    const DBplants_rqst = new Request("/PHP-filer/userPlantsCreate.php", {
+    const DBplants_rqst = new Request("../PHP-filer/userPlantsCreate.php", {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
@@ -278,7 +277,7 @@ function addPLantFromDB (recPlantId, savedUserId) {
     fetch(DBplants_rqst)
         .then(r => r.json())
         .then(plant => {
-            const userOwns_rqst = new Request("/PHP-filer/ownsUpdate.php", {
+            const userOwns_rqst = new Request("../PHP-filer/ownsUpdate.php", {
                 method: "POST",
                 headers: { "Content-type": "application/json; charset=UTF-8" },
                 body: JSON.stringify({
@@ -327,7 +326,6 @@ function eventSubmitOwnBut () {
     const flowers = {};
     const water = parseInt(document.getElementById("waterInput").value); 
     const sun = document.getElementById("sunInput").value;
-    console.log(sun);
 
     if (document.getElementById("flowerInput").value == "false") {
         flowers.value = false;
@@ -344,7 +342,7 @@ function eventSubmitOwnBut () {
 
 function addOwnPlant(name, latin, info, water, flowers, sun) {
         console.log(name);
-        const add_plant_rqst = new Request("/PHP-filer/plantCreate.php", {
+        const add_plant_rqst = new Request("../PHP-filer/plantCreate.php", {
         method: "POST",
         headers: { "Content-type": "application/json; charset=UTF-8" },
         body: JSON.stringify({
@@ -360,11 +358,11 @@ function addOwnPlant(name, latin, info, water, flowers, sun) {
     fetch(add_plant_rqst)
         .then(response => response.json())
         .then(resource => {
-            console.log(resource)
 
             if (resource.error) {
                 alert("An error occured, try again!");
             } else {
+                addPLantFromDB(resource.plantId, savedUserId);
                 renderDatabasePlants(savedUserId);
             }
 
@@ -372,3 +370,12 @@ function addOwnPlant(name, latin, info, water, flowers, sun) {
         });
 
 }
+
+const close_form_but = document.querySelector(".close");
+close_form_but.style.cursor = "pointer";
+close_form_but.addEventListener("click", function (event) {
+    event.preventDefault();
+    if (document.querySelector("#addPlantForm").style.display != "none") {
+        document.querySelector("#addPlantForm").style.display = "none";
+    }
+})
