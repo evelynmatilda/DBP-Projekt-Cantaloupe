@@ -222,12 +222,14 @@ async function waterAllEvent (resource, counter) {
 
         await fetch(wat_rqst);
         
-        counter++
-        if (counter < resource.length) {
-            waterAllEvent(resource, counter)
-        } else {
-            renderUserPlants(savedUserId)
-        }
+        
+    }
+    
+    counter++
+    if (counter < resource.length) {
+        waterAllEvent(resource, counter)
+    } else {
+        renderUserPlants(savedUserId)
     }
 }
 
@@ -301,13 +303,13 @@ function addPLantFromDB (recPlantId, savedUserId) {
                 .then(response => response.json())
                 .then(resource => {
                     console.log(resource);
+                    renderUserPlants(savedUserId);
                 })
 
             if (plant.error) {
                 alert("An error occured, try again!");
-            }
+            }  
             
-            renderUserPlants(savedUserId);
         })
 }
 
