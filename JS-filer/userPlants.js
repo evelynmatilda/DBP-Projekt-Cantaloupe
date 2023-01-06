@@ -8,8 +8,15 @@ function renderUserPlants(id) {
     document.getElementById("plantWrapper").innerHTML = "";
     const users_rqst = new Request("/PHP-filer/userRead.php")
 
-    if (id != null) {
-        console.log(id)
+    if (id == null) {
+        let notLoggedIn = document.createElement("div");
+        notLoggedIn.classList.add("notLoggedIn");
+        let notLoggedInText = document.createElement("div");
+        notLoggedInText.classList.add("notLoggedInText");
+        notLoggedInText.innerHTML = "<h1>AP AP AP! Du måste logga in först! Tryck på profil-ikonen i högra hörnet för att logga in</h1>";
+        document.querySelector("body").append(notLoggedIn);
+        notLoggedIn.append(notLoggedInText)
+    } else {
         fetch(users_rqst)
             .then(r => r.json())
             .then(resource => {
@@ -69,7 +76,7 @@ function renderUserPlants(id) {
                                             })
 
                                             div.addEventListener("click", function(){
-                                                plantOverlay(user_plant, event, plant_info)
+                                                plantOverlay(user_plant, event, plant_info);
                                             })
                                             
                                         });
@@ -82,18 +89,6 @@ function renderUserPlants(id) {
 
 
             })
-
-
-    } 
-    
-    if (id == null){
-        let notLoggedIn = document.createElement("div");
-        notLoggedIn.classList.add("notLoggedIn");
-        let notLoggedInText = document.createElement("div");
-        notLoggedInText.classList.add("notLoggedInText");
-        notLoggedInText.innerHTML = "<h1>AP AP AP! Du måste logga in först! Tryck på profil-ikonen i högra hörnet för att logga in</h1>";
-        document.querySelector("body").append(notLoggedIn);
-        notLoggedIn.append(notLoggedInText)
     }
 
 }
@@ -204,8 +199,6 @@ async function waterAll () {
 }
 
 async function waterAllEvent (resource, counter) {
-    console.log(resource);
-    console.log(counter);
     let plant = resource[counter];
 
     if (savedUserId == plant.userId) {
@@ -331,9 +324,16 @@ function eventSubmitOwnBut () {
     const name = document.getElementById("nameInput").value;
     const latin = document.getElementById("latinInput").value;
     const info = document.getElementById("infoInput").value;
-    const water = parseInt(document.getElementById("waterInput").value);
-    const flowers = document.getElementById("flowerInput").value;
+    const flowers = {};
+    const water = parseInt(document.getElementById("waterInput").value); 
     const sun = document.getElementById("sunInput").value;
+    console.log(sun);
+
+    if (document.getElementById("flowerInput").value == "false") {
+        flowers.value = false;
+    } else {
+        flowers.value = true;
+    }
 
     addOwnPlant(name, latin, info, water, flowers, sun);
 
@@ -352,7 +352,7 @@ function addOwnPlant(name, latin, info, water, flowers, sun) {
             "latin": latin,
             "info": info,
             "waterInt": water,
-            "flowers": flowers,
+            "flowers": flowers.value,
             "sun": sun
         })
     });
