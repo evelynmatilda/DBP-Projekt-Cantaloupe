@@ -185,6 +185,7 @@ body {
 
 #plantWrapper {
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: fit-content;
@@ -192,7 +193,7 @@ body {
     margin-top: 5px;
     margin-left: 10px;
     margin-right: 10px;
-
+    margin: auto;
 }
 
 .userPlantDiv {

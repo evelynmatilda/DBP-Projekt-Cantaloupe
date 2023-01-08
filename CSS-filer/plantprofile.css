@@ -23,6 +23,12 @@ background-color: brown;
     top: 60px;
 }
 
+#overlayWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 #lastWater{
     border: #5B8C5A solid 3px;
@@ -46,8 +52,9 @@ background-color: brown;
     border: #5B8C5A solid 3px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 0 20px 0 20px;
     height: 100px;
-    width: 500px;
+    width: 80vw;
     text-align: center;
     border-radius: 10px;
 }
@@ -70,6 +77,7 @@ background-color: brown;
    padding: 5px;
    display: flex;
    flex-direction: column;
+   word-wrap: break-word;
 }
 
 #nameBox{
