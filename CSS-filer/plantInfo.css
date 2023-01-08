@@ -3,40 +3,56 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #E4B4D2;
+  background-color: #F2F9F0;
+}
+
+#header {
+  margin-top: 70px;
+  color: #213320;
+  text-decoration: underline;
+  text-shadow: #5b8c5a 1px 1px 1px;
 }
 
 #wrapper {
-  max-width: 500px;
+  max-width: 370px;
 }
 
 .plantDiv-opened>img {
   width: 350px;
   height: 490px;
+  transition: height, 0.5s;
 }
 
 .plantDiv-opened {
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   background-color: #D9EAD3;
+  color: #213320;
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   flex-direction: column;
   padding: 20px;
   border-radius: 50px;
   border: #5B8C5A solid 10px;
+  transition: border 0.5s;
 }
 
 .plantDiv-closed {
-  margin-top: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   background-color: #D9EAD3;
+  color: #213320;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   height: 300px;
   border-radius: 50px;
-  border: #5B8C5A solid 10px;
+  border: #E4B4D2 solid 10px;
+  transition: border 0.2s;
 }
 
 .plantDiv-closed > p {

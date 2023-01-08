@@ -6,15 +6,24 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+    color: #213320;
+}
+
+#header {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: #213320;
+    text-decoration: underline;
+    text-shadow: #5b8c5a 1px 1px 1px;
+    text-align: center;
 }
 
 #buttonsTop {
-    width: 100vw;
+    width: 360;
     display: flex;
     justify-content: center;
     gap: 5px;
-    margin-top: 10px;
+    margin: 5px auto 5px auto;
 }
 
 #buttonsTop > button {
@@ -23,9 +32,14 @@ body {
     align-items: center;
 
     font-size: large;
+    color: #213320;
 
-    width: 184px;
+    width: 180px;
     height: 52px;
+
+    background-color: #f2f9f0;
+    border: #5B8C5A 2px solid;
+    border-radius: 5px;
 }
 
 #buttonsTop > button > span {
@@ -36,16 +50,19 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
 
-    background-color: rgb(184, 184, 184);
+    background-color: #D9EAD3;
+    border: #5B8C5A 2px solid;
+    border-radius: 5px;
 
-    margin: 5px;
-    width: 380px;
-    height: fit-content;
+    margin: 5px auto 5px auto;
+    width: 360px;
+    height: 184px;
+    overflow-y: scroll;
 }
 
 #addPlantList > div {
     height: 46px;
-    width: 190px;
+    width: 180px;
     margin: 0;
     position: relative;
     display: flex;
@@ -53,21 +70,22 @@ body {
 }
 
 #addPlantList > div > h3 {
-    margin: 15px;
+    margin: 5px;
     text-align: left;
+    font-size: large;
 }
 
 #addPlantList > div > h3 > span {
     top: 2px;
-    right: 10px;
+    right: 0px;
     position: absolute;
 }
 
 #addPlantList div:nth-child(4n+3) {
-    background-color: gainsboro;
+    background-color: #f2f9f0;
 }
 #addPlantList div:nth-child(4n+2) {
-    background-color: gainsboro;
+    background-color: #f2f9f0;
 }
 
 #addNewPlant {
@@ -81,6 +99,10 @@ body {
     align-items: center;
     
     font-size: medium;
+    color: #213320;
+    background-color: #f2f9f0;
+    border: #5B8C5A 2px solid;
+    border-radius: 5px;
 }
 
 #addNewPlant > span {
@@ -89,7 +111,7 @@ body {
 }
 
 #addPlantForm {
-    background-color: gainsboro;
+    background-color: #f2f9f0;
     margin: 5px;
     height: 206px; 
     width: 380px;
@@ -106,20 +128,44 @@ body {
     width: 150px;
 }
 
+#nameInput {
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 3px;
+}
+
+#latinInput {
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 3px;
+}
+
 #infoInput {
     height: 50px;
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 3px;
 }
 
 #flowerInput {
     width: 46px;
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 3px;
 }
 
 #waterInput {
     width: 35px;
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 3px;
 }
 
 #sunInput {
     width: 100px;
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 3px;
 }
 
 #addButton {
@@ -131,6 +177,10 @@ body {
     align-items: center;
 
     font-size: medium;
+    color: #213320;
+    background-color: #fbfffa;
+    border: #5B8C5A 2px solid;
+    border-radius: 5px;
 }
 
 #plantWrapper {
@@ -157,6 +207,8 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+
+    background-color: #f2f9f0;
 }
 
 .userPlantDiv > h3 {

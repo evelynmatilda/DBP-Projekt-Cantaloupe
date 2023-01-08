@@ -14,11 +14,11 @@ function plantInfoDiv(){
            let plantDiv = document.createElement("div");
            plantDiv.classList.add("plantDiv-closed");
            plantDiv.innerHTML = `
-           <h2>${plant.name} (${plant.latin})</h2>
+           <h2>${plant.name} <br>(${plant.latin})</h2>
            <img src="${plant.img}"></img>
-           <p>Vattnas gånger/veckan? ${plant.waterInt}</p>
-           <p>Blommar den? ${plant.flowers}</p>
-           <p>Hur mycket ljus behöver den? ${plant.sun}</p>
+           <p>Vattnas gånger/veckan? <br>${plant.waterInt}</p>
+           <p>Blommar den? <br>${plant.flowers}</p>
+           <p>Hur mycket ljus behöver den? <br>${plant.sun}</p>
            <p>${plant.info}</p>
            `;
            let wrapper = document.querySelector("#wrapper");

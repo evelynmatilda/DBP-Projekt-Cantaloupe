@@ -6,8 +6,8 @@
 }
 
 .nav-container-closed{
-    color: #181307;
-    background-color: #e6d7b5;
+    color: #213320;
+    background-color: #70a370;
     width: 100vw;
     height: 60px;
     transition: 1s;
@@ -22,7 +22,8 @@
 }
 
 .nav-container-opened{
-    background-color: #99c5a4;
+    background-color: #5b8c5a;
+    color: #213320;
     width: 100vw;
     height: 100vh;
     transition: 1s;
@@ -71,7 +72,7 @@
 .text-container-visible{
     opacity: 100%;
     visibility: visible;
-    color: white;
+    color: #D9EAD3;
     transition: 0.5s;
     transition-delay: 0.5s;    
     position: fixed;
@@ -94,7 +95,7 @@
 .text{
     font-size: 30px;
     text-align: center;
-    color: white;
+    color: #D9EAD3;
     margin: 4vh  0 0 0;
     padding: 20px;
     width: 80vw;
