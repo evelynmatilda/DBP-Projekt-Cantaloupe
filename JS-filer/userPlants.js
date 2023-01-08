@@ -363,7 +363,9 @@ function addOwnPlant(name, latin, info, water, flowers, sun) {
                 alert("An error occured, try again!");
             } else {
                 addPLantFromDB(resource.plantId, savedUserId);
-                renderDatabasePlants(savedUserId);
+                document.querySelector("#addPlantForm").style.display = "none";
+                document.querySelector("#addPlantList").style.display = "none";
+                document.querySelector("#addNewPlant").style.display = "none";
             }
 
 
