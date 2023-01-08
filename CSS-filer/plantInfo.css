@@ -38,11 +38,14 @@ body {
   border: #5B8C5A solid 10px;
   max-width: 80vw;
   height: auto;
+
 }
 
 .plantDiv-closed {
   margin-top: 5px;
   margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #D9EAD3;
   color: #213320;
   display: flex;
@@ -53,8 +56,8 @@ body {
   height: 300px;
   border-radius: 50px;
   border: #5B8C5A solid 10px;
-  transition: border 0.2s;
   max-width: 80vw;
+    transition: padding 0.5s;
 }
 
 .plantDiv-closed > p {
@@ -63,7 +66,6 @@ body {
 
 .plantDiv-closed > img {
   height: 0px;
-  transition: height, 0.5s;
 }
 
 p > p:nth-child(1){
