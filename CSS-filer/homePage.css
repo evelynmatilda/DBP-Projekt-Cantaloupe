@@ -30,15 +30,19 @@ font-size: 30px;
 }
 
 #logedIn-wrapper > a {
-    width: 130px;
-    height: 125px;
+    width: 200px;
+    height: 150px;
     text-align: center;
     font-size: 14px;
     background-color: #5B8C5A;
     border: 1px solid white;
     color: white;
     padding: 10px;
-    border-radius: 50%;
+    border-radius: 20px;
+}
+
+#logedIn-wrapper > a > h1 {
+    margin: 0px;
 }
 
 #welcome {
@@ -49,5 +53,6 @@ font-size: 30px;
     font-weight: bold;
     font-size: larger;
     color: #5B8C5A;
+    text-shadow: 1px -1px 4px rgba(37, 65, 4, 0.57);
 }
 

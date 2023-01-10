@@ -41,6 +41,13 @@ body {
 
 }
 
+h2{
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 1px -1px 4px rgba(37, 65, 4, 0.57);
+}
+
 .plantDiv-closed {
   margin-top: 5px;
   margin-bottom: 10px;
@@ -57,7 +64,12 @@ body {
   border-radius: 50px;
   border: #5B8C5A solid 10px;
   max-width: 80vw;
-    transition: padding 0.5s;
+  transition: padding 0.5s;
+}
+
+.plantDiv-opened > p {
+  margin: 0;
+  padding-top: 20px;
 }
 
 .plantDiv-closed > p {

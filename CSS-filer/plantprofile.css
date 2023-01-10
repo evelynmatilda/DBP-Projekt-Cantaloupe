@@ -41,11 +41,15 @@ background-color: brown;
 #lastWater > p{
     font-weight: bold;
     padding: 0;
+    margin-bottom: 5px;
 }
 
 #plantInfo{
     text-align: center;
     border-radius: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
 }
 
 #otherInfo{
@@ -81,6 +85,18 @@ background-color: brown;
 }
 
 #nameBox{
-   padding-left: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+#nameBox > h1 {
+    text-shadow: 1px -1px 4px rgba(37, 65, 4, 0.57);
+    margin: 0px;
+}
+
+#nameBox > h2 {
+    margin-top: 10px;
 }
 

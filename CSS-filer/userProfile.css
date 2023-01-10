@@ -27,6 +27,7 @@ body > h1{
     border: #E4B4D2 5px solid;
     font-size: large;
     font-weight: bolder;
+    padding: 10px;
 }
 
 .confirmLogOut-closed{
@@ -44,6 +45,7 @@ body > h1{
     border: #E4B4D2 5px solid;
     font-size: large;
     font-weight: bolder;
+    padding: 10px;
 }
 
 .YoNbuttons, .yes-no-buttons{
@@ -62,7 +64,7 @@ body > h1{
     color: #5B8C5A;
     border: #E4B4D2 solid 3px;
     font-size: large;
-   border-radius: 10%;
+    border-radius: 10px;
 }
 
 #pass-word {
@@ -101,7 +103,8 @@ body > h1{
 #profile-pic-container > h1 {
     margin-left: 60px;
     margin-top: 40px;
-    font-size: 20px;
+    font-size: 25px;
+    color: #213320;
 }
 
 #logout-buttons {
@@ -119,7 +122,8 @@ body > h1{
     height: 40px;
     background-color: #5B8C5A;
     color: white;
-    border: black solid 1px;
+    border: black solid 2px;
+    border-radius: 10px;
 }
 
 #logout-buttons > button:hover {
@@ -130,20 +134,10 @@ body > h1{
     background-color: rgb(71, 71, 71);
 }
 
-#user-name{
-    font-weight: bold;
-}
-
-#pass-word{
-    font-weight: bold;
-}
-
-#e-mail{
-    font-weight: bold;
-}
 
 .changeProfileInfo{
     border: 3px #5B8C5A solid;
     border-radius: 20px;
     padding: 20px;
+    color: #213320;
 }
