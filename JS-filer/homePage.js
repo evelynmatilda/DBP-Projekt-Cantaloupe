@@ -50,18 +50,20 @@ homePageLogedIn(userId)
 function homePageLogedIn(userId) {
     if (localStorage.length > 0){
         let homePageReg = document.getElementById("registration");
-        let homePageText = document.querySelector("#welcomeText > p");
+        let homePageText = document.querySelector("#welcomeText");
         let welcomeText = document.querySelector("#welcome");
 
-        homePageText.innerHTML = "";
+        homePageText.style.display = "none";
         homePageReg.style.display = "none";
+        welcomeText.style.marginBottom = "40px";
+        welcomeText.style.fontSize = "15px";
 
         const rqst = new Request (`/PHP-filer/userRead.php?userId=${userId}`);
 
         fetch(rqst)
             .then(r => r.json())
             .then(user => {
-                welcomeText.innerHTML = `<h1>Välkommen "${user.username}"!</h1>`;
+                welcomeText.innerHTML = `<h1>Välkommen ${user.username}!</h1>`;
                 logedInHome()
             })
     }

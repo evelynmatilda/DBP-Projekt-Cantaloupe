@@ -197,7 +197,7 @@ a{
 .header-name{
     position: fixed;
     margin: 0;
-    top: 17px;
+    top: 12px;
     height: auto;
     font-size: 25px;
     font-family: 'Playfair Display';
@@ -254,6 +254,7 @@ h1{
     flex-direction: column;
     padding: 20px;
     font-size: 12px;
+    width: 60vw;
 }
 
 #input-login-visible{
@@ -264,10 +265,21 @@ h1{
     position: fixed;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    background-color: #e6f4f1;
-    border: solid 1px gainsboro;
+    padding: 30px;
+    background-color: #D9EAD3;
+    border: #213320 2px solid;
+    border-radius: 10px;
     font-size: 12px;
+    width: 60vw;
+    margin-top: 60px;
+
+}
+
+#input-login-visible > input {
+    height: 25px;
+    border-radius: 7px;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .inp {
@@ -281,15 +293,35 @@ h1{
 }
 
 .login-button {
-    width: 80px;
+    width: 100px;
+    margin-top: 20px;
+    height: 35px;
+    border: #213320 2px solid;
+    border-radius: 10px;
+    background-color: #5B8C5A;
+    color: #D9EAD3;
+}
+
+.login-button:active{
+    background-color: #5b8c5ac7;
 }
 
 .reg-button {
     width: 100px;
+    margin-top: 20px;
+    height: 35px;
+    border: #213320 2px solid;
+    border-radius: 10px;
+    background-color: #5B8C5A;
+    color: #D9EAD3;
 }
 
 .reg-button:hover, .login-button:hover{
     cursor: pointer;
+}
+
+.reg-button:active{
+    background-color: #5b8c5ac7;
 }
 
 #reg-login-hidden {
@@ -301,6 +333,7 @@ h1{
     flex-direction: column;
     padding: 20px;
     font-size: 12px;
+    width: 60vw;
 }
 
 #reg-login-visible{
@@ -311,10 +344,20 @@ h1{
     position: fixed;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    background-color: #e6f4f1;
-    border: solid 1px gainsboro;
+    padding: 30px;
+    background-color: #D9EAD3;
+    border: #213320 2px solid;
+    border-radius: 10px;
     font-size: 12px;
+    width: 60vw;
+    margin-top: 60px;
+}
+
+#reg-login-visible > input {
+    height: 25px;
+    border-radius: 7px;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #profile-wrapper {
@@ -329,8 +372,9 @@ h1{
 
 #error-message {
     height: 200px;
-    font-size: 12px;
-}
+    font-size: 14px;
+    color: #E4B4D2;
+    text-shadow: -1px 2px 12px rgba(19, 7, 7, 0.37);}
 
 @keyframes shake {
     0% {

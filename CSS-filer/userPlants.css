@@ -270,23 +270,30 @@ body {
     width: 100vw;
     position: absolute;
     z-index: 4;
-    background-color: #E4B4D2;
+    background-color: #00000092;
     top: 60px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
 .notLoggedInText{
-height: 70vh;
-width: 80vw;
-background-color: #D9EAD3;
-text-align: center;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 10px;
-border-radius: 20px;
+    margin-top: 20vh;
+    width: 80vw;
+    background-color: #D9EAD3;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: 5px solid #5B8C5A;
+    border-radius: 20px;
+}
+
+.notLoggedInText > h1 {
+    font-family: "Cabin Condensed";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
 }
 
 .infoBut{

@@ -43,7 +43,6 @@ function logIn(event) {
     .then((resource) => {
       if (resource.error) {
         errorMessage.innerHTML = "Fel användarnamn eller lösenord...";
-        errorMessage.style.color = "red";
         errorMessage.style.display = "flex";
         input.classList.add("shake");
         document.querySelector("#login-username").value = "";

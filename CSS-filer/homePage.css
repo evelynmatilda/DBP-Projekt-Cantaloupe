@@ -8,18 +8,72 @@ body{
 }
 
 #welcomeText{
-max-width: 300px;
-font-size: 30px;
+    width: 100vw;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    text-align: center;  
+    color: #213320c0;
+    margin-top: 40px;
+    background-color: #e4b4d2a7;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;}
+
+#welcomeText > p {
+    max-width: 300px;
+    line-height: 30px;
 }
 
+#welcome > h1{
+    margin-bottom: 0px;
+}
 #registration{
     display: flex;
     flex-direction: column;
     padding: 30px;
-    background-color: #e6f4f1;
-    border: solid 1px gainsboro;
+    background-color: #70a370;
+    border: solid 2px #213320c0;
+    border-radius: 25px;
     font-size: 14px;
     margin-top: 20px;
+    color: #D9EAD3;
+}
+
+#registration > h2 {
+    width: 200px;
+    text-align: center;
+    text-shadow: 1px -1px 4px rgba(37, 65, 4, 0.57);
+}
+
+#registration > form > p {
+    margin-bottom: 2px;
+}
+
+#registration > form{
+    display: flex;
+    flex-direction: column;
+}
+
+#registration > form > button {
+    width: 100px;
+    margin-top: 20px;
+    height: 40px;
+    margin-left: 53px;
+    border: #213320c0 2px solid;
+    border-radius: 10px;
+    background-color: #D9EAD3;
+    color: #5B8C5A;
+}
+
+#registration > form > input {
+    height: 25px;
+    border-radius: 7px;
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#registration > form > button:active{
+    background-color: #c4d3be;
 }
 
 #logedIn-wrapper {
