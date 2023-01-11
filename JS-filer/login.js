@@ -36,7 +36,7 @@ function logIn(event) {
   errorMessage.innerHTML = "";
   input.classList.remove("shake");
 
-  let request = `../PHP-filer/getUser.php?username=${recUsername}&password=${recPassword}`;
+  let request = `PHP-filer/getUser.php?username=${recUsername}&password=${recPassword}`;
 
   fetch(request)
     .then((r) => r.json())
