@@ -58,7 +58,7 @@ function homePageLogedIn(userId) {
         welcomeText.style.marginBottom = "40px";
         welcomeText.style.fontSize = "15px";
 
-        const rqst = new Request (`../PHP-filer/userRead.php?userId=${userId}`);
+        const rqst = new Request (`PHP-filer/userRead.php?userId=${userId}`);
 
         fetch(rqst)
             .then(r => r.json())
