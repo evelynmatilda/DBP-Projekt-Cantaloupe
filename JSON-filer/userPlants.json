@@ -106,5 +106,12 @@
             "2023-01-11"
         ],
         "bugs": false
+    },
+    {
+        "userPlantId": 11,
+        "userId": 3,
+        "plantId": 6,
+        "water": [],
+        "bugs": false
     }
 ]
