@@ -96,7 +96,7 @@ function deleteUserAccount() {
         .then(resource => {
             console.log(resource);
             localStorage.clear();
-            window.location.href = "HTML-filer/homePage.html";
+            window.location.href = "index.html";
         });
 }
 
