@@ -140,6 +140,6 @@ if (localStorage.length > 0) {
     inputLogin.style.display = "none";
     profile.removeEventListener("click", profileEvent)
     profile.addEventListener("click", function(){
-        window.location.href = "HTML-filer/userProfile.html";
+        window.location.href = "../HTML-filer/userProfile.html";
     })
 } 
