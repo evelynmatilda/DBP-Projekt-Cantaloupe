@@ -109,7 +109,7 @@ function plantOverlay(user_plant, event, plant_info){
     let overlay = document.querySelector(".plantProfileOverlay");
     overlay.style.display = "block"
     overlay.style.width = "100vw";
-    overlay.style.height = "90vh";
+    overlay.style.height = "91vh";
     let overlayWrapper = document.querySelector("#overlayWrapper");
     let exit = document.querySelector("#exit");
     exit.addEventListener("click", function(){
