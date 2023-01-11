@@ -88,7 +88,7 @@ function patchUsername (newUsername) {
     fetch(patch_rqst)
         .then(r => r.json())
         .then(recource =>{
-            window.location.href = "../HTML-filer/userProfile.html";
+            window.location.href = "HTML-filer/userProfile.html";
         })
     
 
@@ -110,7 +110,7 @@ function patchPassword (newPassword) {
     fetch(patch_rqst)
         .then(r => r.json())
         .then(recource =>{
-            window.location.href = "../HTML-filer/userProfile.html";
+            window.location.href = "HTML-filer/userProfile.html";
         })
     
 }
@@ -131,7 +131,7 @@ function patchEmail (newEmail) {
     fetch(patch_rqst)
         .then(r => r.json())
         .then(recource =>{
-            window.location.href = "../HTML-filer/userProfile.html";
+            window.location.href = "HTML-filer/userProfile.html";
         })
     
 }

@@ -13,7 +13,7 @@ function logOut(){
 
     yesLogOut.addEventListener("click", function(){
         window.localStorage.clear();
-        window.location.href = "../index.html";
+        window.location.href = "index.html";
     });
 
     noLogOut.addEventListener("click", function(){

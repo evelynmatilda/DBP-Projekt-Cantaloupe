@@ -37,7 +37,7 @@ function regUser(email, userName, password){
         .then(resource => {
             if (resource.email == email && resource.username == userName && resource.password == password) {
                 window.localStorage.setItem("userId", resource.userId);
-                window.location.href = "../index.html";
+                window.location.href = "index.html";
             }
         })
 
