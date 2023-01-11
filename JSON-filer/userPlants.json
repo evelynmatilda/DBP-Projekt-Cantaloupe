@@ -93,7 +93,18 @@
         "userPlantId": 9,
         "userId": 1,
         "plantId": 2,
-        "water": [],
+        "water": [
+            "2023-01-11"
+        ],
+        "bugs": false
+    },
+    {
+        "userPlantId": 10,
+        "userId": 1,
+        "plantId": 6,
+        "water": [
+            "2023-01-11"
+        ],
         "bugs": false
     }
 ]

@@ -7,19 +7,13 @@ function logOut(){
         } else {
             confirmLogOut.className = "confirmLogOut-closed";
         }
-        // if(window.confirm("Är du säker på att du vill logga ut? Tryck OK för ja och Avbryt för nej") == true){
-        //      window.localStorage.clear()
-        //     window.location.href = "/HTML-filer/homePage.html";
-        // } else {
-
-        // }
     });
     let yesLogOut = document.querySelector("#yesLogOut");
     let noLogOut = document.querySelector("#noLogOut");
 
     yesLogOut.addEventListener("click", function(){
         window.localStorage.clear();
-        window.location.href = "/HTML-filer/homePage.html";
+        window.location.href = "/index.html";
     });
 
     noLogOut.addEventListener("click", function(){
