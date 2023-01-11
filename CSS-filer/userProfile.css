@@ -28,6 +28,7 @@ body > h1{
     font-size: large;
     font-weight: bolder;
     padding: 10px;
+    top: 40vh;
 }
 
 .confirmLogOut-closed{
@@ -46,6 +47,7 @@ body > h1{
     font-size: large;
     font-weight: bolder;
     padding: 10px;
+    top: 40vh;
 }
 
 .YoNbuttons, .yes-no-buttons{
@@ -110,7 +112,6 @@ body > h1{
 #logout-buttons {
     display: flex;
     flex-direction: column;
-    height: 120px;
     align-items: flex-end;
     justify-content: space-between;
     padding-top: 40px;
@@ -131,6 +132,32 @@ body > h1{
 }
 
 #logout-buttons > button:active {
+    background-color: rgb(71, 71, 71);
+}
+#delete-buttons {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 40px;
+    width: 85vw;
+}
+
+#delete-buttons > button {
+    width: 100px;
+    height: 40px;
+    background-color: #5B8C5A;
+    color: white;
+    border: black solid 2px;
+    border-radius: 10px;
+}
+
+#delete-buttons > button:hover {
+    cursor: pointer;
+}
+
+#delete-buttons > button:active {
     background-color: rgb(71, 71, 71);
 }
 
