@@ -9,34 +9,52 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin+Condensed&family=Mali:wght@400;600&family=Playfair+Display:ital,wght@0,400;1,700;1,900&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="../CSS-filer/menu.css">
-    <link rel="stylesheet" href="../CSS-filer/plantprofile.css">
-    <link rel="icon" type="image/x-icon" href="../bilder/OKbloomer.png">
-    <title>Document</title>
+    <link rel="stylesheet" href="/CSS-filer/menu.css">
+    <link rel="stylesheet" href="/CSS-filer/homePage.css">
+    <link rel="icon" type="image/x-icon" href="/bilder/OKbloomer.png">
+    <title>OkBloomer!</title>
 </head>
 
-<div id="plant"></div>
-
-<div class="plantProfileOverlay">
-    <span class="material-symbols-outlined" id="exit">close</span>
-    <div id="overlayWrapper"></div>
-</div>
-
 <body>
+
+    <div id="welcome">
+        <h1>Välkommen till OkBloomer!</h1>
+    </div>
+
+    <div id="welcomeText">
+        <p>Har du alltid svårt för att komma ihåg när du senast vattnade dina växter? Är du någon som verkligen vill ta
+            hand om dina växter och få de att må bra? Då är det här rätt sida för dig, för allt detta kan du göra med
+            OkBloomer!</p>
+    </div>
+
+    <div id="logedIn-wrapper"></div>
+
+    <div id="registration">
+        <h2>Registrera dig här!</h2>
+        <form action="">
+            <p>Email</p>
+            <input id="email" type="text">
+            <p>Användarnamn</p>
+            <input id="username" type="text">
+            <p>Lösenord</p>
+            <input id="password" type="text">
+            <button id="register-button" type="submit">Registrera</button>
+        </form>
+    </div>
+
     <div class="nav-container-closed">
         <h1 class="header-name">OKBloomer<div id="logga"></div></h1>
-
         <div class="text-container-hidden">
-            <a href="homePage.html">
+            <a href="index.html">
                 <h1 class="text">Hem</h1>
             </a>
-            <a href="plantInfo.html">
+            <a href="/HTML-filer/plantInfo.html">
                 <h1 class="text">Våra växter</h1>
             </a>
-            <a href="userPlants.html">
+            <a href="/HTML-filer/userPlants.html">
                 <h1 class="text">Mina växter</h1>
             </a>
-            <a href="aboutUs.html">
+            <a href="/HTML-filer/aboutUs.html">
                 <h1 class="text">Om oss</h1>
             </a>
         </div>
@@ -74,8 +92,9 @@
         </div>
     </div>
 
-    <script src="../JS-filer/menu.js"></script>
-    <script src="../JS-filer/login.js"></script>
+    <script src="/JS-filer/menu.js"></script>
+    <script src="/JS-filer/login.js"></script>
+    <script src="/JS-filer/homePage.js"></script>
 </body>
 
 </html>

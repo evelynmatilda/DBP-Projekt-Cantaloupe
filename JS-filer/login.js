@@ -20,7 +20,7 @@ function addUser(email, username, password) {
         resource.password == password
       ) {
         window.localStorage.setItem("userId", resource.userId);
-        window.location.href = "/HTML-filer/homePage.html";
+        window.location.href = "/index.html";
       }
     });
 }
@@ -49,7 +49,7 @@ function logIn(event) {
         document.querySelector("#login-password").value = "";
       } else {
         window.localStorage.setItem("userId", resource.userId);
-        window.location.href = "/HTML-filer/homePage.html";
+        window.location.href = "/index.html";
         errorMessage.innerHTML = "";
       }
     });
