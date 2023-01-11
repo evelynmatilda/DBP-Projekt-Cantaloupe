@@ -1,7 +1,14 @@
 function logOut(){
     let logOutButton = document.querySelector("#logOutButton");
     let confirmLogOut = document.querySelector(".confirmLogOut-closed");
+    let confirmWrapper = document.querySelector(".confirm-wrapper-closed");
     logOutButton.addEventListener("click", function(){
+        if(confirmWrapper.className == "confirm-wrapper-closed"){
+            confirmWrapper.className = "confirm-wrapper-opened";
+        }
+        else{
+            confirmWrapper.className = "confirm-wrapper-closed";
+        }
         if(confirmLogOut.className == "confirmLogOut-closed"){
             confirmLogOut.className = "confirmLogOut-opened";
         } else {
@@ -17,7 +24,8 @@ function logOut(){
     });
 
     noLogOut.addEventListener("click", function(){
-       confirmLogOut.className = "confirmLogOut-closed"
+        confirmWrapper.className = "confirm-wrapper-closed";
+        confirmLogOut.className = "confirmLogOut-closed"
     });
 
 }

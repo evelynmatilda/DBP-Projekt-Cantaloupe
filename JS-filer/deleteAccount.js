@@ -3,8 +3,15 @@
 function deleteAccout() {
     let delAccountBtn = document.querySelector("#del-account-button");
     let confirmDelete = document.querySelector(".confirmDelete-closed");
+    let confirmWrapper = document.querySelector(".confirm-delwrapper-closed");
 
     delAccountBtn.addEventListener("click", function () {
+        if(confirmWrapper.className == "confirm-delwrapper-closed"){
+            confirmWrapper.className = "confirm-delwrapper-opened";
+        }
+        else{
+            confirmWrapper.className = "confirm-delwrapper-closed";
+        }
         if (confirmDelete.className == "confirmDelete-closed") {
             confirmDelete.className = "confirmDelete-opened";
         } else {
@@ -17,6 +24,8 @@ function deleteAccout() {
 
     noDelete.addEventListener("click", function () {
         confirmDelete.className = "confirmDelete-closed";
+        confirmWrapper.className = "confirm-delwrapper-closed";
+
     });
 
     yesDelete.addEventListener("click", getUsersPlants);

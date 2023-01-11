@@ -168,3 +168,21 @@ body > h1{
     padding: 20px;
     color: #213320;
 }
+
+.confirm-wrapper-opened{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-wrapper-closed{
+    display: none;
+}
+
+.confirm-delwrapper-opened{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.confirm-delwrapper-closed{
+    display: none;
+}
