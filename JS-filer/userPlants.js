@@ -33,6 +33,9 @@ function renderUserPlants(id) {
                                     fetch(plant_rqst)
                                         .then(r => r.json())
                                         .then(plant_info => {
+                                            if(user_plant.water[user_plant.water.length - 1] == undefined){
+                                                user_plant.water[user_plant.water.length - 1] = "Ej vattnad"; 
+                                            }
                                             let div = document.createElement("div");
                                             div.classList.add("userPlantDiv");
                                             div.id = user_plant.userPlantId;
