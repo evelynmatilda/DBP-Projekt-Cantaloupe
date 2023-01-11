@@ -28,8 +28,6 @@ if (!isset($requestData["id"], $requestData["username"])) {
 
 $id = $requestData["id"];
 $newName = $requestData["username"];
-// $newPassword = $requestData["password"];
-// $newEmail = $requestData["email"];
 
 if ($newName == "") {
     $error = ["error" => "Bad Request!"];

@@ -22,7 +22,7 @@ function reg(event){
 
 function regUser(email, userName, password){
     
-    const request = new Request("/PHP-filer/userCreate.php",{
+    const request = new Request("../PHP-filer/userCreate.php",{
         method:'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({
@@ -37,7 +37,7 @@ function regUser(email, userName, password){
         .then(resource => {
             if (resource.email == email && resource.username == userName && resource.password == password) {
                 window.localStorage.setItem("userId", resource.userId);
-                window.location.href = "/index.html";
+                window.location.href = "../index.html";
             }
         })
 
@@ -58,7 +58,7 @@ function homePageLogedIn(userId) {
         welcomeText.style.marginBottom = "40px";
         welcomeText.style.fontSize = "15px";
 
-        const rqst = new Request (`/PHP-filer/userRead.php?userId=${userId}`);
+        const rqst = new Request (`../PHP-filer/userRead.php?userId=${userId}`);
 
         fetch(rqst)
             .then(r => r.json())

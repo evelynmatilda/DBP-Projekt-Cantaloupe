@@ -25,7 +25,7 @@ function deleteAccout() {
 
 function getUsersPlants() {
     let id = window.localStorage.getItem("userId");
-    const userrqst = new Request(`/PHP-filer/userRead.php?userId=${id}`);
+    const userrqst = new Request(`../PHP-filer/userRead.php?userId=${id}`);
 
     fetch(userrqst)
         .then(r => r.json())
@@ -40,7 +40,7 @@ function eventDeleteUserplants(plants) {
     let id = window.localStorage.getItem("userId");
     const requests = [];
 
-    const plantrqst = new Request(`/PHP-filer/userPlantRead.php`)
+    const plantrqst = new Request(`../PHP-filer/userPlantRead.php`)
 
     fetch(plantrqst)
         .then(r => r.json())
@@ -48,7 +48,7 @@ function eventDeleteUserplants(plants) {
             userPlants.forEach(userPlant => {
                 if (userPlant.userId == id) {
                     let userPlantId = userPlant.userPlantId;
-                    const deleteUserPlant = new Request("/PHP-filer/userPlantDelete.php", {
+                    const deleteUserPlant = new Request("../PHP-filer/userPlantDelete.php", {
                         method: 'DELETE',
                         headers: { "Content-type": "application/json; charset=UTF-8" },
                         body: JSON.stringify({
@@ -73,7 +73,7 @@ function eventDeleteUserplants(plants) {
 function deleteUserAccount() {
     let id = window.localStorage.getItem("userId");
 
-    const deleteRequest = new Request("/PHP-filer/userDelete.php", {
+    const deleteRequest = new Request("../PHP-filer/userDelete.php", {
 
         method: 'DELETE',
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -87,7 +87,7 @@ function deleteUserAccount() {
         .then(resource => {
             console.log(resource);
             localStorage.clear();
-            window.location.href = "/HTML-filer/homePage.html";
+            window.location.href = "../HTML-filer/homePage.html";
         });
 }
 

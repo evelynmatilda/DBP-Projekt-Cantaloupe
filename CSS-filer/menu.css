@@ -216,7 +216,7 @@ h1{
 }
 
 #logga{
-    background-image: url("/bilder/OKbloomer.png");
+    background-image: url("../bilder/OKbloomer.png");
     width: 34px;
     height: 34px;
     background-size: contain;

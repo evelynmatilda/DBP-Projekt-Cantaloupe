@@ -3,7 +3,7 @@
 function getProfileInfo () {
     let id = window.localStorage.getItem("userId");
 
-    const rqst = new Request (`/PHP-filer/userRead.php?userId=${id}`);
+    const rqst = new Request (`../PHP-filer/userRead.php?userId=${id}`);
 
         fetch(rqst)
             .then(r => r.json())
@@ -75,7 +75,7 @@ function openForm (){
 function patchUsername (newUsername) {
     let id = window.localStorage.getItem("userId");
 
-    const patch_rqst = new Request("/PHP-filer/usernameUpdate.php", {
+    const patch_rqst = new Request("../PHP-filer/usernameUpdate.php", {
 
         method: 'PATCH',
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -88,7 +88,7 @@ function patchUsername (newUsername) {
     fetch(patch_rqst)
         .then(r => r.json())
         .then(recource =>{
-            window.location.href = "/HTML-filer/userProfile.html";
+            window.location.href = "../HTML-filer/userProfile.html";
         })
     
 
@@ -97,7 +97,7 @@ function patchUsername (newUsername) {
 function patchPassword (newPassword) {
     let id = window.localStorage.getItem("userId");
 
-    const patch_rqst = new Request("/PHP-filer/passwordUpdate.php", {
+    const patch_rqst = new Request("../PHP-filer/passwordUpdate.php", {
 
         method: 'PATCH',
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -110,7 +110,7 @@ function patchPassword (newPassword) {
     fetch(patch_rqst)
         .then(r => r.json())
         .then(recource =>{
-            window.location.href = "/HTML-filer/userProfile.html";
+            window.location.href = "../HTML-filer/userProfile.html";
         })
     
 }
@@ -118,7 +118,7 @@ function patchPassword (newPassword) {
 function patchEmail (newEmail) {
     let id = window.localStorage.getItem("userId");
 
-    const patch_rqst = new Request("/PHP-filer/emailUpdate.php", {
+    const patch_rqst = new Request("../PHP-filer/emailUpdate.php", {
 
         method: 'PATCH',
         headers: { "Content-type": "application/json; charset=UTF-8" },
@@ -131,7 +131,7 @@ function patchEmail (newEmail) {
     fetch(patch_rqst)
         .then(r => r.json())
         .then(recource =>{
-            window.location.href = "/HTML-filer/userProfile.html";
+            window.location.href = "../HTML-filer/userProfile.html";
         })
     
 }

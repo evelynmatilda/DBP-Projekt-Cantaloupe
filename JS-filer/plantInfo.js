@@ -1,5 +1,5 @@
 
-let request = "http://localhost:8888/JSON-filer/plants.json";
+let request = "../JSON-filer/plants.json";
 
 function plantInfoDiv(){
     fetch(request)

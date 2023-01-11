@@ -24,15 +24,15 @@ h2{
 }
 
 #hanna{
-    background-image: url(/bilder/Hanna.jpg);
+    background-image: url(../bilder/Hanna.jpg);
 }
 
 #evelyn{
-    background-image: url(/bilder/Evelyn.jpg);
+    background-image: url(../bilder/Evelyn.jpg);
 }
 
 #julia{
-    background-image: url(/bilder/Julia.jpg);
+    background-image: url(../bilder/Julia.jpg);
 }
 
 .usPicture{

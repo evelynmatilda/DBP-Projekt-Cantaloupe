@@ -1,7 +1,7 @@
 "use strict";
 
 function addUser(email, username, password) {
-  const request = new Request("/PHP-filer/userCreate.php", {
+  const request = new Request("../PHP-filer/userCreate.php", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -20,7 +20,7 @@ function addUser(email, username, password) {
         resource.password == password
       ) {
         window.localStorage.setItem("userId", resource.userId);
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
       }
     });
 }
@@ -49,7 +49,7 @@ function logIn(event) {
         document.querySelector("#login-password").value = "";
       } else {
         window.localStorage.setItem("userId", resource.userId);
-        window.location.href = "/index.html";
+        window.location.href = "../index.html";
         errorMessage.innerHTML = "";
       }
     });
