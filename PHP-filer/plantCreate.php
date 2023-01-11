@@ -33,7 +33,7 @@ $waterInt = $requestData["waterInt"];
 $flowers = $requestData["flowers"];
 $sun = $requestData["sun"];
 
-if ($name == "" or $latin == "" or $info == "" or $waterInt = 0 or $flowers = "" or $sun = "") {
+if ($name == "" or $latin == "" or $info == "") {
     $error = ["error" => "Bad Request!"];
     sendJSON($error, 400);
 }
