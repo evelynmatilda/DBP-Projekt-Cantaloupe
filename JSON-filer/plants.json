@@ -7,7 +7,7 @@
         "waterInt": 1,
         "flowers": false,
         "sun": "Full sol",
-        "img": "../bilder/fiolfikus.jpg"
+        "img": "..\/bilder\/fiolfikus.jpg"
     },
     {
         "plantId": 2,
@@ -17,7 +17,7 @@
         "waterInt": 1,
         "flowers": false,
         "sun": "Full sol",
-        "img": "../bilder/euforbia.jpg"
+        "img": "..\/bilder\/euforbia.jpg"
     },
     {
         "plantId": 3,
@@ -27,7 +27,7 @@
         "waterInt": 1,
         "flowers": true,
         "sun": "Halvskugga",
-        "img": "../bilder/ampellilja.jpg"
+        "img": "..\/bilder\/ampellilja.jpg"
     },
     {
         "plantId": 4,
@@ -37,7 +37,7 @@
         "waterInt": 2,
         "flowers": true,
         "sun": "Halv sol",
-        "img": "../bilder/kalatea.jpg"
+        "img": "..\/bilder\/kalatea.jpg"
     },
     {
         "plantId": 5,
@@ -47,7 +47,7 @@
         "waterInt": 1,
         "flowers": true,
         "sun": "Full sun",
-        "img": "../bilder/paradisblomma.jpg"
+        "img": "..\/bilder\/paradisblomma.jpg"
     },
     {
         "plantId": 6,
@@ -57,7 +57,7 @@
         "waterInt": 1,
         "flowers": false,
         "sun": "Halv sol",
-        "img": "../bilder/monstera.jpg"
+        "img": "..\/bilder\/monstera.jpg"
     },
     {
         "plantId": 7,
@@ -67,7 +67,7 @@
         "waterInt": 2,
         "flowers": true,
         "sun": "Halv skugga",
-        "img": "../bilder/fredskalla.jpg"
+        "img": "..\/bilder\/fredskalla.jpg"
     },
     {
         "plantId": 8,
@@ -77,6 +77,6 @@
         "waterInt": 1,
         "flowers": true,
         "sun": "Full sol",
-        "img": "../bilder/paradistr\u00e4d.jpg"
+        "img": "..\/bilder\/paradistrad.jpg"
     }
 ]

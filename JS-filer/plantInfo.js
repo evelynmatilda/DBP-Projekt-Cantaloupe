@@ -11,30 +11,53 @@ function plantInfoDiv(){
            } else{
             plant.flowers = "Ja";
            };
-           let plantDiv = document.createElement("div");
-           plantDiv.classList.add("plantDiv-closed");
-           plantDiv.innerHTML = `
-           <h2>${plant.name} <br>(${plant.latin})</h2>
-           <img src="${plant.img}"></img>
-           <p>Vattnas gånger/veckan? <br>${plant.waterInt}</p>
-           <p>Blommar den? <br>${plant.flowers}</p>
-           <p>Hur mycket ljus behöver den? <br>${plant.sun}</p>
-           <p>${plant.info}</p>
-           `;
-           let wrapper = document.querySelector("#wrapper");
-           wrapper.append(plantDiv);
-           
-            plantDiv.addEventListener("click", function(){
-        if (plantDiv.className == "plantDiv-closed"){
-            plantDiv.className = "plantDiv-opened";
-        }
-            else {
-            plantDiv.className = "plantDiv-closed";
-        }
-    });
+           if (plant.img == "No picture exist for this plant") {
+               let plantDiv = document.createElement("div");
+               plantDiv.classList.add("plantDiv-closed");
+               plantDiv.innerHTML = `
+                <h2>${plant.name} <br>(${plant.latin})</h2>
+                <p>Det finns tyvärr ingen bild för denna växt</p>
+                <p>Vattnas gånger/veckan? <br>${plant.waterInt}</p>
+                <p>Blommar den? <br>${plant.flowers}</p>
+                <p>Hur mycket ljus behöver den? <br>${plant.sun}</p>
+                <p>${plant.info}</p>
+                `;
+               let wrapper = document.querySelector("#wrapper");
+               wrapper.append(plantDiv);
+
+               plantDiv.addEventListener("click", function () {
+                   if (plantDiv.className == "plantDiv-closed") {
+                       plantDiv.className = "plantDiv-opened";
+                   }
+                   else {
+                       plantDiv.className = "plantDiv-closed";
+                   }
+               });
+           } else {
+               let plantDiv = document.createElement("div");
+               plantDiv.classList.add("plantDiv-closed");
+               plantDiv.innerHTML = `
+                <h2>${plant.name} <br>(${plant.latin})</h2>
+                <img src="${plant.img}"></img>
+                <p>Vattnas gånger/veckan? <br>${plant.waterInt}</p>
+                <p>Blommar den? <br>${plant.flowers}</p>
+                <p>Hur mycket ljus behöver den? <br>${plant.sun}</p>
+                <p>${plant.info}</p>
+                `;
+               let wrapper = document.querySelector("#wrapper");
+               wrapper.append(plantDiv);
+
+               plantDiv.addEventListener("click", function () {
+                   if (plantDiv.className == "plantDiv-closed") {
+                       plantDiv.className = "plantDiv-opened";
+                   }
+                   else {
+                       plantDiv.className = "plantDiv-closed";
+                   }
+               });
+           } 
         })
     } )
-   
 }
 
 
